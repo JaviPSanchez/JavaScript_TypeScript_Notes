@@ -32,7 +32,8 @@ Imaginemos que queremos sacar el OBJECT openingHours de nuestro OBJECT restauran
 */
 console.log(restaurant.openingHours.mon); //Undefined
 /*
-Como podemos ver esta propiedad no existe, pero imaginemos que no sabemos si el restaurante abre los lunes, la informacion viene de un web service, una API, que gestiona miles de restaurantes. Imaginemos que queremos saber incluso el horario:
+Como podemos ver esta propiedad no existe, pero imaginemos que no sabemos si el restaurante abre los lunes,
+la informacion viene de un web service, una API, que gestiona miles de restaurantes. Imaginemos que queremos saber incluso el horario:
 */
 // console.log(restaurant.openingHours.mon.open);
 //TypeError: Cannot read property 'open' of undefined
@@ -47,7 +48,8 @@ if (restaurant.openingHours && restaurant.openingHours.mon)
   console.log(restaurant.openingHours.mon.open); //Undefined
 //Esto se puede complicar aun mas en NESTED OBJECTS...
 /*
-A partir de ES2020 se introdujo una solucion, que es OPTIONAL CHAINING ?, si una PROPERTIE no existe entonces undefined es devuelto inmediatamente, basicamente la PROPERTIE que este justo antes del signo ? sera evaluada y solo si existe seguira con la siguiente:
+A partir de ES2020 se introdujo una solucion, que es OPTIONAL CHAINING ?, si una PROPERTIE no existe entonces undefined es devuelto inmediatamente,
+basicamente la PROPERTIE que este justo antes del signo ? sera evaluada y solo si existe seguira con la siguiente:
 */
 // console.log(restaurant.openingHours.mon.open); //Error
 console.log(restaurant.openingHours.mon?.open); //Undefined
@@ -55,7 +57,8 @@ console.log(restaurant.openingHours.mon?.open); //Undefined
 /*
 En resumidas cuentas con los signos ?, podemos ahorrarnos los LOGICAL OPERATORS y los IF STATEMENTS.
 
-Imaginemos que queremos obtener la informacion de apertura de un restaurante, a partir de un ARRAY obtenido de una API que nos diga los dias que abre de la semana y la hora:
+Imaginemos que queremos obtener la informacion de apertura de un restaurante,
+a partir de un ARRAY obtenido de una API que nos diga los dias que abre de la semana y la hora:
 */
 const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 for (const day of weekdays) {
@@ -128,3 +131,7 @@ Si no habria que escribir:
 if (users.length > 0) console.log(users[0].name);
 //Javi
 else console.log('User array empty');
+
+// The ? operator can also be used to call methods on nested objects or arrays, like this:
+const arr = [1, 2, 3];
+console.log(arr?.map(x => x * 2)?.join(', '));

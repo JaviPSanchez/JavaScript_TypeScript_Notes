@@ -1,8 +1,10 @@
 /*
  *********************STATEMENTS VS EXPRESSIONS*******************
- */
+ 
 
-// LECTURE : Statements vs expressions: Una EXPRESION es todo aquello que tiene un valor por si mismo, ya sea un numero, una string, una booleana o una variable, serian como las palabras que forman una frase, como por ejemplo:
+ LECTURE : Statements vs expressions: Una EXPRESION es todo aquello que tiene un valor por si mismo, ya sea un numero,
+una string, una booleana o una variable, serian como las palabras que forman una frase, como por ejemplo:
+*/
 3 + 4;
 1991;
 true || (false && true);
