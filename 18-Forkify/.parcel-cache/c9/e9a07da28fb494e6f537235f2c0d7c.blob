@@ -1,0 +1,35 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _182ModelJs = require("./182-model.js");
+var _183RecipeViewJs = require("./views/183-recipeView.js");
+var _183RecipeViewJsDefault = parcelHelpers.interopDefault(_183RecipeViewJs);
+//IMPORTS
+var _stable = require("core-js/stable"); // Polyfilling several things...
+var _runtime = require("regenerator-runtime/runtime"); // Polyfilling ASYNC/Await
+var _regeneratorRuntime = require("regenerator-runtime");
+const timeout = function(s) {
+    return new Promise(function(_, reject) {
+        setTimeout(function() {
+            reject(new Error(`Request took too long! Timeout after ${s} second`));
+        }, s * 1000);
+    });
+};
+///////////////////////////////////////
+const controlRecipes = async function() {
+    try {
+        const id = window.location.hash.slice(1);
+        if (!id) return;
+        _183RecipeViewJsDefault.default.renderSpinner();
+        // 0) Update results view to mark selected search result
+        resultsView.update(_182ModelJs.getSearchResultsPage());
+        // 1) Updating bookmarks view
+        bookmarksView.update(_182ModelJs.state.bookmarks);
+        // 2) Loading recipe
+        await _182ModelJs.loadRecipe(id);
+        // 3) Rendering recipe
+        _183RecipeViewJsDefault.default.render(_182ModelJs.state.recipe);
+    } catch (err) {
+        _183RecipeViewJsDefault.default.renderError();
+        console.error(err);
+    }
+};
+controlRecipes();

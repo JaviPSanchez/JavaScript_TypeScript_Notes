@@ -1,0 +1,11 @@
+{
+  "name": "arrays",
+  "version": "1.0.0",
+  "description": "working with arrays",
+  "main": "1126-6_Different_ways_to_loop_through_an_Array.js",
+  "scripts": {
+    "start": "nodemon 1126-6_Different_ways_to_loop_through_an_Array.js"
+  },
+  "author": "JPS",
+  "license": "ISC"
+}

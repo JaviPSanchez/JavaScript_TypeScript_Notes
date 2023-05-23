@@ -1,0 +1,978 @@
+// modules are defined as an array
+// [ module function, map of requires ]
+//
+// map of requires is short require name -> numeric require
+//
+// anything defined in a previous bundle is accessed via the
+// orig method which is the require for previous bundles
+
+(function(modules, entry, mainEntry, parcelRequireName, globalName) {
+  /* eslint-disable no-undef */
+  var globalObject =
+    typeof globalThis !== 'undefined'
+      ? globalThis
+      : typeof self !== 'undefined'
+      ? self
+      : typeof window !== 'undefined'
+      ? window
+      : typeof global !== 'undefined'
+      ? global
+      : {};
+  /* eslint-enable no-undef */
+
+  // Save the require from previous bundle to this closure if any
+  var previousRequire =
+    typeof globalObject[parcelRequireName] === 'function' &&
+    globalObject[parcelRequireName];
+
+  var cache = previousRequire.cache || {};
+  // Do not use `require` to prevent Webpack from trying to bundle this call
+  var nodeRequire =
+    typeof module !== 'undefined' &&
+    typeof module.require === 'function' &&
+    module.require.bind(module);
+
+  function newRequire(name, jumped) {
+    if (!cache[name]) {
+      if (!modules[name]) {
+        // if we cannot find the module within our internal map or
+        // cache jump to the current global require ie. the last bundle
+        // that was added to the page.
+        var currentRequire =
+          typeof globalObject[parcelRequireName] === 'function' &&
+          globalObject[parcelRequireName];
+        if (!jumped && currentRequire) {
+          return currentRequire(name, true);
+        }
+
+        // If there are other bundles on this page the require from the
+        // previous one is saved to 'previousRequire'. Repeat this as
+        // many times as there are bundles until the module is found or
+        // we exhaust the require chain.
+        if (previousRequire) {
+          return previousRequire(name, true);
+        }
+
+        // Try the node require function if it exists.
+        if (nodeRequire && typeof name === 'string') {
+          return nodeRequire(name);
+        }
+
+        var err = new Error("Cannot find module '" + name + "'");
+        err.code = 'MODULE_NOT_FOUND';
+        throw err;
+      }
+
+      localRequire.resolve = resolve;
+      localRequire.cache = {};
+
+      var module = (cache[name] = new newRequire.Module(name));
+
+      modules[name][0].call(
+        module.exports,
+        localRequire,
+        module,
+        module.exports,
+        this
+      );
+    }
+
+    return cache[name].exports;
+
+    function localRequire(x) {
+      return newRequire(localRequire.resolve(x));
+    }
+
+    function resolve(x) {
+      return modules[name][1][x] || x;
+    }
+  }
+
+  function Module(moduleName) {
+    this.id = moduleName;
+    this.bundle = newRequire;
+    this.exports = {};
+  }
+
+  newRequire.isParcelRequire = true;
+  newRequire.Module = Module;
+  newRequire.modules = modules;
+  newRequire.cache = cache;
+  newRequire.parent = previousRequire;
+  newRequire.register = function(id, exports) {
+    modules[id] = [
+      function(require, module) {
+        module.exports = exports;
+      },
+      {},
+    ];
+  };
+
+  Object.defineProperty(newRequire, 'root', {
+    get: function() {
+      return globalObject[parcelRequireName];
+    },
+  });
+
+  globalObject[parcelRequireName] = newRequire;
+
+  for (var i = 0; i < entry.length; i++) {
+    newRequire(entry[i]);
+  }
+
+  if (mainEntry) {
+    // Expose entry point to Node, AMD or browser globals
+    // Based on https://github.com/ForbesLindesay/umd/blob/master/template.js
+    var mainExports = newRequire(mainEntry);
+
+    // CommonJS
+    if (typeof exports === 'object' && typeof module !== 'undefined') {
+      module.exports = mainExports;
+
+      // RequireJS
+    } else if (typeof define === 'function' && define.amd) {
+      define(function() {
+        return mainExports;
+      });
+
+      // <script>
+    } else if (globalName) {
+      this[globalName] = mainExports;
+    }
+  }
+})({"1OCfx":[function(require,module,exports) {
+var HMR_HOST = null;
+var HMR_PORT = 1234;
+var HMR_SECURE = false;
+var HMR_ENV_HASH = "d751713988987e9331980363e24189ce";
+module.bundle.HMR_BUNDLE_ID = "a7ee4dad3550d4c7e2210307b40f6baa";
+// @flow
+/*global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE*/
+/*::
+import type {
+HMRAsset,
+HMRMessage,
+} from '@parcel/reporter-dev-server/src/HMRServer.js';
+interface ParcelRequire {
+(string): mixed;
+cache: {|[string]: ParcelModule|};
+hotData: mixed;
+Module: any;
+parent: ?ParcelRequire;
+isParcelRequire: true;
+modules: {|[string]: [Function, {|[string]: string|}]|};
+HMR_BUNDLE_ID: string;
+root: ParcelRequire;
+}
+interface ParcelModule {
+hot: {|
+data: mixed,
+accept(cb: (Function) => void): void,
+dispose(cb: (mixed) => void): void,
+// accept(deps: Array<string> | string, cb: (Function) => void): void,
+// decline(): void,
+_acceptCallbacks: Array<(Function) => void>,
+_disposeCallbacks: Array<(mixed) => void>,
+|};
+}
+declare var module: {bundle: ParcelRequire, ...};
+declare var HMR_HOST: string;
+declare var HMR_PORT: string;
+declare var HMR_ENV_HASH: string;
+declare var HMR_SECURE: boolean;
+*/
+var OVERLAY_ID = '__parcel__error__overlay__';
+var OldModule = module.bundle.Module;
+function Module(moduleName) {
+  OldModule.call(this, moduleName);
+  this.hot = {
+    data: module.bundle.hotData,
+    _acceptCallbacks: [],
+    _disposeCallbacks: [],
+    accept: function (fn) {
+      this._acceptCallbacks.push(fn || (function () {}));
+    },
+    dispose: function (fn) {
+      this._disposeCallbacks.push(fn);
+    }
+  };
+  module.bundle.hotData = undefined;
+}
+module.bundle.Module = Module;
+var checkedAssets, /*: {|[string]: boolean|}*/
+acceptedAssets, /*: {|[string]: boolean|}*/
+/*: {|[string]: boolean|}*/
+assetsToAccept;
+function getHostname() {
+  return HMR_HOST || (location.protocol.indexOf('http') === 0 ? location.hostname : 'localhost');
+}
+function getPort() {
+  return HMR_PORT || location.port;
+}
+// eslint-disable-next-line no-redeclare
+var parent = module.bundle.parent;
+if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
+  var hostname = getHostname();
+  var port = getPort();
+  var protocol = HMR_SECURE || location.protocol == 'https:' && !(/localhost|127.0.0.1|0.0.0.0/).test(hostname) ? 'wss' : 'ws';
+  var ws = new WebSocket(protocol + '://' + hostname + (port ? ':' + port : '') + '/');
+  // $FlowFixMe
+  ws.onmessage = function (event) /*: {data: string, ...}*/
+  {
+    checkedAssets = {
+      /*: {|[string]: boolean|}*/
+    };
+    acceptedAssets = {
+      /*: {|[string]: boolean|}*/
+    };
+    assetsToAccept = [];
+    var data = /*: HMRMessage*/
+    JSON.parse(event.data);
+    if (data.type === 'update') {
+      // Remove error overlay if there is one
+      removeErrorOverlay();
+      let assets = data.assets.filter(asset => asset.envHash === HMR_ENV_HASH);
+      // Handle HMR Update
+      var handled = false;
+      assets.forEach(asset => {
+        var didAccept = asset.type === 'css' || asset.type === 'js' && hmrAcceptCheck(module.bundle.root, asset.id, asset.depsByBundle);
+        if (didAccept) {
+          handled = true;
+        }
+      });
+      if (handled) {
+        console.clear();
+        assets.forEach(function (asset) {
+          hmrApply(module.bundle.root, asset);
+        });
+        for (var i = 0; i < assetsToAccept.length; i++) {
+          var id = assetsToAccept[i][1];
+          if (!acceptedAssets[id]) {
+            hmrAcceptRun(assetsToAccept[i][0], id);
+          }
+        }
+      } else {
+        window.location.reload();
+      }
+    }
+    if (data.type === 'error') {
+      // Log parcel errors to console
+      for (let ansiDiagnostic of data.diagnostics.ansi) {
+        let stack = ansiDiagnostic.codeframe ? ansiDiagnostic.codeframe : ansiDiagnostic.stack;
+        console.error('🚨 [parcel]: ' + ansiDiagnostic.message + '\n' + stack + '\n\n' + ansiDiagnostic.hints.join('\n'));
+      }
+      // Render the fancy html overlay
+      removeErrorOverlay();
+      var overlay = createErrorOverlay(data.diagnostics.html);
+      // $FlowFixMe
+      document.body.appendChild(overlay);
+    }
+  };
+  ws.onerror = function (e) {
+    console.error(e.message);
+  };
+  ws.onclose = function (e) {
+    if (undefined !== 'test') {
+      console.warn('[parcel] 🚨 Connection to the HMR server was lost');
+    }
+  };
+}
+function removeErrorOverlay() {
+  var overlay = document.getElementById(OVERLAY_ID);
+  if (overlay) {
+    overlay.remove();
+    console.log('[parcel] ✨ Error resolved');
+  }
+}
+function createErrorOverlay(diagnostics) {
+  var overlay = document.createElement('div');
+  overlay.id = OVERLAY_ID;
+  let errorHTML = '<div style="background: black; opacity: 0.85; font-size: 16px; color: white; position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; padding: 30px; font-family: Menlo, Consolas, monospace; z-index: 9999;">';
+  for (let diagnostic of diagnostics) {
+    let stack = diagnostic.codeframe ? diagnostic.codeframe : diagnostic.stack;
+    errorHTML += `
+      <div>
+        <div style="font-size: 18px; font-weight: bold; margin-top: 20px;">
+          🚨 ${diagnostic.message}
+        </div>
+        <pre>
+          ${stack}
+        </pre>
+        <div>
+          ${diagnostic.hints.map(hint => '<div>' + hint + '</div>').join('')}
+        </div>
+      </div>
+    `;
+  }
+  errorHTML += '</div>';
+  overlay.innerHTML = errorHTML;
+  return overlay;
+}
+function getParents(bundle, id) /*: Array<[ParcelRequire, string]>*/
+{
+  var modules = bundle.modules;
+  if (!modules) {
+    return [];
+  }
+  var parents = [];
+  var k, d, dep;
+  for (k in modules) {
+    for (d in modules[k][1]) {
+      dep = modules[k][1][d];
+      if (dep === id || Array.isArray(dep) && dep[dep.length - 1] === id) {
+        parents.push([bundle, k]);
+      }
+    }
+  }
+  if (bundle.parent) {
+    parents = parents.concat(getParents(bundle.parent, id));
+  }
+  return parents;
+}
+function updateLink(link) {
+  var newLink = link.cloneNode();
+  newLink.onload = function () {
+    if (link.parentNode !== null) {
+      // $FlowFixMe
+      link.parentNode.removeChild(link);
+    }
+  };
+  newLink.setAttribute('href', // $FlowFixMe
+  link.getAttribute('href').split('?')[0] + '?' + Date.now());
+  // $FlowFixMe
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+var cssTimeout = null;
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      // $FlowFixMe[incompatible-type]
+      var href = /*: string*/
+      links[i].getAttribute('href');
+      var hostname = getHostname();
+      var servedFromHMRServer = hostname === 'localhost' ? new RegExp('^(https?:\\/\\/(0.0.0.0|127.0.0.1)|localhost):' + getPort()).test(href) : href.indexOf(hostname + ':' + getPort());
+      var absolute = (/^https?:\/\//i).test(href) && href.indexOf(window.location.origin) !== 0 && !servedFromHMRServer;
+      if (!absolute) {
+        updateLink(links[i]);
+      }
+    }
+    cssTimeout = null;
+  }, 50);
+}
+function hmrApply(bundle, /*: ParcelRequire*/
+asset) /*:  HMRAsset*/
+{
+  var modules = bundle.modules;
+  if (!modules) {
+    return;
+  }
+  if (asset.type === 'css') {
+    reloadCSS();
+    return;
+  }
+  let deps = asset.depsByBundle[bundle.HMR_BUNDLE_ID];
+  if (deps) {
+    var fn = new Function('require', 'module', 'exports', asset.output);
+    modules[asset.id] = [fn, deps];
+  } else if (bundle.parent) {
+    hmrApply(bundle.parent, asset);
+  }
+}
+function hmrAcceptCheck(bundle, /*: ParcelRequire*/
+id, /*: ParcelRequire*/
+/*: string*/
+depsByBundle) /*: ?{ [string]: { [string]: string } }*/
+{
+  var modules = bundle.modules;
+  if (!modules) {
+    return;
+  }
+  if (depsByBundle && !depsByBundle[bundle.HMR_BUNDLE_ID]) {
+    // If we reached the root bundle without finding where the asset should go,
+    // there's nothing to do. Mark as "accepted" so we don't reload the page.
+    if (!bundle.parent) {
+      return true;
+    }
+    return hmrAcceptCheck(bundle.parent, id, depsByBundle);
+  }
+  if (checkedAssets[id]) {
+    return;
+  }
+  checkedAssets[id] = true;
+  var cached = bundle.cache[id];
+  assetsToAccept.push([bundle, id]);
+  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
+    return true;
+  }
+  return getParents(module.bundle.root, id).some(function (v) {
+    return hmrAcceptCheck(v[0], v[1], null);
+  });
+}
+function hmrAcceptRun(bundle, /*: ParcelRequire*/
+id) /*: string*/
+{
+  var cached = bundle.cache[id];
+  bundle.hotData = {};
+  if (cached && cached.hot) {
+    cached.hot.data = bundle.hotData;
+  }
+  if (cached && cached.hot && cached.hot._disposeCallbacks.length) {
+    cached.hot._disposeCallbacks.forEach(function (cb) {
+      cb(bundle.hotData);
+    });
+  }
+  delete bundle.cache[id];
+  bundle(id);
+  cached = bundle.cache[id];
+  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
+    cached.hot._acceptCallbacks.forEach(function (cb) {
+      var assetsToAlsoAccept = cb(function () {
+        return getParents(module.bundle.root, id);
+      });
+      if (assetsToAlsoAccept && assetsToAccept.length) {
+        assetsToAccept.push.apply(assetsToAccept, assetsToAlsoAccept);
+      }
+    });
+  }
+  acceptedAssets[id] = true;
+}
+
+},{}],"2msBC":[function(require,module,exports) {
+/*
+Now that we activated bundling it's time to configure Babel to transpile our super modern code back to ES5 code. And this is still important right now even many years after the new ES6 standard has been introduced. And the reason for that is simply that there are still many people out there who are stuck on like a windows XP or windows 7 computer!!! and they cannot upgrade their old internet explorers but we want our applications to work for everyone. And so we need to keep everyone in mind.
+
+Now, the good news is that parcel actually automatically uses Babel to transpile or code. And we can configure Babel a lot if we want to for example defining exactly what browsers should be supported but as always, that's a ton of work.
+And so we don't want that. And instead parcel makes some very good default decisions for us. And so we will simply mainly just go with these defaults.
+
+Now just so you get a very broad and very general overview of how Babel works.
+Let's just take a look at their website. So that's Babeljs.io and then here in the documentation let's take a look here at plugins. Okay. So basically Babel works with plugins and presets that can both be configured. Now a plugin is basically a specific JavaScript feature that we want to transpile. So to convert.
+So for example let's say we only wanted to convert arrow functions back to ES5
+but leave everything else in ES6 for example, const and var declarations.
+Now usually that doesn't make a lot of sense because basically we will want to transpile everything at the same time.
+
+And so usually instead of using single plugins for each of these features, Babel actually uses presets. And so a preset is basically a bunch of plugins bundled together. And its by default parcel is going to use this preset here.
+
+@babel/preset-env
+
+And this preset will automatically select which JavaScript features should be compiled based on browser support. And again that will all happen automatically
+and out of the box Babel will convert all features So only browsers that are barely used anymore with the market share of less than 0.25% are not going to be supported by the transpiling with this preset here.
+
+So, that's a very brief overview and we will come back here in a second but for now let's start on npm run start script again:
+
+👉 npm run start
+
+just so we can take a look again at our final output.
+
+And so now the script it ads:
+
+<script defer="" src="/index.f8345a9e.js"></script>
+
+So this one and we can see right away that ES6 is no longer there. So here we have var instead of const that we had before. Let's see if we have something else.
+There are not template literal either. So everything that we used from ES6 is now gone. But now let me show you something important.
+
+So let's write some code here which is basically not part of this preset here:
+
+@babel/preset-env
+
+because this preset-env does actually only include final features. So features that are already part of the language after passing the four stages of the AGMA process.
+
+However, previously we used class fields which at the time of recording are only at stage three. And so let me show you how we could transpile a class fields as well. So let's just write a simple example here:
+*/
+class Person {
+  greeting = 'Hey';
+  constructor(name) {
+    this.name = name;
+    console.log(`${this.greeting} ${this.name}`);
+  }
+}
+const javi = new Person('Javi');
+/*
+
+And so here Iam going to use a field called greeting
+
+which I'm going to set to Hey,
+
+and then just a normal constructor
+
+which takes a name, this.name equals the name.
+
+And then as the constructor is run,
+
+it will simply log to the console
+
+this.greeting and then the name.
+
+So like, Hey Jonas.
+
+So const Jonas is a new person Jonas.
+
+But now let's see what happens here
+
+and we should get some kind of error.
+
+So let's see.
+
+Oh, and apparently it does work now
+
+when i last tested it, it didn't work
+
+so let's make this private
+
+maybe then we get the error i was expecting
+
+but actually no, everything is working great.
+
+Let me just search our code here for person.
+
+And so here you can see
+
+that the person class has nicely been converted to ES5.
+
+So the class keyword is nowhere to be found anymore.
+
+And then our entire code
+
+that we had here was basically converted to this, all right?
+
+And so therefore there's actually no more need
+
+for what I was going to show you
+
+which we had to do before
+
+which was to include
+
+this a plugin here for the class properties
+
+because this is still an experimental feature.
+
+And so yeah, we had to manually include this plugin here
+
+in order to make this code work
+
+but now that's no longer necessary.
+
+And so that makes this even more amazing
+
+but let's try another experimental one
+
+for example, this knowledge coalescing operator
+
+which is still also a bit more on the experimental side.
+
+So let's say Jonah's or null, let's say.
+
+And so that actually works as well.
+
+Okay great.
+
+Now there's still two more things
+
+that I need to show you here still.
+
+And so let's write some more code here.
+
+So what I will do now is to use the ES6 find method
+
+to find products in a cart
+
+that are edit more than twice.
+
+So that's I believe just cart.
+
+So cart.find
+
+because remember this is an ES6 method
+
+and then return.quantity where it's greater or equal to.
+
+And so that is only the pizza here.
+
+So you see, well
+
+maybe this isn't a cart, let's see what's happening.
+
+Oh but never mind.
+
+This is not filter.
+
+It is just find, so it will simply find
+
+the first element, right?
+
+And so this is the first element
+
+where the quantity is greater to.
+
+But anyway, what I want to show you here
+
+is that well let me show it to you actually first.
+
+So to find this code here in this other script
+
+I will copy this part and then put it here.
+
+And so you'll see that here is basically that same code.
+
+So the arrow function that we had is gone
+
+and it was replaced by this regular function.
+
+However, the ES6 method find is still here.
+
+So it has not been converted to ES5.
+
+Now the same is too for other things
+
+for example, let's try promises.
+
+So promise.resolve
+
+So we're creating an immediately
+
+resolved promise to make this really a quick example.
+
+And let's just log X to the console
+
+and so that works
+
+but it works because our browser understands ES6
+
+because if we take a look here now
+
+then promise is also not converted to ES5.
+
+So remember promise is an ES6 feature
+
+but again, it was not converted back to ES5
+
+and the reason for that is that
+
+Babel can actually only transpile ES6 Syntax.
+
+So data things like arrow functions,
+
+classes, const, or the spread operator.
+
+So these are basically things
+
+that have an equivalent way of writing them in ES5.
+
+So for example the arrow function,
+
+it is simply a different syntax.
+
+And so Babel can simply write function instead of data.
+
+And the same goes with const.
+
+So it's very easy to simply convert that to VAR
+
+but the same is not true for real new features
+
+that were added to the language
+
+like find and promise.
+
+So these new additions to the language
+
+so these new features, they can simply not be transpiled.
+
+It's simply not possible.
+
+Only syntax is easy to convert, so easy to compile.
+
+However, all hope is not lost.
+
+So for these added features
+
+again, such as promises or all the array methods
+
+like finds and really a bunch of other stuff,
+
+we can polyfill them.
+
+And so that's why since the beginning
+
+I've always been saying transpiling and polyfilling.
+
+So these new features, we have to polyfill them.
+
+Now Babel used to do polyfilling
+
+out of the box some time ago
+
+but recently they started to simply
+
+recommending another library.
+
+And so we now have to manually import data as well.
+
+So import Core-js so that's the name of the library.
+
+And then we usually only want to import a part
+
+of that library and that's called Stable.
+
+And so we can write this.
+
+Okay.
+
+Now usually we have to install
+
+all of the packages first
+
+but fortunately parcel is smart
+
+enough to install this automatically.
+
+Well at least that is how it should be.
+
+So maybe that doesn't work after all
+
+so let's manually install it, but that's weird.
+
+So core-js.
+
+So let's see.
+
+And so here we go.
+
+So let's re-save it.
+
+And so here we go.
+
+Okay.
+
+So you should probably
+
+also try to install core-js manually
+
+and then you will able to use it like this.
+
+So maybe you're starting to see
+
+that D things really change all the time.
+
+And so, hi, I'm even confused myself sometimes
+
+on why certain things used to work
+
+and now they work differently.
+
+But the good thing is
+
+that you don't really have to understand all this.
+
+So this is really more like a recipe
+
+that you just need to follow.
+
+And then with time it will all become like a routine
+
+and it will become simple.
+
+But anyway, let's go back to our code
+
+but you will notice that's the code we had before
+
+is actually still there.
+
+So it's still the same
+
+and promise and find have not been replaced.
+
+And that's because that's simply not the way
+
+it's supposed to work.
+
+So instead what polyfilling does
+
+is to basically recreate defined function
+
+and to make it available in this bundle
+
+so that the codes can then use it.
+
+`So let's search for array.prototype
+
+which remember, is where all the array methods are put.
+
+So array.prototype.find.
+
+And so, well here it is.
+
+So Babel then uses this weird create methods.
+
+But what matters here is that
+
+this will basically implement array prototype find
+
+and the same for find index,
+
+every some filter map and also for each
+
+even though these less ones here are not ES6
+
+but for some reason they are still polyfilled here.
+
+Oh right? And the same for promise, probably.
+
+Well not probably for sure.
+
+Otherwise this is not going to work
+
+and it's not easy to find it
+
+but well, here's the definition of promise
+
+which is going to be global promise
+
+but I'm not gonna dig even deeper into this.
+
+That's just not really necessary.
+
+However, as you just saw before
+
+the polyfilling is going to polyfill everything
+
+even if we don't need it.
+
+So we had to D find index method there as well.
+
+Let's actually go back there.
+
+So array.prototype.find
+
+So it also created find index and every, and some
+
+and so we are actually not even using these.
+
+And so if we wanted
+
+we could cherry pick basically
+
+just the features that we actually want to polyfill.
+
+Now that of course is a lot of work
+
+but it will also greatly reduce the bundle size.
+
+And so it might be worth it
+
+if that's really a concern.
+
+So we could instead of this.
+
+So instead of basically importing everything there is
+
+we can just say core-js stable and then only array
+
+and then find like this.
+
+So now if we go back here,
+
+then, well then only this one should be here.
+
+(indistinct) It looks different now.
+
+And so probably only this one was not polyfilled
+
+At the same you could do for a promise
+
+like this okay.
+
+So that's going to be a lot of work
+
+which we usually don't do
+
+but it is possible again if you are really worried
+
+about your bundle size.
+
+Finally, just to finish there is still one feature
+
+that is not polyfilled by this one here.
+
+And so we always need to install
+
+just one more package
+
+which is called NPM install regenerator-runtime.
+
+So regenerator.That's correct.
+
+So let's see, let's already include it here.
+
+So we need import, so regenerator-runtime/runtime like this.
+
+Alright? So this here is for polyfilling async functions.
+
+So again, it probably looks a bit confusing
+
+that we have to do all of this, but yeah, don't worry.
+
+It's just a recipe that you have to follow.
+
+Okay. And usually you would put
+
+these imports here right at the top of your file
+
+but in this case, we can just leave them here
+
+because they will be hosted anyway, right?
+
+Also keep in mind that all of this might change.
+
+And so if you're watching this video
+
+like in two years from now,
+
+then things might be different
+
+and things might not work the same.
+
+And so once again make sure
+
+that you then install
+
+exactly the same versions as I have here
+
+especially this core-js and regenerator-runtime.
+
+And of course, also parcel.
+
+So just as I told you in the last video.
+
+Now okay.
+
+And with this, we're actually done with this video
+
+and also with learning about Modern JavaScript Development.
+
+So basically with learning about Tooling,
+
+such as parcel and babel and also about modules.
+
+Now in the remainder of this section,
+
+so the next two videos
+
+we will just quickly also talk
+
+about modern JavaScript coding.
+
+So more on the actual programming side of things.
+
+And so there we will learn or actually more review
+
+how to write clean and modern JavaScript code.
+*/
+
+},{}]},["1OCfx","2msBC"], "2msBC", "parcelRequire62d3")
+
+//# sourceMappingURL=index.HASH_REF_a7ee4dad3550d4c7e2210307b40f6baa.js.map

@@ -1,0 +1,47 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _182ModelJs = require("./182-model.js");
+var _183RecipeViewJs = require("./183-recipeView.js");
+var _183RecipeViewJsDefault = parcelHelpers.interopDefault(_183RecipeViewJs);
+//IMPORTS
+var _iconsSvg = require("url:../img/icons.svg");
+var _iconsSvgDefault = parcelHelpers.interopDefault(_iconsSvg);
+var _stable = require("core-js/stable"); // Polyfilling several things...
+var _runtime = require("regenerator-runtime/runtime"); // Polyfilling ASYNC/Await
+const recipeContainer = document.querySelector('.recipe');
+const timeout = function(s) {
+    return new Promise(function(_, reject) {
+        setTimeout(function() {
+            reject(new Error(`Request took too long! Timeout after ${s} second`));
+        }, s * 1000);
+    });
+};
+// https://forkify-api.herokuapp.com/v2
+///////////////////////////////////////
+const renderSpinner = function(parentEl) {
+    const markup = `\n  <div class="spinner">\n    <svg>\n      <use href="${_iconsSvgDefault.default}#icon-loader"></use>\n    </svg>\n  </div>\n  `;
+    parentEl.innerHTML = '';
+    parentEl.insertAdjacentHTML('afterbegin', markup);
+};
+const showRecipe = async function() {
+    try {
+        const id = window.location.hash.slice(1);
+        console.log(id);
+        if (!id) return;
+        renderSpinner(recipeContainer);
+        // 1 --> Loading the recipe
+        await _182ModelJs.loadRecipe(id);
+        const { recipe  } = _182ModelJs.state;
+        // 2 --> Rendering the recipe
+        _183RecipeViewJsDefault.default.render(_182ModelJs.state.recipe);
+    /*
+    And so now let's take all the data that we need, siendo la primera la imagen:
+    */ } catch (err) {
+        alert(err);
+    }
+};
+showRecipe();
+[
+    'hashchange',
+    'load'
+].forEach((ev)=>window.addEventListener(ev, showRecipe)
+);

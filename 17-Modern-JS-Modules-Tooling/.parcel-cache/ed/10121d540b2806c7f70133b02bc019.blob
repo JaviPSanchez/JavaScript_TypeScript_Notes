@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <script defer src="1700-Web.js"></script> -->
+    <!-- <script defer src="1701-Intro.js"></script> -->
+    <!-- <script defer src="1702-AnOverviewOfModernJavaScriptDeveloment.js"></script> -->
+    <!-- <script defer src="1703-AnOverviewOfModulesInJavascript.js"></script> -->
+    <!-- <script
+      type="module"
+      defer
+      src="1704-ExportingAndImportingInES6Modules.js"
+    ></script> -->
+    <!-- <script defer src="1705-shoppingCart.js"></script> -->
+    <!-- <script defer src="1706-TheModulePattern.js"></script> -->
+    <!-- <script defer src="1707-CommonJavaScriptModules.js"></script> -->
+    <!-- <script defer src="1708-ABriefIntroToTheCommandLine.js"></script> -->
+    <!-- <script defer src="1709-IntroductionToNPM.js"></script> -->
+    <!-- <script type="module" defer src="1710-LodashLibrary-CloneDeep.js"></script> -->
+    <script defer="" src="6d3ec811ebce061b3759339932d5a63a"></script>
+    <!-- <script defer src=".js"></script> -->
+    <!-- <script defer src=".js"></script> -->
+    <title>Modern JavaScript Development: Modules and Tooling</title>
+    <style data-parcel-key="e3d2440e366bd68735b456ed8a35c1ef">
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(to top left, #28b487, #7dd56f);
+      }
+      h1 {
+        font-family: sans-serif;
+        font-size: 50px;
+        line-height: 1.3;
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Modern JavaScript Development: Modules and Tooling</h1>
+  </body>
+</html>
