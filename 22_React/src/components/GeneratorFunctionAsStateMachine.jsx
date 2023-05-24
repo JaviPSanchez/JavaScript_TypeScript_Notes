@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 /*
 In simple terms, a JavaScript generator function is a special type of function that can be paused and
@@ -26,24 +26,24 @@ Now, let's illustrate these principles with an example:
 */
 
 function* trafficLightStateMachine() {
-  let state = "red";
+  let state = 'red';
 
   while (true) {
-    if (state === "red") {
-      yield "red";
-      state = "green";
-    } else if (state === "green") {
-      yield "green";
-      state = "yellow";
-    } else if (state === "yellow") {
-      yield "yellow";
-      state = "red";
+    if (state === 'red') {
+      yield 'red';
+      state = 'green';
+    } else if (state === 'green') {
+      yield 'green';
+      state = 'yellow';
+    } else if (state === 'yellow') {
+      yield 'yellow';
+      state = 'red';
     }
   }
 }
 
 function TrafficLight() {
-  const [lightColor, setLightColor] = useState("red");
+  const [lightColor, setLightColor] = useState('red');
   /*
 In the example, we define a trafficLightStateMachine() generator function that yields three colors: red, green, and yellow.
 We create an instance of the generator by calling trafficLightStateMachine(), and then we use the next() method to iterate through the generator.
@@ -65,7 +65,7 @@ After the third call to next(), the generator completes (done is set to true), a
 
   return (
     <div
-      style={{ backgroundColor: lightColor, color: "black", padding: "2rem" }}
+      style={{ backgroundColor: lightColor, color: 'black', padding: '2rem' }}
     >
       Now Displaying: {lightColor.toUpperCase()}
     </div>
