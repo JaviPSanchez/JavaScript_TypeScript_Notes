@@ -8,8 +8,6 @@
 3. toSpliced(startIndex, deleteCount): With this method, you can extract a portion of an array without changing the original array. Specify the startIndex and deleteCount parameters to define the range of elements to extract.
 
 These new array methods bring increased flexibility and convenience to your JavaScript code. Enjoy experimenting with them and leverage their power in your projects!
-
-Happy coding! 😊
 */
 
 /*

@@ -1,24 +1,35 @@
 /*
-LECTURE: Strings and Template Literals
-*/
-// Templeate Literals --> Cuando queremos crear frases largas es bastante incomodo tener en cuenta todos los espacios, por ello a partir de ES6 debemos utilizar los backtips `` y el ${}. Mucho mas limpio y sencillo!
 
+Templeate Literals --> Cuando queremos crear frases largas es bastante incomodo
+tener en cuenta todos los espacios, por ello a partir de ES6 debemos utilizar los backtips
+`` y el ${}. Mucho mas limpio y sencillo!
+
+*/
 const firstName = "Javi";
 const job = "Digital Manager";
 const birthYear = 1987;
 const year = 2021;
-// const frase = "I'm " + firstName + ", a " + (year - birthYear) + "years old" + job + "!";
-// console.log(frase);
+
+const frase =
+  "I'm " + firstName + ", a " + (year - birthYear) + " years old " + job + "!";
+console.log(frase);
+
 const fraseLiterals = `I'm ${firstName}, a ${
   year - birthYear
 } years old ${job}!`;
 console.log(fraseLiterals);
 
-// Template Literals permite cambiar de linea facilmente presionando la tecla return, las versiones anteriores a ES6 habia que escribir \n\.
+/*
+Template Literals permite cambiar de linea facilmente presionando la tecla return,
+las versiones anteriores a ES6 habia que escribir \n\.
+*/
 
-console.log("String with \n\
+console.log(
+  "String with \n\
 multiple \n\
-lines");
+lines"
+);
+
 console.log(`String with
 multiple
 lines`);
