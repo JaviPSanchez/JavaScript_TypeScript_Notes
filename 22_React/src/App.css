@@ -40,3 +40,49 @@
 .read-the-docs {
   color: #888;
 }
+
+.steps {
+  width: 350px;
+  background-color: rgb(204, 205, 206);
+  padding: 1rem;
+  border-radius: 5%;
+}
+
+.numbers {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 2rem;
+}
+
+.message {
+  color: #000000;
+  font-weight: bold;
+}
+
+.step-number--active {
+  background-color: rgb(170, 65, 231);
+  padding: 0.5rem;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+}
+.step-number--normal {
+  background-color: rgb(240, 237, 241);
+  padding: 0.5rem;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  align-self: center;
+  justify-self: center;
+  color: #000000;
+  font-weight: bold;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 2rem;
+}
