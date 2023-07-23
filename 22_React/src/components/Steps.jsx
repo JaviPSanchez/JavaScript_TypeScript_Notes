@@ -12,13 +12,13 @@ const ThirdStep = ({ step }) => {
 
 const Steps = () => {
   const [step, setStep] = useState(1);
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   function handlePrevious() {
-    if (step > 1) setStep(step - 1);
+    if (step > 1) setStep(currentState => currentState - 1);
   }
   function handleNext() {
-    if (step < 3) setStep(step + 1);
+    if (step < 3) setStep(currentState => currentState + 1);
   }
 
   return (
@@ -71,7 +71,10 @@ const Steps = () => {
           </div>
         </div>
       )}
-      <button onClick={() => setOpen(!open)} className="close">
+      <button
+        onClick={() => setOpen(currentState => !currentState)}
+        className="close"
+      >
         &times;
       </button>
     </div>

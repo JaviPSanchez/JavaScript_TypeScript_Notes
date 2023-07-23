@@ -80,3 +80,27 @@
   justify-content: space-between;
   padding: 2rem 2rem;
 }
+
+.counter {
+  width: 350px;
+  height: 250px;
+  border: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.counter-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.date {
+  margin: 1rem;
+}
