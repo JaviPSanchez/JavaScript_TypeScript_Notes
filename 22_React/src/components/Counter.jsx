@@ -1,54 +1,53 @@
+import styles from './Counter.module.css';
 import { useState } from 'react';
 
-export const Counter = () => {
-  const [increment, setIncrement] = useState(5);
+const Counter = () => {
+  const [increment, setIncrement] = useState(1);
   const [counter, setCounter] = useState(0);
-  const [date, setDate] = useState(new Date());
-  console.log(date);
-  console.log(counter);
+  const todayDate = new Date();
+  const date = new Date();
+  date.setDate(date.getDate() + counter);
 
-  const decreaseDate = () => {
-    const decreasedDate = new Date(date);
-    decreasedDate.setDate(decreasedDate.getDate() + counter);
-    setDate(decreasedDate);
-  };
-  const incrementDate = () => {
-    const incrementedDate = new Date(date);
-    console.log(incrementedDate);
-    incrementedDate.setDate(incrementedDate.getDate() + counter);
-    console.log(incrementedDate);
-    setDate(incrementedDate);
-  };
-
-  function decreaseCounter() {
-    setCounter(counter - increment);
-    decreaseDate();
-  }
-
-  function increaseCounter() {
-    setCounter(counter + increment);
-    incrementDate();
+  function handleReset() {
+    setIncrement(1);
+    setCounter(0);
   }
 
   return (
-    <div className="counter">
-      <div className="counter-wrapper">
-        <button onClick={() => setIncrement(currentState => currentState - 5)}>
+    <div className={styles.counter}>
+      <p>Today is {todayDate.toDateString()}</p>
+      <div className={styles.counterWrapper}>
+        <button
+          className={increment <= 1 ? styles.nonClickableButton : ''}
+          onClick={() =>
+            setIncrement(currentState =>
+              currentState <= 0 ? 1 : currentState - 1
+            )
+          }
+        >
           -
         </button>
         <p>Increment: {increment}</p>
-        <button onClick={() => setIncrement(currentState => currentState + 5)}>
+        <button onClick={() => setIncrement(currentState => currentState + 1)}>
           +
         </button>
       </div>
-      <div className="counter-wrapper">
-        <button onClick={decreaseCounter}>-</button>
+      <div className={styles.counterWrapper}>
+        <button
+          className={counter <= 0 ? styles.nonClickableButton : ''}
+          onClick={() => setCounter(counter - increment)}
+        >
+          -
+        </button>
         <p>Count: {counter}</p>
-        <button onClick={increaseCounter}>+</button>
+        <button onClick={() => setCounter(counter + increment)}>+</button>
       </div>
-      <span className="date">
+      <span className={styles.date}>
         {counter} days from today is {date.toDateString()}
       </span>
+      <button onClick={handleReset}>Reset</button>
     </div>
   );
 };
+
+export default Counter;

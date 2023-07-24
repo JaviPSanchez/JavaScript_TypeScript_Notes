@@ -1,17 +1,15 @@
-import './App.css';
-import ArrayMethods from '@components/ArrayMethods2022-Reverse-Sort-Splice';
-import GeneratorFunctionAsStateMachine from '@components/GeneratorFunctionAsStateMachine';
-import Steps from '@components/Steps';
-import { Counter } from './components/Counter';
+import { Counter, Generator, ArrayMethods, Steps } from '@components';
+import FarAway from '@pages';
 
 function App() {
   return (
-    <div className="container">
-      {/* <GeneratorFunctionAsStateMachine /> */}
+    <>
+      {/* <Generator /> */}
       {/* <ArrayMethods /> */}
       {/* <Steps /> */}
-      <Counter />
-    </div>
+      {/* <Counter /> */}
+      <FarAway />
+    </>
   );
 }
 

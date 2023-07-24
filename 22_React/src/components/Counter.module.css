@@ -1,0 +1,58 @@
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 2rem;
+}
+
+.counter {
+  width: 450px;
+  height: fit-content;
+  border: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+.counterWrapper {
+  display: flex;
+  flex-direction: row;
+  width: 65%;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.date {
+  margin: 2rem;
+}
+
+.nonClickableButton {
+  border: solid #d30d0d 0.5px;
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button:hover {
+  background-color: #002ead;
+  transition: 0.7s;
+}

@@ -18,7 +18,7 @@ Therefore, you need to use methods that return a new array instead of changing t
 
 */
 
-function ArrayMethods() {
+const ArrayMethods = () => {
   // Define an array of numbers as state
   const [numbers, setNumbers] = useState([5, 2, 4, 1, 3]);
   // Define a handler function for reversing the array
@@ -63,6 +63,6 @@ function ArrayMethods() {
       <button onClick={handleSplice}>Splice</button>
     </div>
   );
-}
+};
 
 export default ArrayMethods;

@@ -1,13 +1,14 @@
+import styles from './Steps.module.css';
 import { useState } from 'react';
 
 const FirstStep = ({ step }) => {
-  return <p className="message">{`Step ${step}: Learn React 🧪`}</p>;
+  return <p>{`Step ${step}: Learn React 🧪`}</p>;
 };
 const SecondStep = ({ step }) => {
-  return <p className="message">{`Step ${step}: Enjoy the right 🏋️‍♀️ `}</p>;
+  return <p>{`Step ${step}: Enjoy the right 🏋️‍♀️ `}</p>;
 };
 const ThirdStep = ({ step }) => {
-  return <p className="message">{`Step ${step}: Make friends 🙌`}</p>;
+  return <p>{`Step ${step}: Make friends 🙌`}</p>;
 };
 
 const Steps = () => {
@@ -22,39 +23,33 @@ const Steps = () => {
   }
 
   return (
-    <div className="wrapper">
+    <div className={styles.container}>
       {open && (
-        <div className="steps">
-          <div className="numbers">
+        <div className={styles.steps}>
+          <div className={styles.numbers}>
             <span
               className={
-                step >= 1
-                  ? 'step-number--active number'
-                  : 'step-number--normal number'
+                step >= 1 ? styles.stepNumberActive : styles.stepNumberNormal
               }
             >
               1
             </span>
             <span
               className={
-                step >= 2
-                  ? 'step-number--active number'
-                  : 'step-number--normal number'
+                step >= 2 ? styles.stepNumberActive : styles.stepNumberNormal
               }
             >
               2
             </span>
             <span
               className={
-                step === 3
-                  ? 'step-number--active number'
-                  : 'step-number--normal number'
+                step === 3 ? styles.stepNumberActive : styles.stepNumberNormal
               }
             >
               3
             </span>
           </div>
-          <div className="message-container">
+          <div className={styles.messageContainer}>
             {step === 1 ? (
               <FirstStep step={step} />
             ) : step === 2 ? (
@@ -64,7 +59,7 @@ const Steps = () => {
             )}
           </div>
 
-          <div className="buttons-container">
+          <div className={styles.buttonsContainer}>
             <button onClick={handlePrevious}>Previous</button>
 
             <button onClick={handleNext}>Next</button>
@@ -73,7 +68,7 @@ const Steps = () => {
       )}
       <button
         onClick={() => setOpen(currentState => !currentState)}
-        className="close"
+        className={styles.close}
       >
         &times;
       </button>
