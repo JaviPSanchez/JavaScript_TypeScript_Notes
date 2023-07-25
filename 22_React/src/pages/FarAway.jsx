@@ -1,7 +1,7 @@
-import styles from '../components/FarAwayComponents/Form.module.css';
+import styles from './FarAway.module.css';
 import { Logo, Form, PackingList, Stats } from '@components';
 
-export const FarAway = () => {
+const FarAway = () => {
   return (
     <div className={styles.app}>
       <Logo />
@@ -11,3 +11,5 @@ export const FarAway = () => {
     </div>
   );
 };
+
+export default FarAway;

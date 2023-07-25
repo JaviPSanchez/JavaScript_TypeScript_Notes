@@ -1,3 +1,10 @@
+body {
+  font-size: 2.4rem;
+  font-family: sans-serif;
+  font-family: 'Quicksand';
+  font-weight: 500;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -13,6 +20,21 @@ button {
 button:hover {
   border-color: #646cff;
 }
+.container {
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    color: #ffffff;
+  }
+}
+
+input {
+  width: 100%;
+  background-color: transparent;
+  border: solid 0.5px #ffffff;
+}
 
 .buttons-container {
   display: flex;
@@ -20,23 +42,24 @@ button:hover {
   padding: 2rem 2rem;
 }
 
-.counter {
+.container {
   width: 450px;
   height: fit-content;
-  border: solid;
-  border-color: #ffffff;
-  border-width: 0.5px;
+  border: solid 0.5px #ffffff;
   border-radius: 5%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  font-size: 1.8rem;
+  color: #ffffff;
 }
+
 .counterWrapper {
   display: flex;
   flex-direction: row;
-  width: 65%;
+  width: 85%;
   justify-content: space-between;
   margin: 10px;
 }

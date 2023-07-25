@@ -8,6 +8,8 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  color: #ffffff;
+  margin: 2rem;
 }
 
 button:hover {
@@ -17,15 +19,15 @@ button:hover {
 .container {
   position: relative;
   display: flex;
-  width: 350px;
-  height: 290px;
+  width: 400px;
+  height: 350px;
 }
 
 .steps {
-  width: 300px;
   background-color: rgb(204, 205, 206);
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 5%;
+  width: 100%;
 }
 
 .numbers {
@@ -36,7 +38,8 @@ button:hover {
 
 .buttonsContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   padding: 2rem 2rem;
 }
 
@@ -45,12 +48,12 @@ button:hover {
   color: #ffffff;
   font-weight: 800;
   background-color: rgb(170, 65, 231);
-  width: 40px;
-  height: 40px;
+  width: 4rem;
+  height: 4rem;
   border-radius: 100%;
   padding: 0.5rem;
-  top: -50px;
-  right: -50px;
+  top: -100px;
+  right: -200px;
   cursor: pointer;
 }
 
@@ -61,22 +64,22 @@ button:hover {
 }
 
 .stepNumberActive {
+  height: 4rem;
+  width: 4rem;
   background-color: rgb(170, 65, 231);
   padding: 0.5rem;
   border-radius: 100%;
-  width: 20px;
-  height: 20px;
   text-align: center;
   color: #ffffff;
   font-weight: bold;
 }
 .stepNumberNormal {
+  height: 4rem;
+  width: 4rem;
   background-color: rgb(240, 237, 241);
   padding: 0.5rem;
   border-radius: 100%;
-  width: 20px;
   text-align: center;
-  height: 20px;
   align-self: center;
   justify-self: center;
   color: #000000;

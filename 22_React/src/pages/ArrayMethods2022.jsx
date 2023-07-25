@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import styles from './ArrayMethods2022.module.css';
 /*
 These 3 new methods [toReversed(), toSorted() and toSpliced()] are new methods of Array in JavaScript
 that are proposed for the ECMAScript 2022 standard, they are similar to the existing methods reverse(), sort() and splice(),
@@ -55,12 +55,14 @@ const ArrayMethods = () => {
     setNumbers(splicedNumbers);
   };
   return (
-    <div>
+    <div className={styles.container}>
       <h1>Array Methods Demo</h1>
       <p>Current array: {numbers.join(', ')}</p>
-      <button onClick={handleReverse}>Reverse</button>
-      <button onClick={handleSort}>Sort</button>
-      <button onClick={handleSplice}>Splice</button>
+      <div className={styles.wrapper}>
+        <button onClick={handleReverse}>Reverse</button>
+        <button onClick={handleSort}>Sort</button>
+        <button onClick={handleSplice}>Splice</button>
+      </div>
     </div>
   );
 };

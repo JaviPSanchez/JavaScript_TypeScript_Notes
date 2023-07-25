@@ -1,5 +1,12 @@
-import { Counter, Generator, ArrayMethods, Steps } from '@components';
-import FarAway from '@pages';
+import { Generator } from '@components';
+import {
+  FarAway,
+  FlashCards,
+  Counter,
+  Steps,
+  ArrayMethods,
+  CounterRange,
+} from '@pages';
 
 function App() {
   return (
@@ -8,7 +15,9 @@ function App() {
       {/* <ArrayMethods /> */}
       {/* <Steps /> */}
       {/* <Counter /> */}
+      {/* <CounterRange /> */}
       <FarAway />
+      {/* <FlashCards /> */}
     </>
   );
 }
