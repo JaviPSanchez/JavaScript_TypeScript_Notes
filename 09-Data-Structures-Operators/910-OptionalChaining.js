@@ -2,31 +2,8 @@
 /*
 Vamos a aprender un nuevo feature para los OBJECTs y los ARRAYS, que se llama OPTIONAL CHAINING.
 */
-const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+import { restaurant, data } from './assets';
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
-  order: function (starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-};
 /*
 Imaginemos que queremos sacar el OBJECT openingHours de nuestro OBJECT restaurant pero solo los Mondays,
 */
@@ -135,3 +112,23 @@ else console.log('User array empty');
 // The ? operator can also be used to call methods on nested objects or arrays, like this:
 const arr = [1, 2, 3];
 console.log(arr?.map(x => x * 2)?.join(', '));
+
+//EXEMPLE
+
+function getBooks(id) {
+  return data.find(book => book.id === id);
+}
+
+const secondBook = getBooks(2);
+const thirdBook = getBooks(3);
+secondBook;
+thirdBook;
+
+function getTotalReviewCount(book) {
+  const goodread = book.reviews?.goodreads?.reviewsCount;
+  const librarything = book.reviews?.librarything?.reviewsCount ?? 0; //Si no existe o es undefined, devolver 0
+  return goodread + librarything;
+}
+
+console.log(getTotalReviewCount(secondBook));
+console.log(getTotalReviewCount(thirdBook));

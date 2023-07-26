@@ -5,7 +5,7 @@
 ****************FUNCTION DECLARATION VS FUNCTION EXPRESSION*****************
 
 
-Hay dos formas de escribir las funciones, la primera es la ya estudiada, dandole un nombre a la funcion, y la segunda es sin darle un nombre especifico. Quizas es ejor usar el metodo EXPRESSION por temas de organizacion.
+Hay dos formas de escribir las funciones, la primera es la ya estudiada, dandole un nombre a la funcion, y la segunda es sin darle un nombre especifico. Quizas es mejor usar el metodo EXPRESSION por temas de organizacion.
 
 FUNCION DECLARATION: La ventaja que tiene es que podemos llamarla lineas antes de donde este escrita la funcion, podemos llamarla y luego tenerla escrita donde sea en nuestro codigo.
 */

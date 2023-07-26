@@ -56,3 +56,28 @@ if (speakEnglish === "English" && populationCountry <= 50 && !islandCountry) {
 } else {
   console.log("it isn't the right country");
 }
+
+//SHORT CIRCUITING
+
+/*
+&& --> el AND OPERATOR corta cuando el primer operador es falso, es decir, devuelve ese valor.
+*/
+
+console.log(true && "Some String");
+console.log(false && "Some String");
+console.log("jonas" && "Thruthy Value");
+console.log(0 && "Falsy Value");
+
+/*
+|| --> el OR OPERATOR hace lo contrario, si el primer operador es verdadero, se devuelve a si mismo.
+*/
+
+console.log(true || "Some String");
+console.log(false || "Some String");
+
+/*
+?? --> Nullish Coalescing OPERATOR se corta con los Falsy values, lo usamos para evitar que cuando tenemos un 0 o '' devuelve a si mismo, pero no con NaN o undefined.
+*/
+
+console.log(0 ?? "Falsy Value");
+console.log(undefined ?? "Error");

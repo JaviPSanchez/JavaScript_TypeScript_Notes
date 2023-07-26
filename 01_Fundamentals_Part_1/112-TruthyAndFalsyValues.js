@@ -2,7 +2,7 @@
 ************************TRUTHY & FALSY VALUES***********************
 
 
-Hay 5 valores falsos: 
+Hay 5 valores falsos : 
     1/ Booleans con el numero 0. El resto son true.
     2/ String vacios ''.
     3/ variables no definidas (undefined).
