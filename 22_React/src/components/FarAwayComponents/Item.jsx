@@ -1,3 +1,5 @@
+import styles from './Item.module.css';
+
 const Item = ({ item }) => {
   return (
     <li>
