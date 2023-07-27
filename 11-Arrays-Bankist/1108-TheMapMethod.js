@@ -12,11 +12,13 @@ const eurToUsd = 1.18;
 const movementsUSD = movements.map(function (mov) {
   return mov * eurToUsd;
 });
+
 console.log(movementsUSD); //[236, 531, -472, 3540, -767, -153.4, 82.6, 1534]
+
 //Guardando la ARRAY original
 console.log(movements); //[200, 450, -400, 3000, -650, -130, 70, 1300]
 
-///////////////EJEMPLO 1////////////
+//EJEMPLO 1
 
 /*
 Given an array of numbers, return an array of each number, squared
@@ -29,7 +31,7 @@ const squared = nums.map(function (num) {
 
 console.log(squared); //[1, 4, 9, 16, 25]
 
-////////////EJEMPLO 2////////////
+//EJEMPLO 2
 
 /*
 Given an array of strings, return an array where the first letter of each string is capitalized
@@ -40,7 +42,7 @@ const names = ['alice', 'bob', 'charlie', 'danielle'];
 const capitalized = names.map(name => name[0].toUpperCase() + name.slice(1));
 console.log(capitalized); //["Alice", "Bob", "Charlie", "Danielle"]
 
-///////////////EJEMPLO 3/////////////
+//EJEMPLO 3
 
 /*
 Given an array of strings, return an array of strings that wraps each
@@ -55,7 +57,7 @@ const paragraphs = pokemon.map(mon => {
 
 console.log(paragraphs); //["<p>Bulbasaur</p>", "<p>Charmander</p>", "<p>Squirtle</p>"]
 
-///////////////EJEMPLO ANECDOTA/////////////
+//EJEMPLO ANECDOTA
 
 //Si hubiesemos creado una funcion CALLBACK con el valor de 23, obtendriamos un ARRAY de 23:
 

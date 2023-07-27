@@ -16,8 +16,8 @@ function App() {
       {/* <Steps /> */}
       {/* <Counter /> */}
       {/* <CounterRange /> */}
-      <FarAway />
       {/* <FlashCards /> */}
+      <FarAway />
     </>
   );
 }

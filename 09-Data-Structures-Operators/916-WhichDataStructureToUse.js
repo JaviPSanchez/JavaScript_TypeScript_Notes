@@ -1,11 +1,15 @@
 'use strict';
 
 /*
-Dealing with DATA is the main thing we do as developers, that's why since the beginning of the course we have been working with JS built-in DATA STRUCTURES like ARRAYS, OBJECTS, SETS or MAPS.
+Dealing with DATA is the main thing we do as developers, that's why since the beginning of the course we have been working with JS built-in DATA STRUCTURES
+like ARRAYS, OBJECTS, SETS or MAPS.
 
 Es importante conocer los PROS y CONTRAS de cada tipo para poder elegir correctamente.
 
-De donde viene la informacion, los datos?Tenemos tres fuentes esenciales de donde viene la informacion:
+¿De donde viene la informacion, los datos?
+
+Tenemos tres fuentes esenciales de donde viene la informacion:
+
 1/From the program itself: Data written directly in source code (i.e. status messages)
 2/From the UI: Data input from the user or data written in DOM.
 3/From external sources: web API (we can use a web API to get data from other web applications like currency conversion rates...) Normalmente viene en formato JSON.
@@ -14,7 +18,7 @@ No importa que tipo de DATA es, siempre tendremos COLLECTIONS OF DATA, que neces
 
 Where do we store COLLECTIONS OF DATA? Efectivamente, usamos los DATA STRUCTURES, tenemos 4 built-in DATA STRUCTURES en JS: ARRAYS, OBJECTS, SETS or MAPS.
 
-La primera pregunta que tendremos que hacernos es?
+La primera pregunta que tendremos que hacernos es:
 
 Do we just need a simple list of VALUES?*
 YES--> ARRAY or SETS
@@ -22,9 +26,11 @@ NO (KEY/VALUES PAIRS) --> OBJECTS or MAPS
 
 Con los KEY/VALUE PAIRS es una forma de describir los VALUES, sin embargo en los ARRAYS y SETS simplemente tenemos los valores sin descripcion.
 
-Como hemos comentado, la info que viene de otras web API viene en formato JSON, que es basicamente un texto (STRINGS) que puede ser conveertido facilmente en JS OBJECTS, puesto que utiliza el mismo formato que los OBJECTS.
+Como hemos comentado, la info que viene de otras web API viene en formato JSON, que es basicamente un texto (STRINGS) que puede ser conveertido facilmente en JS OBJECTS,
+puesto que utiliza el mismo formato que los OBJECTS.
 
-Antes de comparar los diferentes DATA STRUCTURES, cabe mencionar que existen tambien otros built-in DATA STRUCTURES en JS como WEAKSETS y WEAKMAPS o not built-in en JS, pero usados en programacion como STACKS, QUEUES, LINKED LISTS, TREES, HASH TABLES, etc.
+Antes de comparar los diferentes DATA STRUCTURES, cabe mencionar que existen tambien otros built-in DATA STRUCTURES en JS como
+WEAKSETS y WEAKMAPS o not built-in en JS, pero usados en programacion como STACKS, QUEUES, LINKED LISTS, TREES, HASH TABLES, etc.
 
 Por el momento solo tener en cuenta que no solo tenemos 4 DATA STRUCTURES.
 

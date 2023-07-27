@@ -8,7 +8,7 @@ const Item = ({ item }) => {
         {item.quantity}
         {item.description}
       </span>
-      <button>❌</button>
+      <button className={styles.buttonItem}>❌</button>
     </li>
   );
 };

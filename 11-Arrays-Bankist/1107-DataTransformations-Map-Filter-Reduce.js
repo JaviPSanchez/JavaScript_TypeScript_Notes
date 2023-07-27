@@ -3,7 +3,8 @@
 /*
 En JS hay tres grandes e importantes ARRAY METHODS que utilizamos todo el tiempo para hacer transformaciones.
 
-Son METHODS que utilizamos para crear nuevos ARRAYS basados en transformaciones de otros ARRAYS y se han vuelto muy populares en MODERN JS hasta el punto de que los veremos por todas partes!
+Son METHODS que utilizamos para crear nuevos ARRAYS basados en transformaciones de otros ARRAYS y se han vuelto muy populares en MODERN JS hasta
+el punto de que los veremos por todas partes!
 
 Los METHODS de los que hablamos para poder hacer DATA TRANSFORMATION son:
 

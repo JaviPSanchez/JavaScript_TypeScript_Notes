@@ -4,11 +4,13 @@
 
 Hemos visto hasta ahora ARRAYs, OBJECTs y SETs, le toca el turno a los MAPs, mucho mas utiles que los SETs.
 
-Que es un MAP? es una DATA STRUCTURE que podemos usar to map VALUES and KEYs. So, just like an OBJECT, we stored key value pairs. La gran diferencia entre MAPS y OBJECTS es que en los MAPS los KEYs pueden ser cualquier DATA TYPE siendo una gran ventaja! En los OBJECTS los KEYS son STRINGS, pero en los MAPS los KEYS pueden ser OBJECTS, ARRAYs, NUMBERS, STRINGS, BOOLEANS o incluso otros MAPs.
+Que es un MAP? es una DATA STRUCTURE que podemos usar to map VALUES and KEYs. So, just like an OBJECT, we stored key value pairs.
+La gran diferencia entre MAPS y OBJECTS es que en los MAPS los KEYs pueden ser cualquier DATA TYPE siendo una gran ventaja!
+En los OBJECTS los KEYS son STRINGS, pero en los MAPS los KEYS pueden ser OBJECTS, ARRAYs, NUMBERS, STRINGS, BOOLEANS o incluso otros MAPs.
 
 Vamos a crear un MAP, para ello hay que escribir el CONSTRUCTOR "new Map()" como en el caso de los SETs "new Set()".
 */
-const rest = new Map(content);
+const rest = new Map();
 //Para llenar el MAP, podemos usar el METHOD .set y pasarle los ARGUMENTS, siendo el primero el KEY name y el segundo el VALUE.
 rest.set('name', 'Classico Italiano');
 rest.set(1, 'Madrid, España');
@@ -57,14 +59,20 @@ Finalmente podemos tambien comprobar que podemos usar OBJECTS o ARRAYS como MAP 
 */
 rest.set([1, 2], 'Test');
 console.log(rest);
-//Pero si quisiesemos llamar a ese KEY en forma de ARRAY tendriamos problemas por la forma en la que trabaja JS. A pesar de escribir las dos ARRAYs de la misma forma, no son el mismo OBJECT en el HEAP!
+/*
+Pero si quisiesemos llamar a ese KEY en forma de ARRAY tendriamos problemas por la forma en la que trabaja JS.
+A pesar de escribir las dos ARRAYs de la misma forma, no son el mismo OBJECT en el HEAP!
+*/
+
 console.log(rest.get([1, 2])); //Undefined
+
 //Luego lo que hay que hacer, es crear una VARIABLE que tenga la misma address en el HEAP:
+
 const arr = [1, 2];
 rest.set(arr, 'Test');
 console.log(rest.get(arr)); //Test
 /*
-Hemos demostrado que podemos usar OBJECTS  como MAP KEYS y esto puede ser muy util con DOM elements, que al fin y al cabo no dejan de ser un tipo especial de OBJECT.
+Hemos demostrado que podemos usar OBJECTS como MAP KEYS y esto puede ser muy util con DOM elements, que al fin y al cabo no dejan de ser un tipo especial de OBJECT.
 */
 rest.set(document.querySelector('h1'), 'Heading');
 console.log(rest); // {Array(2) => "Test", Array(2) => "Test", h1 => "Heading"}
