@@ -3,27 +3,40 @@
 /*
 Basicamente debemos diferenciar ASYNCHRONOUS de SYNCHRONOUS.
 
-SYNCHRONOUS --> Es lo que hemos estado haciendo hasta ahora, el codigo se ejecuta linea por linea. Por lo que si una linea de codigo tarda demasiado en ejecutarse toda la pagina queda bloqueada esperando a que termine la tarea. Un alert por ejepmo es uan operacion que bloquea, algo nada bueno!
+SYNCHRONOUS --> Es lo que hemos estado haciendo hasta ahora, el codigo se ejecuta linea por linea.
+
+Por lo que si una linea de codigo tarda demasiado en ejecutarse toda la pagina queda bloqueada esperando a que termine la tarea.
+
+Un alert por ejepmo es una operacion que bloquea, ¡algo nada bueno!
 
 <cmg img/Picture01.jpg>
 
-ASYNCHRONOUS --> Por contra el codigo ASYNC permite saltar una tarea y dejarla funcionar en segundo plano. Para poder implementar el codigo async basta con crear una funcion callback, pero no todas las funciones callback hacen el codigo ASYNC. Por ejemplo un ARRAY MAP METHOD acepta una callback function pero no es ASYNC.
+ASYNCHRONOUS --> Por contra el codigo ASYNC permite saltar una tarea y dejarla funcionar en segundo plano.
+Para poder implementar el codigo async basta con crear una funcion callback, pero no todas las funciones callback hacen el codigo ASYNC.
+Por ejemplo un ARRAY MAP METHOD acepta una callback function pero no es ASYNC.
 
 <cmg img/Picture02.jpg>
 
-Podemos ver otro ejemplio en el que cargamos una imagen con el attributo src de source, este atributo transforma la operacion en  ASYNC.
-
+Podemos ver otro ejemplo en el que cargamos una imagen con el attributo src de source,
+este atributo transforma la operacion en  ASYNC.
 
 <cmg img/Picture03.jpg>
 
-There's just one more important thing that I need to mention which is the fact that event listeners alone do not make code asynchronous, just like callback functions alone, do also not make code asynchronous.
+There's just one more important thing that I need to mention which is the fact that
+event listeners alone do not make code asynchronous,
+just like callback functions alone, do also not make code asynchronous.
 
-Hay mas ejemplos de comportamiento ASYNC como la API de geolocalizacion o AJAX calls. AJAX CALLS son probablemente el uso mas importante del comportamiento ASYNC.
+Hay mas ejemplos de comportamiento ASYNC como la API de geolocalizacion o AJAX calls.
+AJAX CALLS son probablemente el uso mas importante del comportamiento ASYNC.
 
 Que es AJAX?
 
-So Ajax stands for Asynchronous JavaScript and XML, and basically it allows us to communicate with remote web servers in an asynchronous way.Now in practice,
-we make Ajax calls in our code in order to request some data from a web server dynamically. So without reloading the page so that we can use that data in our application dynamically. For example, right in the next video, we're going to make Ajax calls to request data about countries.
+So Ajax stands for Asynchronous JavaScript and XML, and basically it allows us to communicate with remote web servers in an asynchronous way.
+Now in practice, we make Ajax calls in our code in order to request some data
+from a web server dynamically. So without reloading the page so that we can use that data
+in our application dynamically.
+
+For example, right in the next video, we're going to make Ajax calls to request data about countries.
 
 And we can then use that data about countries to build a small application that shows us information about the country that we're currently in. And the possibilities and use cases are endless, but more about that in the next slide.
 

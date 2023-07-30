@@ -164,7 +164,7 @@ const get3Countries_v5 = async function (c1, c2, c3) {
 get3Countries_v5('portugal', 'canada', 'tanzania');
 
 /*
-So console.log then data.map, because remember that we want to actually return an array, but not this array, but simply an array with all the capital cities. So in this array of data, each element, let's call it d, which stands for data. So d is now this single array. So from d we want to take element zero and then on there,
+So we use a data.map method, because remember that we want to actually return an array, but not this array, but simply an array with all the capital cities. So in this array of data, each element, let's call it d, which stands for data. So d is now this single array. So from d we want to take element zero and then on there,
 we want the capital city:
 
 3) ["Lisbon", "Ottawa", "Dodoma"]

@@ -50,43 +50,43 @@ const getCountryData = function (country) {
   //Country 1
   fetch(`https://restcountries.eu/rest/v2/name/${country}`)
     .then(response => response.json())
-    
+
     // So let's simply modify what we already have here. And so the second Ajax call basically needs to happen here in this then handler.
 
     .then(data => {
       renderCountry(data[0]);
-      
-// So as soon as we get the data, then we need to get the neighbor country and do the Ajax call for that one as well. So let's get the neighbor and we already know
-// that it is at data zero at borders. And then also the first one. And just like before, let's say, if there is no neighbor, then return immediately.
+
+      // So as soon as we get the data, then we need to get the neighbor country and do the Ajax call for that one as well. So let's get the neighbor and we already know
+      // that it is at data zero at borders. And then also the first one. And just like before, let's say, if there is no neighbor, then return immediately.
 
       const neighbour = data[0].borders[0];
 
       // And actually this is not going to work, but nevermind about this for now. So we will talk about error handling actually in the next video. And so let's do the second Ajax call. And so, we use again fetch and then the URL.
       if (!neighbour) return;
-//       
-//       Country 2
+      //
+      //       Country 2
 
-//       Now, for now, this is not going to do anything because what we need to do now is to actually return this new promise, because then when we do that, we will be able to chain a new then method on the result of this then method.
+      //       Now, for now, this is not going to do anything because what we need to do now is to actually return this new promise, because then when we do that, we will be able to chain a new then method on the result of this then method.
 
-//       So by returning this promise here, then the fulfilled value of the next then method will be fulfilled value of this previous promise.        
+      //       So by returning this promise here, then the fulfilled value of the next then method will be fulfilled value of this previous promise.
       return fetch(`https://restcountries.eu/rest/v2/alpha/${neighbour}`);
     })
-//     /*
-//     So I know that sounds confusing, but what you need to understand is that basically this then method here ⏫ returns in your promise until, we can then one more time handle the success value of that promise.
-//     */
-//     /*
-//     So one more time, I'm calling this one now a response, because here we are dealing with the fulfilled value of a fetch promise.
+    /*
+    So I know that sounds confusing, but what you need to understand is that basically this then method here ⏫ returns in your promise until, we can then one more time handle the success value of that promise.
+    */
+    /*
+    So one more time, I'm calling this one now a response, because here we are dealing with the fulfilled value of a fetch promise.
 
-//     And so here, one more time, we need to call the JSON method and that is pretty annoying, but that's just how we have to do it.
-//    */
-//     .then(response => response.json())
-//     /*
-//     And so here again, the fulfilled value of the promise will become that body. So the data that is stored in the body, and then we can again, handle that.
+    And so here, one more time, we need to call the JSON method and that is pretty annoying, but that's just how we have to do it.
+   */
+    .then(response => response.json())
+    /*
+    And so here again, the fulfilled value of the promise will become that body. So the data that is stored in the body, and then we can again, handle that.
 
-//     So data like this and then render country with data. And then here again, we pass in that CSS class for the neighbor.
-//     */
-//     .then(data => renderCountry(data, 'neighbour'));
-// };
+    So data like this and then render country with data. And then here again, we pass in that CSS class for the neighbor.
+    */
+    .then(data => renderCountry(data, 'neighbour'));
+};
 
 // getCountryData('spain');
 /*
@@ -110,7 +110,7 @@ const getCountryData = country => {
     })
     .then(neighbors => {
       neighbors.forEach(neighbor => {
-        //We can also remove the if(!neighbor) check as the forloop will not process if there are no neighbors since the array length will equal 0.
+        //We can also remove the if(!neighbor) check as the for loop will not process if there are no neighbors since the array length will equal 0.
         // if (!neighbor) return; // terminate if no neighbors
 
         // process neighbors

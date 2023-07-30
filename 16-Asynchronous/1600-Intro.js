@@ -1,12 +1,20 @@
 'use strict';
 
 /*
-Let's now continue learning important JavaScript features. And one topic that we haven't touched yet is asynchronous JavaScript. So, the goal of asynchronous JavaScript is basically to deal with long-running tasks, that basically run in the background.
+Let's now continue learning important JavaScript features.
 
-And the most common use case of asynchronous JavaScript is to fetch data from remote servers, in so-called AJAX calls. And so, that's what we will do in this section, while learning everything there is to learn about Promises, the fetch function, async await, and error handling.
+And one topic that we haven't touched yet is asynchronous JavaScript.
 
-So this is yet another really exciting section, and so let's get started.
+So, the goal of asynchronous JavaScript is basically to deal with long-running tasks, that basically run in the background.
 
+And the most common use case of asynchronous JavaScript is to fetch data from remote servers, in so-called AJAX calls.
+
+And so, that's what we will do in this section
+
+👉 Promises
+👉 Fetch function
+👉 async await
+👉 error handling.
 
 Antes de empezar el curso me gustaria resaltar una frase de una persona que conoce el metier de FRONT END USER:
 

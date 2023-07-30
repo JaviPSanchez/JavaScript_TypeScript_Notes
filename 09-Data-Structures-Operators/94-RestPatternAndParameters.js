@@ -19,17 +19,21 @@ If you want to break an array into several variables, you're using spread syntax
 If you're taking several variables and putting them into one array, you're using rest syntax.
 */
 
-//SPREAD, right side of = operator
+//SPREAD --> right side of = operator
 
 const arr = [1, 2, ...[3, 4]];
 console.log(arr); //[1, 2, 3, 4] JUNTA ELEMENTOS
-//REST, left side of = operator
+
+//REST --> left side of = operator
+
 const [a, b, ...others] = [1, 2, 3, 4, 5];
 console.log(a, b, others); //1 2  [3, 4, 5] SEPARA ELEMENTOS
 console.log(others); // [3, 4, 5]
+
 /*
 Con el ejemplo del restaurante, imaginemos que queremos poner todo en un ARRAY, el mainMenu y el starterMenu en un solo menu, lado derecho de la igualdad, y queremos sacar dos platos del menu dejando el resto en un ARRAY, lado izquierdo de la igualdad:
 */
+
 const [pizza, risotto, ...otherFood] = [
   ...restaurant.mainMenu,
   ...restaurant.starterMenu,

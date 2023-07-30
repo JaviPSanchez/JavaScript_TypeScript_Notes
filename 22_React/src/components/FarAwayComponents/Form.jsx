@@ -1,15 +1,9 @@
 import styles from './Form.module.css';
 import { useState } from 'react';
 
-const Form = () => {
+const Form = ({ onAddItems }) => {
   const [description, setDescription] = useState('');
   const [quantity, setQuantity] = useState(1);
-  const [items, setItems] = useState([]);
-  console.log(items);
-
-  function handleAddItems(item) {
-    setItems(items => [...items, item]);
-  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -19,7 +13,7 @@ const Form = () => {
     const newItem = { description, quantity, packed: false, id: Date.now() };
     console.log(newItem);
 
-    handleAddItems(newItem);
+    onAddItems(newItem);
 
     setDescription('');
     setQuantity(1);

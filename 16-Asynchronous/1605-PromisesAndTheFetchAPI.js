@@ -1,9 +1,13 @@
 'use strict';
 
 /*
-En la leccion anterior hemos visto un poco el CALLBACK HELL, So in this lecture, let's learn about a modern JavaScript feature called promises, so that we can escape callback hell.
+En la leccion anterior hemos visto un poco el CALLBACK HELL,
 
-However, before we learn about promises, we should actually see one. And so let's not replace the old XML HTTP request function with the modern way of making AJAX calls. And that is by using the Fetch API.
+So in this lecture, let's learn about a modern JavaScript feature called promises, so that we can escape callback hell.
+
+However, before we learn about promises, we should actually see one.
+
+And so let's not replace the old XML HTTP request function with the modern way of making AJAX calls. And that is by using the Fetch API.
 
 So let me go up here to our first function, just to see how it used to work and
 how we can do it now.
@@ -24,13 +28,16 @@ Now there are actually some more options that we can specify here in the fetch f
 
 So for more complex AJAX calls, the fetch function can take in like an object of options as well. But again, for now, we don't need that:
 */
+
 console.log(request2);
+
 /*
 Promise {<pending>}
 __proto__: Promise
 [[PromiseState]]: "fulfilled"
 [[PromiseResult]]: Response
 */
+
 /*
 And so you see that the fetch function immediately returned a promise here. It says pending. So if we open that up, then here it says fulfilled.
 

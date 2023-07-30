@@ -14,7 +14,7 @@ Imaginemos que tenemos un ARRAY con diferentes nombres y queremos organizarlo al
 const owners = ['Javi', 'Meli', 'Gabi', 'Dani'];
 console.log(owners.sort()); //["Dani", "Gabi", "Javi", "Meli"]
 
-//Hay que tener en cuenta que el METHOD SORT muta el arry de origen, por lo que hay que tener cuidado con este METHOD.
+//Hay que tener en cuenta que el METHOD SORT muta el array de origen, por lo que hay que tener cuidado con este METHOD.
 console.log(owners); //["Dani", "Gabi", "Javi", "Meli"]
 
 //Podemos usarlo con NUMBERS tambien:
@@ -27,9 +27,15 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 console.log(movements.sort()); //[-130, -400, -650, 1300, 200, 3000, 450, 70]
 
 /*
-SORPRESA! aqui no ha funcionado, esto es porque el METHOD SORT funciona basado en STRINGS, es decir, lo convierte todo en STRINGS y luego hace el sorting. Si nos fijamos en el resultado, tenemos primero todos los menos que en el alfabeto estan primero y luego el 1, 2, 3, etc. Si fuesen STRINGS tendria sentido, pero son NUMBERS, lo cual es un problema.
+SORPRESA! aqui no ha funcionado, esto es porque el METHOD SORT funciona basado en STRINGS, es decir,
+lo convierte todo en STRINGS y luego hace el sorting.
 
-Este problema podemos solucionarlo con una COMPARE CALLBACK FUNCTION. La FUNCTION tendra dos argumentos a y b. Que seran el CURRENT VALUE y el NEXT VALUE respectivamente.
+Si nos fijamos en el resultado, tenemos primero todos los menos que en el alfabeto estan primero y luego el 1, 2, 3, etc.
+
+Si fuesen STRINGS tendria sentido, pero son NUMBERS, lo cual es un problema.
+
+Este problema podemos solucionarlo con una COMPARE CALLBACK FUNCTION. La FUNCTION tendra dos argumentos a y b.
+Que seran el CURRENT VALUE y el NEXT VALUE respectivamente.
 
 Para entender como funciona esta CALLABACK FUNCTION debemos ver los dos argumentos a y b como dos numeros consecutivos en el ARRAY. Por ejemplo, cogemos 450 y -400, vamos a compararlos:
 
@@ -114,7 +120,7 @@ btnSort.addEventListener('click', function (e) {
   displayMovements(currentAccount.movements, true);
 });
 
-//Ya solo que un pequeño detalle, cuando volvemos a pulasar el boton no pasa nada, para solucionar este problema podemos usar una STATE VARIABLE, que vigilara si estamos ordenando el ARRAY o no.
+//Ya solo que un pequeño detalle, cuando volvemos a pulsar el boton no pasa nada, para solucionar este problema podemos usar una STATE VARIABLE, que vigilara si estamos ordenando el ARRAY o no.
 
 let sorted = false;
 

@@ -12,7 +12,9 @@ Los METHODS de los que hablamos para poder hacer DATA TRANSFORMATION son:
 
 <cmg /images/Picture2.jpg>
 
-2/FILTER --> Usado para filtrar los elementos en el ARRAY original satisfacciendo una condicion inicial (por ejemplo elementos mayores que 2). Todos los elementos que satisfagan esta condicion, pasaran al nuevo ARRAY.
+2/FILTER --> Usado para filtrar los elementos en el ARRAY original satisfaciendo
+una condicion inicial (por ejemplo elementos mayores que 2).
+Todos los elementos que satisfagan esta condicion, pasaran al nuevo ARRAY.
 
 <cmg /images/Picture3.jpg>
 

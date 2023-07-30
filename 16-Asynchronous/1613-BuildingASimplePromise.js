@@ -13,7 +13,7 @@ new Promise(function (resolve, reject) {});
 /*
 And those arguments are the resolve and reject functions. So we will use them here in a second, but for now let's actually build this executor function. And also we should probably store the result.
 */
-// const lotteryPromise = new Promise(function (resolve, reject) {});
+const lotteryPromise = new Promise(function (resolve, reject) {});
 /*
 All of this here we'll create a new promise that we're gonna store into this variable. Now this executor function that we specified here is the function which will contain the asynchronous behavior that we're trying to handle with the promise.
 
@@ -21,13 +21,13 @@ So this executor function should eventually produce a result value. So the value
 
 Now, in our lottery example, let's say that we actually win in 50% of the cases and to lose in the other 50%:
 */
-// const lotteryPromise = new Promise(function (resolve, reject) {
-//   if (Math.random() >= 0.5) {
-//     resolve('You WIN 🎉');
-//   } else {
-//     reject('You lost your money 😫!');
-//   }
-// });
+const lotteryPromise = new Promise(function (resolve, reject) {
+  if (Math.random() >= 0.5) {
+    resolve('You WIN 🎉');
+  } else {
+    reject('You lost your money 😫!');
+  }
+});
 
 /*
 And so what I'm gonna do is to simply generate a random number which remember is gonna be between zero and one. And so I can simply say, if this number here is greater or equal than 0.5, then I want to call the resolve function. And so now this is where this resolve function that was passed into the executor function comes into play.
@@ -44,11 +44,11 @@ So just to quickly recap, before we consume this promise here, we created an exe
 
 And so you see that this promise is eventually going to move to either the fulfilled state or the rejected state. So we always need to make sure that the promise ends up in one of these two states. And so now it's time to actually try this out by consuming this promise that we just built:
 */
-// lotteryPromise.then();
+lotteryPromise.then();
 /*
 So lotteryPromise is going to be a promise object at this point. And so then as always, we can call the .then() method, and then just like before the .then() method needs a callback function that is going to be called with the resolved value of the promise. So let's call this res here and then let's simply log it to the console:
 */
-// lotteryPromise.then(res => console.log(res)).catch(err => console.log(err));
+lotteryPromise.then(res => console.log(res)).catch(err => console.log(err));
 /*
 And of course, once again, this could be any name here. And now let's also catch any errors, then so here also as always, we will simply log it to the console as an error.
 
@@ -81,7 +81,7 @@ lotteryPromise.then(res => console.log(res)).catch(err => console.log(err));
 And so this is a really nice and helpful pattern. Now, in practice, most of the time all we actually do is to consume promises. And we usually only built promises
 to basically wrap old callback based functions into promises. And this is a process that we call promisifying. So basically promisifying means to convert callback based asynchronous behavior to promise based.
 
-//PROMISIFYING SETTIMEOUT
+PROMISIFYING SETTIMEOUT
 
 Let's see that in action a little bit. And so what we're gonna do is to actually promisify the set timeout function and create a wait function.
 
@@ -103,12 +103,12 @@ Now, here, we want to run that timer for a certain amount of seconds, so we need
 
 So let's call or wait function:
 */
-// wait(2)
-//   .then(() => {
-//     console.log('I waited for 2 seconds');
-//     return wait(1);
-//   })
-//   .then(() => console.log('I waited for 1 second'));
+wait(2)
+  .then(() => {
+    console.log('I waited for 2 seconds');
+    return wait(1);
+  })
+  .then(() => console.log('I waited for 1 second'));
 /*
 And so this will now create a promise that will wait for two seconds and after these two seconds, it will resolve. And so just like before we now have to return a new promise here, so return, wait, and this time just one second.
 
@@ -116,18 +116,18 @@ And so this is exactly what we did before when we wanted to chain two sequential
 
 And so now with this, we have once again a nice chain of asynchronous behavior that happens nicely in a sequence and all without the callback hell. So before I actually showed you what happened when we had multiple timers:
 */
-// setTimeout(() => {
-//   console.log('1 second passed');
-//   setTimeout(() => {
-//     console.log('2 seconds passed');
-//     setTimeout(() => {
-//       console.log('3 second passed');
-//       setTimeout(() => {
-//         console.log('4 second passed');
-//       }, 1000);
-//     }, 1000);
-//   }, 1000);
-// }, 1000);
+setTimeout(() => {
+  console.log('1 second passed');
+  setTimeout(() => {
+    console.log('2 seconds passed');
+    setTimeout(() => {
+      console.log('3 second passed');
+      setTimeout(() => {
+        console.log('4 second passed');
+      }, 1000);
+    }, 1000);
+  }, 1000);
+}, 1000);
 /*
 And so basically we could do now this same thing like this:
 */
@@ -160,7 +160,6 @@ Promise.reject(new Error('Problem!')).catch(x => console.error(x));
 And so basically this is a static method on the promise constructor. And so here we can then pass in the resolved value, so just like we would pass to resolve value right here. Again, the difference is that this one here will resolve immediately.
 
 So here, it doesn't matter. So just abc and then we can handle that. And so again, the values here don't matter and then we can also do the same with reject. And so these two here should now appear at the very beginning. So here is abc and then the error.
-
 
 So this is how we built our own promises and how we promisify a very simple callback based asynchronous behavior function such as set timeout.
 */

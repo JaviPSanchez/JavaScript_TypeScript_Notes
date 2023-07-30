@@ -27,10 +27,10 @@ Let's now keep promisifying things and this time around, we're gonna promisify t
 
 Now we used the geolocation API before, and so let's start by reviewing how it works. So remember we use:
 */
-// navigator.geolocation.getCurrentPosition(
-//   position => console.log(position),
-//   err => console.error(err)
-// );
+navigator.geolocation.getCurrentPosition(
+  position => console.log(position),
+  err => console.error(err)
+);
 /*
 and then this function here accepts two callbacks where the first is for the success
 and the second one is for the error. So this first callback function actually gets access to the position object. So let's pass that in as an argument to this callback function, then let's simply log that to the console. So this is our first callback, and now let's create a second callback with the error.
@@ -48,7 +48,7 @@ __proto__: GeolocationPosition
 
 this is actually asynchronous behavior in exactly the way that we have been talking about. So the code is not blocked, which we can check here:
 */
-// console.log('Getting position');
+console.log('Getting position');
 /*
 So we have a console.log after the geolocation. Now this console.log is logged first
 and so this one happens first and so that's because the geolocation function basically offloaded its work to the background. So to the web API environment in the browser.
@@ -58,23 +58,23 @@ So this is very clearly a callback based API. So we have to pass in these differ
 So let's do that and it's actually pretty simple. So let's create a function here
 just like before with the wait function. So get positioned and we don't need to pass anything into this one:
 */
-// const getPosition = function () {
-//   return new Promise(function (resolve, reject) {});
-// };
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {});
+};
 /*
 and just like before we are going to return a new promise, which we then can handle later on. So here we pass in the executer function, which gets access to the resolve function and the reject function, which remember we can use to mark the promise as either rejected or fulfilled.
 
 
 So let's actually grab the previous code and paste it inside our Promise function:
 */
-// const getPosition = function () {
-//   return new Promise(function (resolve, reject) {
-//     navigator.geolocation.getCurrentPosition(
-//       position => resolve(position), // => Success Callback function
-//       err => reject(err) // => Reject Callback function
-//     );
-//   });
-// };
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    navigator.geolocation.getCurrentPosition(
+      position => resolve(position), // => Success Callback function
+      err => reject(err) // => Reject Callback function
+    );
+  });
+};
 /*
 and now all we need to change is basically what happens here in each of these callback functions. So remember that the success callback function receives the position, and so when we have success, we want to resolve the promise. So we want to mark it as fulfilled, and so therefore we call the result function and we pass in that position object, because that is actually the fulfilled value that we want to get from this promise in case that is successful. And we do the same, but with reject.
 
@@ -92,7 +92,7 @@ position => resolve(position),
 
 all we did was to take the position and pass it down into resolve, but we make it to happens automatically. So now resolve itself is the callback function, which will get called with the position, and so that's exactly what we do here, and the same of course, with reject, and so now let's actually try this out:
 */
-// getPosition().then(pos => console.log(pos));
+getPosition().then(pos => console.log(pos));
 /*
 So get position and then we want to handle the result. So again, this is exactly the same thing that we did previously with the fetch function, or also with the wait function that we created in the last lecture. So let's now log this position to the console and for now we don't need the catch block and so let's see:
 
@@ -150,9 +150,11 @@ So let's run this but first need to set it up with the event handler:
 btn.addEventListener('click', whereAmI);
 /*
 So if we click now, so here, then we get an error that latitude is not defined, but what we were interested in any way is get the latitude and longitude of this coords object, and so let's not go ahead and destructure this object giving new names a lat and lng with latitude and longitude:
+*/
+const { lat = latitude, lng = longitude } = pos.coords; // OJITO con no caer en el error de hacer the equal sign "=" porque en destructuring is actually to set a default value.
 
-const { lat = latitude, lng = longitude } = pos.coords; --> OJITO con no caer en el error de hacer the equal sign porque en destructuring is actually to set a default value. So this is not what we want.
-
+// So this is not what we want.
+/*
 Nosotros queremos crear una variable basada en otra:
 
 const { latitude: lat, longitude : lng } = pos.coords;

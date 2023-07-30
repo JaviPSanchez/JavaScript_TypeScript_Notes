@@ -1,6 +1,6 @@
 /*
 Let me now quickly, show you some of the stuff, that we just learned and practice.
-And so let's not build an extremely simple example. So I will start by simply logging test, start to the console:
+And so let's now build an extremely simple example. So I will start by simply logging test, start to the console:
 */
 console.log('Test start');
 /*

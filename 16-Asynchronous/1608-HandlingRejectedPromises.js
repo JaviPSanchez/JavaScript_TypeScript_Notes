@@ -53,7 +53,9 @@ const getCountryData = country => {
 };
 
 /*
-So until now, we have always assumed that everything went well with our AJAX calls, so we never handled any errors. However, an important part of web development is to actually handle the errors because it's very common that errors happen in web applications. And so in this lecture, let's talk about how to handle errors in promises.
+So until now, we have always assumed that everything went well with our AJAX calls, so we never handled any errors.
+
+However, an important part of web development is to actually handle the errors because it's very common that errors happen in web applications. And so in this lecture, let's talk about how to handle errors in promises.
 
 And to start, remember that a promise in which an error happens is a rejected promise. And so in this video, we're gonna learn how to handle promise rejections.
 
@@ -129,7 +131,11 @@ fetch(`https://restcountries.eu/rest/v2/alpha/${neighbor}`)
       });
 
 /*
-And then here we can actually use the same callback error function. So again this catch method here at the end of the chain will basically catch any errors that occur in any place in this whole promise chain and no matter where that is. So errors basically propagate down the chain until they are caught.
+And then here we can actually use the same callback error function.
+
+So again this catch method here at the end of the chain will basically catch any errors that occur in any place in this whole promise chain and no matter where that is.
+
+So errors basically propagate down the chain until they are caught.
 
 Now instead of having that annoying alert window let's just lock the error to the console and create some string.
 

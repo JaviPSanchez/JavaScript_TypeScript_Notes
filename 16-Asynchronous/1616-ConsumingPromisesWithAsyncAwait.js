@@ -23,11 +23,15 @@ const renderCountry = function (data, className = '') {
 };
 
 /*
-So now that you're super comfortable with consuming promises and also building promises, let's turn our attention back to actually consuming promises that's because since ES 2017, there is now an even better and easier way to consume promises, which is called ASYNC/Await.
+So now that you're super comfortable with consuming promises and also building promises,
+
+let's turn our attention back to actually consuming promises that's because since ES 2017, there is now an even better and easier way to consume promises,
+
+which is called ASYNC/AWAIT.
 
 So let me show you how it works. So we start by creating a special kind of function, which is an ASYNC function. So in this lecture, we will basically recreate the whereAmI() function that we have been building:
 */
-// const whereAmI = function (country) {};
+const whereAmI = function (country) {};
 /*
 We will pass in the country again, to make it simple at the beginning. But as I was saying, we now need to make this a special kind of function, which is an ASYNC function. And we do this by simply adding
 ASYNC here in front of the function:
@@ -37,9 +41,9 @@ ASYNC here in front of the function:
 And so this function is now an asynchronous function. So a function that will basically keep running in the
 background while performing the code that is inside of it, then when this function is done, it automatically returns a promise, but more on that in the next video for now, what's important is that inside an ASYNC function, we can have one or more await statements:
 */
-// const whereAmI = async function (country) {
-//   await fetch(`https://restcountries.eu/rest/v2/name/${country}`);
-// };
+const whereAmI = async function (country) {
+  await fetch(`https://restcountries.eu/rest/v2/name/${country}`);
+};
 /*
 so, await, and then here we need a promise. And so we can use the promise returned from the fetch function using our API again, to search for a country basically. let's pass in the country again.
 
@@ -49,15 +53,15 @@ You might think isn't stopping the code, blocking the execution? Well, that's a 
 
 But anyway, as soon as this promise here is resolved, then the value of this whole await expression that we have here is going to be the resolved value of the promise. And so we can simply store that into a variable, que llamaremos res por response, metemos un log tambien.
 */
-// const whereAmI = async function (country) {
-//   const res = await fetch(`https://restcountries.eu/rest/v2/name/${country}`);
-//   console.log(res);
-// };
+const whereAmI = async function (country) {
+  const res = await fetch(`https://restcountries.eu/rest/v2/name/${country}`);
+  console.log(res);
+};
 /*
 And just to show you that this function here is actually asynchronous. Let's log something to the console before we call it:
 */
-// whereAmI('spain');
-// console.log('First');
+whereAmI('spain');
+console.log('First');
 /*
 But even by doing this, this console.log will be displayed first, because again, this is an ASYNC function. And so this Fetcher will be running in the background
 without blocking our mainthreat.
