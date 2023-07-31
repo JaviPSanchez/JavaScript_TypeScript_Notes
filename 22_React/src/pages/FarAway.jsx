@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 const FarAway = () => {
   const [items, setItems] = useState([]);
+
   console.log(items);
 
   function handleAddItems(item) {
@@ -22,6 +23,11 @@ const FarAway = () => {
     );
   }
 
+  function handleClearList() {
+    const confirmed = window.confirm('Are you sure?');
+    if (confirmed) setItems([]);
+  }
+
   return (
     <div className={styles.app}>
       <Logo />
@@ -30,6 +36,7 @@ const FarAway = () => {
         items={items}
         onDeleteItem={handleDeleteItem}
         onToggleItem={handleToggleItem}
+        onClearList={handleClearList}
       />
       <Stats items={items} />
     </div>
