@@ -6,6 +6,7 @@ import {
   Steps,
   ArrayMethods,
   CounterRange,
+  Accordion,
 } from '@pages';
 
 function App() {
@@ -13,11 +14,12 @@ function App() {
     <>
       {/* <Generator /> */}
       {/* <ArrayMethods /> */}
-      {/* <Steps /> */}
+      <Steps />
       {/* <Counter /> */}
       {/* <CounterRange /> */}
       {/* <FlashCards /> */}
-      <FarAway />
+      {/* <FarAway /> */}
+      {/* <Accordion /> */}
     </>
   );
 }

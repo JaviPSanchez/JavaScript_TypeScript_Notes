@@ -4,5 +4,14 @@ import Counter from './Counter';
 import CounterRange from './CounterRange';
 import Steps from './Steps';
 import ArrayMethods from './ArrayMethods2022';
+import Accordion from './Accordion';
 
-export { FarAway, FlashCards, Counter, Steps, ArrayMethods, CounterRange };
+export {
+  FarAway,
+  FlashCards,
+  Counter,
+  Steps,
+  ArrayMethods,
+  CounterRange,
+  Accordion,
+};

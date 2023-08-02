@@ -1,0 +1,58 @@
+.item {
+  width: 58rem;
+  display: flex;
+  flex-direction: row;
+
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.1);
+  background-color: white;
+  margin-top: 1.6rem;
+  cursor: pointer;
+}
+.itemComponents {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.open {
+  border-top: 4px solid #087f5b;
+  margin-top: 1.6rem;
+  cursor: pointer;
+}
+
+.open .number {
+  color: #087f5b;
+}
+.open .title {
+  color: #087f5b;
+}
+
+.number {
+  color: #ced4da;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.title {
+  width: 100%;
+  font-weight: 600;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 58rem;
+  height: 10rem;
+  background-color: white;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.icon {
+  padding: 0;
+  background-color: transparent;
+  color: black;
+  font-size: 2.2rem;
+}
