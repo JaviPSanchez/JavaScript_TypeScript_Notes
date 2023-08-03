@@ -60,9 +60,12 @@ const Steps = () => {
           </div>
 
           <div className={styles.buttonsContainer}>
-            <button onClick={handlePrevious}>Previous</button>
-
-            <button onClick={handleNext}>Next</button>
+            <Button className={styles.button} onClick={handlePrevious}>
+              <span>👈</span>Previous
+            </Button>
+            <Button className={styles.button} onClick={handleNext}>
+              Next<span>👉</span>
+            </Button>
           </div>
         </div>
       )}
@@ -75,5 +78,13 @@ const Steps = () => {
     </div>
   );
 };
+
+function Button({ className, onClick, children }) {
+  return (
+    <button className={className} onClick={onClick}>
+      {children}
+    </button>
+  );
+}
 
 export default Steps;

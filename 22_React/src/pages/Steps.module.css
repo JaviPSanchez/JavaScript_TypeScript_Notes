@@ -1,26 +1,8 @@
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-  color: #ffffff;
-  margin: 2rem;
-}
-
-button:hover {
-  border-color: #646cff;
-}
-
 .container {
   position: relative;
   display: flex;
   width: 400px;
-  height: 350px;
+  height: 28rem;
 }
 
 .steps {
@@ -38,9 +20,18 @@ button:hover {
 
 .buttonsContainer {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 2rem 2rem;
+}
+
+.button {
+  color: #ffffff;
+  font-weight: 800;
+  background-color: rgb(170, 65, 231);
+  width: fit-content;
+  height: auto;
+  border-radius: 2rem;
 }
 
 .close {
