@@ -1,12 +1,16 @@
 import styles from './Item.module.css';
-import { useState } from 'react';
 
-const Item = ({ num, title, text }) => {
-  const [open, setOpen] = useState(false);
+const Item = ({ num, title, currentOpen, onOpen, children }) => {
+  const open = num === currentOpen;
+
+  const handleToggel = function () {
+    onOpen(open ? null : num);
+  };
+
   return (
     <div
       className={`${!open ? styles.item : styles.open}`}
-      onClick={() => setOpen(!open)}
+      onClick={handleToggel}
     >
       <div className={styles.itemComponents}>
         <p className={styles.number}>{`0${num + 1}`}</p>
@@ -15,7 +19,7 @@ const Item = ({ num, title, text }) => {
       </div>
       {open && (
         <div className={styles.text}>
-          <p>{text}</p>
+          <p>{children}</p>
         </div>
       )}
     </div>

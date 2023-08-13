@@ -1,5 +1,6 @@
 import { Item } from '@components';
 import styles from './Accordion.module.css';
+import { useState } from 'react';
 
 const faqs = [
   {
@@ -17,10 +18,20 @@ const faqs = [
 ];
 
 const Accordion = () => {
+  const [currentOpen, setCurrentOpen] = useState(null);
   return (
     <div>
       {faqs.map((item, index) => (
-        <Item key={index} num={index} title={item.title} text={item.text} />
+        <Item
+          currentOpen={currentOpen}
+          onOpen={setCurrentOpen}
+          key={index}
+          num={index}
+          title={item.title}
+          text={item.text}
+        >
+          {item.text}
+        </Item>
       ))}
     </div>
   );

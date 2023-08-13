@@ -14,12 +14,12 @@ function App() {
     <>
       {/* <Generator /> */}
       {/* <ArrayMethods /> */}
-      <Steps />
+      {/* <Steps /> */}
       {/* <Counter /> */}
       {/* <CounterRange /> */}
       {/* <FlashCards /> */}
       {/* <FarAway /> */}
-      {/* <Accordion /> */}
+      <Accordion />
     </>
   );
 }
