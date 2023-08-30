@@ -7,6 +7,7 @@ import {
   ArrayMethods,
   CounterRange,
   Accordion,
+  TipCalculator,
 } from '@pages';
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
       {/* <CounterRange /> */}
       {/* <FlashCards /> */}
       {/* <FarAway /> */}
-      <Accordion />
+      {/* <Accordion /> */}
+      <TipCalculator />
     </>
   );
 }
