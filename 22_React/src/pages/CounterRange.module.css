@@ -20,7 +20,7 @@ button {
 button:hover {
   border-color: #646cff;
 }
-.container {
+/* .container {
   p {
     display: flex;
     justify-content: center;
@@ -28,7 +28,7 @@ button:hover {
     margin: 2rem;
     color: #ffffff;
   }
-}
+} */
 
 input {
   width: 100%;
