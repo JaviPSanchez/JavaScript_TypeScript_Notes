@@ -8,6 +8,7 @@ import {
   CounterRange,
   Accordion,
   TipCalculator,
+  EatAndSplit,
 } from '@pages';
 
 function App() {
@@ -21,7 +22,8 @@ function App() {
       {/* <FlashCards /> */}
       {/* <FarAway /> */}
       {/* <Accordion /> */}
-      <TipCalculator />
+      {/* <TipCalculator /> */}
+      <EatAndSplit />
     </>
   );
 }

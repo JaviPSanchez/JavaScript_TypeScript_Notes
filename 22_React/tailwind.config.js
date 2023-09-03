@@ -10,12 +10,6 @@ module.exports = {
   theme: {
     extend: {
       scrollbarWidth: ['hover', 'focus'],
-      gridTemplateColumns: {
-        // Simple 16 column grid
-        fit: 'repeat(auto-fit, minmax(250px, 1fr))',
-        // Complex site-specific column configuration
-        footer: '200px minmax(900px, 1fr) 100px',
-      },
       fontSize: {
         '4xl': [
           '2rem',
@@ -48,6 +42,11 @@ module.exports = {
         dark2: '#8898a2',
         dark3: '#385364',
         error: '#fc8181',
+
+        orangeLightess: '#fff4e6',
+        orangeLight: '#ffe8cc',
+        orangeMedium: '#ffa94d',
+        orangeDark: '#ff922b',
       },
       lineHeight: {
         12: '1.2',

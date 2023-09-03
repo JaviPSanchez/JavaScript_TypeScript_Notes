@@ -66,7 +66,7 @@ const TipCalculator = () => {
   const [opinion1, setOpinion1] = useState(0);
   const [opinion2, setOpinion2] = useState(0);
 
-  const tip = (bill * (opinion1 + opinion2)) / 2;
+  const tip = opinion1 * bill + opinion2 * bill;
 
   function handleReset() {
     setBill('');
