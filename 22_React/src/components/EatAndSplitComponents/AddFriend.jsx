@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 const AddFriend = ({ onAddFriend }) => {
   const [newFriend, setNewFriend] = useState([]);
-  console.log(newFriend);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -16,9 +15,12 @@ const AddFriend = ({ onAddFriend }) => {
       userName: newFriend,
       urlImage: `https://i.pravatar.cc/48?u=${randomNumber}`,
     };
-    console.log(newItem);
     onAddFriend(newItem);
     setNewFriend([]);
+  }
+
+  function handleTargetId(e) {
+    console.log(e.target.id);
   }
 
   return (
@@ -41,11 +43,13 @@ const AddFriend = ({ onAddFriend }) => {
         <input
           className="w-full text-2xl col-start-2 col-end-3 bg-white border-[0.2px] border-grey3 rounded-lg p-4"
           placeholder="https://i.pravatar.cc/48"
-          // value={'https://i.pravatar.cc/48'}
         />
       </div>
       <div className="col-start-2 col-end-3 p-4">
-        <button className="w-full bg-orangeMedium hover:bg-orangeDark text-[#343a40] font-bold px-4 py-2 border-none text-2xl rounded-lg transition-all duration-300">
+        <button
+          onClick={handleTargetId}
+          className="w-full bg-orangeMedium hover:bg-orangeDark text-[#343a40] font-bold px-4 py-2 border-none text-2xl rounded-lg transition-all duration-300"
+        >
           Add
         </button>
       </div>

@@ -1,5 +1,5 @@
 import { Item } from '@components';
-import styles from './Accordion.module.css';
+import styles from '@styles';
 import { useState } from 'react';
 
 const faqs = [
@@ -20,7 +20,9 @@ const faqs = [
 const Accordion = () => {
   const [currentOpen, setCurrentOpen] = useState(null);
   return (
-    <div>
+    <div
+      className={`${styles.centerPosition} min-w-fit min-h-[300px] flex flex-col justify-start items-start bg-orangeLightess rounded-2xl drop-shadow-2xl p-6`}
+    >
       {faqs.map((item, index) => (
         <Item
           currentOpen={currentOpen}

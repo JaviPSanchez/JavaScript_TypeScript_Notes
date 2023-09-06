@@ -1,14 +1,16 @@
 import styles from '@styles';
 import { useState } from 'react';
 import { FriendList, AddFriend, SplitBill } from '@components';
+import data from '@data';
 
 const EatAndSplit = () => {
-  const [items, setItems] = useState([]);
-  console.log(items);
+  const [items, setItems] = useState(data);
 
   function handleAddFriend(item) {
     setItems(items => [...items, item]);
   }
+
+  function handleSelect() {}
 
   return (
     <div

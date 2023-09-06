@@ -1,5 +1,3 @@
-import styles from './Item.module.css';
-
 const Item = ({ num, title, currentOpen, onOpen, children }) => {
   const open = num === currentOpen;
 
@@ -9,16 +7,32 @@ const Item = ({ num, title, currentOpen, onOpen, children }) => {
 
   return (
     <div
-      className={`${!open ? styles.item : styles.open}`}
+      className={`${
+        !open
+          ? 'w-[58rem] flex flex-row rounded-2xl p-6 bg-white mt-4 cursor-pointer'
+          : 'border-t-2 border-solid border-[#087f5b] mt-6'
+      } `}
       onClick={handleToggel}
     >
-      <div className={styles.itemComponents}>
-        <p className={styles.number}>{`0${num + 1}`}</p>
-        <p className={styles.title}>{title}</p>
-        <p className={styles.icon}>{open ? '-' : '+'}</p>
+      <div className="bg-white w-full flex flex-row justify-between items-center">
+        <p
+          className={`${
+            open ? 'text-[#087f5b]' : 'text-[#ced4da]'
+          } text-5xl p-4`}
+        >{`0${num + 1}`}</p>
+        <p className={`${open ? 'text-[#087f5b]' : 'text-black'} text-3xl p-2`}>
+          {title}
+        </p>
+        <p
+          className={`${
+            open ? 'text-[#087f5b]' : 'text-black '
+          } p-4 text-6xl bg-transparent`}
+        >
+          {open ? '-' : '+'}
+        </p>
       </div>
       {open && (
-        <div className={styles.text}>
+        <div className="flex justify-center items-center w-[58rem] h-[10rem] bg-white p-4 text-start text-xl cursor-pointer">
           <p>{children}</p>
         </div>
       )}
