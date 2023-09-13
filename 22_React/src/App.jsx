@@ -21,9 +21,9 @@ function App() {
       {/* <CounterRange /> */}
       {/* <FlashCards /> */}
       {/* <FarAway /> */}
-      <Accordion />
+      {/* <Accordion /> */}
       {/* <TipCalculator /> */}
-      {/* <EatAndSplit /> */}
+      <EatAndSplit />
     </>
   );
 }
