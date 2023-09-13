@@ -20,10 +20,20 @@ const Friend = ({ item }) => {
         <span className="w-full text-xl">{item.userName}</span>
         <p
           className={`text-xl ${
-            item.balance >= 0 ? 'text-red-400' : 'text-green-600'
+            item.balance > 0
+              ? 'text-red-400'
+              : item.balance < 0
+              ? 'text-green-600'
+              : item.balance === 0
+              ? 'text-black'
+              : 'text-black'
           }`}
         >
-          You own Clark 7€
+          {item.balance > 0
+            ? `You own ${item.userName} ${Math.abs(item.balance)}€`
+            : item.balance < 0
+            ? `${item.userName} owes you ${Math.abs(item.balance)}€`
+            : `You and ${item.userName} are even`}
         </p>
       </div>
       <div className="">
