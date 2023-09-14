@@ -1,18 +1,15 @@
-import { useState } from 'react';
+const Friend = ({ item, num, selected, onSelected }) => {
+  const open = num === selected;
 
-const Friend = ({ item }) => {
-  const [selected, setSelected] = useState(false);
-
-  function handleSelected(item) {
-    setSelected(!selected);
-    console.log(item);
-  }
+  const handleSelected = function () {
+    onSelected(open ? null : num);
+  };
 
   return (
     <li
       key={item.key}
       className={`w-full h-28 flex flex-row justify-start items-center ${
-        selected ? 'bg-orangeLight' : 'bg-transparent'
+        open ? 'bg-orangeLight' : 'bg-transparent'
       } p-4 rounded-lg mt-4`}
     >
       <img className="rounded-full" src={item.urlImage} alt={item.userName} />
@@ -38,10 +35,10 @@ const Friend = ({ item }) => {
       </div>
       <div className="">
         <button
-          onClick={() => handleSelected(item.key)}
+          onClick={handleSelected}
           className="w-full bg-orangeMedium hover:bg-orangeDark text-[#343a40] font-bold px-4 py-2 border-none text-2xl rounded-lg transition-all duration-300"
         >
-          {selected ? 'Close' : 'Select'}
+          {open ? 'Close' : 'Select'}
         </button>
       </div>
     </li>

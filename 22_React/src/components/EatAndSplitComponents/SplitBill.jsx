@@ -1,6 +1,18 @@
-const SplitBill = () => {
+const SplitBill = ({ items, selected }) => {
+  console.log(items);
+  console.log(selected);
+
+  const friend = items.filter(item => item.id === selected);
+  console.log(friend);
+
   return (
-    <div className="bg-orangeLight col-start-2 col-end-3 row-start-1 row-end-3">
+    <div
+      className={`${
+        selected === null
+          ? 'hidden bg-orangeLight col-start-2 col-end-3 row-start-1 row-end-3'
+          : 'bg-orangeLight col-start-2 col-end-3 row-start-1 row-end-3'
+      }`}
+    >
       <h2 className="text-4xl uppercase font-bold mt-4 p-6">
         Split a bill with Javi
       </h2>
@@ -17,7 +29,7 @@ const SplitBill = () => {
         </div>
         <div className="flex flex-row items-center col-start-1 col-end-3 p-4">
           <label className="w-2/3 text-2xl font-bold mr-4">
-            🧑‍🤝‍🧑Sarah`s expense
+            🧑‍🤝‍🧑Sarah`s {friend.userName} expense
           </label>
           <input className="w-1/3 text-2xl col-start-2 col-end-3 bg-white border-[0.2px] border-grey3 rounded-lg p-4"></input>
         </div>
