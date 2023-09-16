@@ -1,4 +1,3 @@
-import styles from './PackingList.module.css';
 import Item from './Item';
 import { useState } from 'react';
 
@@ -20,8 +19,8 @@ const PackingList = ({ items, onDeleteItem, onToggleItem, onClearList }) => {
     sortedItems = items.filter(item => item.packed === true);
 
   return (
-    <div className={styles.list}>
-      <ul>
+    <div className="bg-[#5a3e2b] text-[#ffebb3] px-6 flex flex-col justify-between items-center gap-6">
+      <ul className="w-2/3 grid grid-cols-list uppercase py-[0.8rem] px-[2.4rem] text-4xl font-bold my-0 mx-[0.8rem]">
         {sortedItems.map(item => (
           <Item
             key={item.id}
@@ -32,9 +31,9 @@ const PackingList = ({ items, onDeleteItem, onToggleItem, onClearList }) => {
           />
         ))}
       </ul>
-      <div className={styles.actions}>
+      <div className="flex flex-row gap-6 uppercase py-[0.8rem] px-[2.4rem] text-4xl font-bold my-0 mx-[0.8rem] ">
         <select
-          className={styles.form__title}
+          className="w-fit bg-[#ffebb3] text-[#5a3e2b] border-none rounded-2xl font-bold cursor-pointer p-4"
           value={sortBy}
           onChange={e => setSortBy(e.target.value)}
         >
@@ -43,7 +42,10 @@ const PackingList = ({ items, onDeleteItem, onToggleItem, onClearList }) => {
           <option value="packed">Sort by packed status</option>
           <option value="packedStatus">Order by packed status</option>
         </select>
-        <button className={styles.form__title} onClick={onClearList}>
+        <button
+          className="w-fit bg-[#ffebb3] text-[#5a3e2b] border-none rounded-2xl font-bold cursor-pointer p-4"
+          onClick={onClearList}
+        >
           Clear list
         </button>
       </div>

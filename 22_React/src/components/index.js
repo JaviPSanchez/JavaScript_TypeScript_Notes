@@ -5,8 +5,9 @@ import Stats from './FarAwayComponents/Stats';
 import Generator from './GeneratorFunctionAsStateMachine';
 import Item from './Accordion/Item';
 import FriendList from './EatAndSplitComponents/FriendList';
-import AddFriend from './EatAndSplitComponents/AddFriend';
-import SplitBill from './EatAndSplitComponents/SplitBill';
+import FormAddFriend from './EatAndSplitComponents/FormAddFriend';
+import FormSplitBill from './EatAndSplitComponents/FormSplitBill';
+import Button from './EatAndSplitComponents/Button';
 
 export {
   Form,
@@ -16,6 +17,7 @@ export {
   Stats,
   Item,
   FriendList,
-  AddFriend,
-  SplitBill,
+  FormAddFriend,
+  FormSplitBill,
+  Button,
 };

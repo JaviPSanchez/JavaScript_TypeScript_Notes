@@ -1,20 +1,8 @@
-const SplitBill = ({ items, selected }) => {
-  console.log(items);
-  console.log(selected);
-
-  const friend = items.filter(item => item.id === selected);
-  console.log(friend);
-
+const SplitBill = ({ selectedFriend }) => {
   return (
-    <div
-      className={`${
-        selected === null
-          ? 'hidden bg-orangeLight col-start-2 col-end-3 row-start-1 row-end-3'
-          : 'bg-orangeLight col-start-2 col-end-3 row-start-1 row-end-3'
-      }`}
-    >
-      <h2 className="text-4xl uppercase font-bold mt-4 p-6">
-        Split a bill with Javi
+    <div className="bg-orangeLight rounded-xl">
+      <h2 className="text-4xl uppercase font-bold mt-4 p-6 font-Rubik">
+        Split a bill with {selectedFriend.name}
       </h2>
       <form className="grid gap-6 grid-cols-2 grid-rows-4">
         <div className="flex flex-row items-center col-start-1 col-end-3 p-4">
@@ -29,7 +17,7 @@ const SplitBill = ({ items, selected }) => {
         </div>
         <div className="flex flex-row items-center col-start-1 col-end-3 p-4">
           <label className="w-2/3 text-2xl font-bold mr-4">
-            🧑‍🤝‍🧑Sarah`s {friend.userName} expense
+            🧑‍🤝‍🧑 {selectedFriend.name} expense
           </label>
           <input className="w-1/3 text-2xl col-start-2 col-end-3 bg-white border-[0.2px] border-grey3 rounded-lg p-4"></input>
         </div>
@@ -38,8 +26,8 @@ const SplitBill = ({ items, selected }) => {
             😊 Who is paying the bill?
           </label>
           <select className="w-1/3 text-2xl col-start-2 col-end-3 bg-white border-[0.2px] border-grey3 rounded-lg p-4">
-            <option>You</option>
-            <option>Other</option>
+            <option value="user">You</option>
+            <option value="friend">{selectedFriend.name}</option>
           </select>
         </div>
         <div className="flex flex-row items-center col-start-2 col-end-3 p-4">

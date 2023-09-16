@@ -1,4 +1,3 @@
-import styles from './FarAway.module.css';
 import { Logo, Form, PackingList, Stats } from '@components';
 import { useState } from 'react';
 
@@ -29,7 +28,7 @@ const FarAway = () => {
   }
 
   return (
-    <div className={styles.app}>
+    <div className="text-4xl font-Quicksand font-medium w-screen h-screen grid grid-rows-list">
       <Logo />
       <Form onAddItems={handleAddItems} />
       <PackingList

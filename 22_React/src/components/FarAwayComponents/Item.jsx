@@ -1,15 +1,14 @@
-import styles from './Item.module.css';
-
 const Item = ({ item, onDeleteItem, onToggleItem }) => {
   return (
-    <li className={styles.list}>
+    <li className="flex justify-center items-center gap-4">
       <input
+        className="h-[2rem] w-[2rem]  accent-[#e5771f]"
         type="checkbox"
         value={item.packed}
         onChange={() => onToggleItem(item.id)}
       />
       <span
-        className={styles.items}
+        className="flex justify-between items-center p-2 gap-4"
         style={item.packed ? { textDecoration: 'line-through' } : {}}
       >
         <span>{item.quantity}</span>
@@ -18,7 +17,7 @@ const Item = ({ item, onDeleteItem, onToggleItem }) => {
 
       <button
         onClick={() => onDeleteItem(item.id)}
-        className={styles.deleteItem}
+        className="bg-none text-2xl"
       >
         ❌
       </button>

@@ -10,6 +10,12 @@ module.exports = {
   theme: {
     extend: {
       scrollbarWidth: ['hover', 'focus'],
+      gridTemplateColumns: {
+        list: 'repeat(auto-fit, minmax(250px, 1fr))',
+      },
+      gridTemplateRows: {
+        list: '180px 100px minmax(200px, 1fr) 120px',
+      },
       fontSize: {
         '4xl': [
           '2rem',
@@ -42,6 +48,7 @@ module.exports = {
         dark2: '#8898a2',
         dark3: '#385364',
         error: '#fc8181',
+        red: '#ff0000',
 
         orangeLightess: '#fff4e6',
         orangeLight: '#ffe8cc',
@@ -63,6 +70,8 @@ module.exports = {
     },
     fontFamily: {
       Rubik: ['Rubik', 'sans-serif'],
+      Quicksand: ['Quicksand', 'sans-serif'],
+      Monoton: ['Monoton', 'sans-serif'],
     },
   },
   plugins: [

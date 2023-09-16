@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './ArrayMethods2022.module.css';
+import styles from '@styles';
 /*
 These 3 new methods [toReversed(), toSorted() and toSpliced()] are new methods of Array in JavaScript
 that are proposed for the ECMAScript 2022 standard, they are similar to the existing methods reverse(), sort() and splice(),
@@ -55,13 +55,32 @@ const ArrayMethods = () => {
     setNumbers(splicedNumbers);
   };
   return (
-    <div className={styles.container}>
-      <h1>Array Methods Demo</h1>
-      <p>Current array: {numbers.join(', ')}</p>
-      <div className={styles.wrapper}>
-        <button onClick={handleReverse}>Reverse</button>
-        <button onClick={handleSort}>Sort</button>
-        <button onClick={handleSplice}>Splice</button>
+    <div
+      className={`${styles.centerPosition} min-w-fit min-h-[250px] flex flex-col justify-center items-center bg-orangeLightess rounded-2xl drop-shadow-2xl p-6`}
+    >
+      <h1 className="text-3xl font-bold m-4">Array Methods Demo</h1>
+      <p className="text-3xl font-bold m-4 bg-grey2 rounded-lg p-6 drop-shadow-2xl">
+        Current array: {numbers.join(', ')}
+      </p>
+      <div className="flex flex-row justify-center items-center">
+        <button
+          className="w-2/5 m-6 bg-orangeMedium hover:bg-orangeDark text-[#343a40] font-bold px-4 py-2 border-none text-2xl rounded-lg transition-all duration-300"
+          onClick={handleReverse}
+        >
+          Reverse
+        </button>
+        <button
+          className="w-2/5 m-6 bg-orangeMedium hover:bg-orangeDark text-[#343a40] font-bold px-4 py-2 border-none text-2xl rounded-lg transition-all duration-300"
+          onClick={handleSort}
+        >
+          Sort
+        </button>
+        <button
+          className="w-2/5 m-6 bg-orangeMedium hover:bg-orangeDark text-[#343a40] font-bold px-4 py-2 border-none text-2xl rounded-lg transition-all duration-300"
+          onClick={handleSplice}
+        >
+          Splice
+        </button>
       </div>
     </div>
   );

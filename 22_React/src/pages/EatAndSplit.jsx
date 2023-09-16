@@ -1,32 +1,49 @@
 import styles from '@styles';
 import { useState } from 'react';
-import { FriendList, AddFriend, SplitBill } from '@components';
-import data from '@data';
+import { FriendList, FormAddFriend, FormSplitBill, Button } from '@components';
+import { initialFriends } from '@data';
 
 const EatAndSplit = () => {
-  const [items, setItems] = useState(data);
-  const [selected, setSelected] = useState(null);
-  const [open, setOpen] = useState(false);
+  const [friends, setFriends] = useState(initialFriends);
+  const [selectedFriend, setSelectedFriend] = useState(null);
+  const [showAddFriend, setShowAddFriend] = useState(false);
+
+  console.log(friends);
+  console.log(selectedFriend);
 
   function handleAddFriend(item) {
-    setItems(items => [...items, item]);
+    setFriends(initialFriends => [...initialFriends, item]);
+    setShowAddFriend(false);
+  }
+
+  function handleShowFriend() {
+    setShowAddFriend(show => !show);
+  }
+
+  function handleSelection(friend) {
+    setSelectedFriend(currentState =>
+      currentState?.id === friend.id ? null : friend,
+    );
+    setShowAddFriend(false);
   }
 
   return (
     <div
-      className={`${styles.centerPosition} min-w-[750px] min-h-[500px] flex flex-col justify-start items-start bg-orangeLightess rounded-2xl drop-shadow-2xl p-6`}
+      className={`${styles.centerPosition} min-w-[800px] min-h-[600px] flex flex-row justify-start items-start gap-6 bg-orangeLightess rounded-2xl drop-shadow-2xl p-6`}
     >
-      <div className="w-full max-h-[600px] grid gap-6 grid-cols-2 grid-rows-3">
+      <div className="w-1/2 flex flex-col justify-center items-start">
         <FriendList
-          items={items}
-          selected={selected}
-          onSelected={setSelected}
-          open={open}
-          onOpen={setOpen}
+          friends={friends}
+          selectedFriend={selectedFriend}
+          onSelection={handleSelection}
         />
-        <SplitBill items={items} selected={selected} />
-        <AddFriend onAddFriend={handleAddFriend} open={open} onOpen={setOpen} />
+
+        {showAddFriend && <FormAddFriend onAddFriend={handleAddFriend} />}
+        <Button onClick={handleShowFriend}>
+          {showAddFriend ? 'Close' : 'Add Friend'}
+        </Button>
       </div>
+      {selectedFriend && <FormSplitBill selectedFriend={selectedFriend} />}
     </div>
   );
 };

@@ -1,9 +1,7 @@
-import styles from './Stats.module.css';
-
 const Stats = ({ items }) => {
   if (!items.length)
     return (
-      <em className={styles.stats}>
+      <em className="bg-[#76c7ad] font-bold text-center p-6 flex justify-center items-center">
         Start adding items to your packing list ✌️!
       </em>
     );
@@ -13,7 +11,7 @@ const Stats = ({ items }) => {
   console.log(percentage);
 
   return (
-    <footer className={styles.stats}>
+    <footer className="bg-[#76c7ad] font-bold text-center p-6 flex justify-center items-center">
       <em>
         {percentage !== 100
           ? `💼 You have ${numItems} items on your list, and you already packed ${numPacked} (${percentage}%)`

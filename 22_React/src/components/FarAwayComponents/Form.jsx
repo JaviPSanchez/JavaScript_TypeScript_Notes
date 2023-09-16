@@ -1,4 +1,3 @@
-import styles from './Form.module.css';
 import { useState } from 'react';
 
 const Form = ({ onAddItems }) => {
@@ -20,10 +19,13 @@ const Form = ({ onAddItems }) => {
   }
 
   return (
-    <form className={styles.addForm} onSubmit={handleSubmit}>
-      <h3 className={styles.title}>What do you need for your 😍 trip?</h3>
+    <form
+      className="bg-[#e5771f] px-0 py-6 flex justify-center items-center gap-4"
+      onSubmit={handleSubmit}
+    >
+      <h3>What do you need for your 😍 trip?</h3>
       <select
-        className={styles.form__title}
+        className="w-fit bg-[#ffebb3] text-[#5a3e2b] border-none rounded-2xl font-bold cursor-pointer p-4"
         value={quantity}
         onChange={e => setQuantity(+e.target.value)}
       >
@@ -34,13 +36,15 @@ const Form = ({ onAddItems }) => {
         ))}
       </select>
       <input
-        className={styles.form__title}
+        className="w-fit bg-[#ffebb3] text-[#5a3e2b] border-none rounded-2xl font-bold cursor-pointer p-4"
         type="text"
         placeholder="Item..."
         value={description}
         onChange={e => setDescription(e.target.value)}
       />
-      <button className={styles.form__title}>Add</button>
+      <button className="w-fit bg-[#76c7ad] uppercase text-[#5a3e2b] border-none rounded-2xl font-bold cursor-pointer p-4">
+        Add
+      </button>
     </form>
   );
 };

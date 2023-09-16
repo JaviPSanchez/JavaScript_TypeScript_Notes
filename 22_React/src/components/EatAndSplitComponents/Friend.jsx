@@ -1,45 +1,39 @@
-const Friend = ({ item, num, selected, onSelected }) => {
-  const open = num === selected;
+import { Button } from '@components';
 
-  const handleSelected = function () {
-    onSelected(open ? null : num);
-  };
+const Friend = ({ friend, onSelection, selectedFriend }) => {
+  const isSelected = selectedFriend?.id === friend.id;
 
   return (
     <li
-      key={item.key}
       className={`w-full h-28 flex flex-row justify-start items-center ${
-        open ? 'bg-orangeLight' : 'bg-transparent'
-      } p-4 rounded-lg mt-4`}
+        isSelected ? 'bg-orangeLight' : 'bg-transparent'
+      } p-4 rounded-lg mt-4 hover:bg-orangeLight transition-all duration-300`}
     >
-      <img className="rounded-full" src={item.urlImage} alt={item.userName} />
+      <img className="rounded-full" src={friend.image} alt={friend.name} />
       <div className="w-full flex flex-col justify-center items-start px-6">
-        <span className="w-full text-xl">{item.userName}</span>
+        <span className="w-full text-xl">{friend.name}</span>
         <p
           className={`text-xl ${
-            item.balance > 0
+            friend.balance > 0
               ? 'text-red-400'
-              : item.balance < 0
+              : friend.balance < 0
               ? 'text-green-600'
-              : item.balance === 0
+              : friend.balance === 0
               ? 'text-black'
               : 'text-black'
           }`}
         >
-          {item.balance > 0
-            ? `You own ${item.userName} ${Math.abs(item.balance)}€`
-            : item.balance < 0
-            ? `${item.userName} owes you ${Math.abs(item.balance)}€`
-            : `You and ${item.userName} are even`}
+          {friend.balance > 0
+            ? `You own ${friend.name} ${Math.abs(friend.balance)}€`
+            : friend.balance < 0
+            ? `${friend.name} owes you ${Math.abs(friend.balance)}€`
+            : `You and ${friend.name} are even`}
         </p>
       </div>
-      <div className="">
-        <button
-          onClick={handleSelected}
-          className="w-full bg-orangeMedium hover:bg-orangeDark text-[#343a40] font-bold px-4 py-2 border-none text-2xl rounded-lg transition-all duration-300"
-        >
-          {open ? 'Close' : 'Select'}
-        </button>
+      <div>
+        <Button onClick={() => onSelection(friend)}>
+          {isSelected ? 'Close' : 'Select'}
+        </Button>
       </div>
     </li>
   );

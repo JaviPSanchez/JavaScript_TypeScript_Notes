@@ -1,14 +1,20 @@
-import styles from './Steps.module.css';
+import styles from '@styles';
 import { useState } from 'react';
 
 const FirstStep = ({ step }) => {
-  return <p>{`Step ${step}: Learn React 🧪`}</p>;
+  return (
+    <p className="text-4xl font-Rubik font-bold">{`Step ${step}: Learn React 🧪`}</p>
+  );
 };
 const SecondStep = ({ step }) => {
-  return <p>{`Step ${step}: Enjoy the right 🏋️‍♀️ `}</p>;
+  return (
+    <p className="text-4xl font-Rubik font-bold">{`Step ${step}: Enjoy the voyage 🏋️‍♀️ `}</p>
+  );
 };
 const ThirdStep = ({ step }) => {
-  return <p>{`Step ${step}: Make friends 🙌`}</p>;
+  return (
+    <p className="text-4xl font-Rubik font-bold">{`Step ${step}: Make friends 🙌`}</p>
+  );
 };
 
 const Steps = () => {
@@ -23,33 +29,41 @@ const Steps = () => {
   }
 
   return (
-    <div className={styles.container}>
+    <div
+      className={`${styles.centerPosition} min-w-[400px] min-h-[300px] flex flex-col justify-center items-center bg-orangeLightess rounded-2xl drop-shadow-2xl p-6`}
+    >
       {open && (
-        <div className={styles.steps}>
-          <div className={styles.numbers}>
+        <>
+          <div className="flex justify-between gap-6 text-2xl relative m-10">
             <span
               className={
-                step >= 1 ? styles.stepNumberActive : styles.stepNumberNormal
+                step >= 1
+                  ? 'h-[4rem] w-[4rem] bg-[#aa41e7] p-2 rounded-full text-white font-bold text-4xl text-center'
+                  : 'h-[4rem] w-[4rem] bg-[#f0edf1] p-2 rounded-full text-black font-bold text-4xl text-center'
               }
             >
               1
             </span>
             <span
               className={
-                step >= 2 ? styles.stepNumberActive : styles.stepNumberNormal
+                step >= 2
+                  ? 'h-[4rem] w-[4rem] bg-[#aa41e7] p-2 rounded-full text-white font-bold text-4xl text-center'
+                  : 'h-[4rem] w-[4rem] bg-[#f0edf1] p-2 rounded-full text-black font-bold text-4xl text-center'
               }
             >
               2
             </span>
             <span
               className={
-                step === 3 ? styles.stepNumberActive : styles.stepNumberNormal
+                step === 3
+                  ? 'h-[4rem] w-[4rem] bg-[#aa41e7] p-2 rounded-full text-white font-bold text-4xl text-center'
+                  : 'h-[4rem] w-[4rem] bg-[#f0edf1] p-2 rounded-full text-black font-bold text-4xl text-center'
               }
             >
               3
             </span>
           </div>
-          <div className={styles.messageContainer}>
+          <div className="text-black font-bold text-center m-10">
             {step === 1 ? (
               <FirstStep step={step} />
             ) : step === 2 ? (
@@ -59,19 +73,25 @@ const Steps = () => {
             )}
           </div>
 
-          <div className={styles.buttonsContainer}>
-            <Button className={styles.button} onClick={handlePrevious}>
+          <div className="flex justify-between items-center m-10 text-2xl gap-6">
+            <Button
+              className="text-white bg-[#aa41e7] w-fit  rounded-xl p-2"
+              onClick={handlePrevious}
+            >
               <span>👈</span>Previous
             </Button>
-            <Button className={styles.button} onClick={handleNext}>
+            <Button
+              className="text-white bg-[#aa41e7] w-fit rounded-xl p-2"
+              onClick={handleNext}
+            >
               Next<span>👉</span>
             </Button>
           </div>
-        </div>
+        </>
       )}
       <button
         onClick={() => setOpen(currentState => !currentState)}
-        className={styles.close}
+        className="absolute w-20 h-20 text-center text-6xl text-white bg-[#aa41e7] rounded-full top-[-50px] right-[-50px] "
       >
         &times;
       </button>
