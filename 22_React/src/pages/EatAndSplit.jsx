@@ -8,9 +8,6 @@ const EatAndSplit = () => {
   const [selectedFriend, setSelectedFriend] = useState(null);
   const [showAddFriend, setShowAddFriend] = useState(false);
 
-  console.log(friends);
-  console.log(selectedFriend);
-
   function handleAddFriend(item) {
     setFriends(initialFriends => [...initialFriends, item]);
     setShowAddFriend(false);
@@ -25,6 +22,18 @@ const EatAndSplit = () => {
       currentState?.id === friend.id ? null : friend,
     );
     setShowAddFriend(false);
+  }
+
+  function handleSplitBill(value) {
+    setFriends(currentFriends =>
+      currentFriends.map(friend =>
+        friend.id === selectedFriend.id
+          ? { ...friend, balance: friend.balance + value }
+          : friend,
+      ),
+    );
+
+    setSelectedFriend(null);
   }
 
   return (
@@ -43,7 +52,12 @@ const EatAndSplit = () => {
           {showAddFriend ? 'Close' : 'Add Friend'}
         </Button>
       </div>
-      {selectedFriend && <FormSplitBill selectedFriend={selectedFriend} />}
+      {selectedFriend && (
+        <FormSplitBill
+          selectedFriend={selectedFriend}
+          onSplitBill={handleSplitBill}
+        />
+      )}
     </div>
   );
 };

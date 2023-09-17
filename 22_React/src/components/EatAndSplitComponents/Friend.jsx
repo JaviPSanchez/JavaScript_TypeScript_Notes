@@ -13,11 +13,11 @@ const Friend = ({ friend, onSelection, selectedFriend }) => {
       <div className="w-full flex flex-col justify-center items-start px-6">
         <span className="w-full text-xl">{friend.name}</span>
         <p
-          className={`text-xl ${
-            friend.balance > 0
-              ? 'text-red-400'
-              : friend.balance < 0
-              ? 'text-green-600'
+          className={`text-xl font-bold mt-2 ${
+            friend.balance < 0
+              ? 'text-green-400'
+              : friend.balance > 0
+              ? 'text-red'
               : friend.balance === 0
               ? 'text-black'
               : 'text-black'
