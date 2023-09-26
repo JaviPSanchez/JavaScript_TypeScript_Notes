@@ -7,6 +7,7 @@ import ArrayMethods from './ArrayMethods2022';
 import Accordion from './Accordion';
 import TipCalculator from './TipCalculator';
 import EatAndSplit from './EatAndSplit';
+import StartRating from './StartRating';
 
 export {
   FarAway,
@@ -18,4 +19,5 @@ export {
   Accordion,
   TipCalculator,
   EatAndSplit,
+  StartRating,
 };

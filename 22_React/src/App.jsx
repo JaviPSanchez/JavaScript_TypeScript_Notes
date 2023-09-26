@@ -9,6 +9,7 @@ import {
   Accordion,
   TipCalculator,
   EatAndSplit,
+  StartRating,
 } from '@pages';
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
       {/* <FarAway /> */}
       {/* <Accordion /> */}
       {/* <TipCalculator /> */}
-      <EatAndSplit />
+      {/* <EatAndSplit /> */}
+      <StartRating />
     </>
   );
 }
