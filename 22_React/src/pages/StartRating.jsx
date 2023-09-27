@@ -1,17 +1,15 @@
 import styles from '@styles';
 import { useState } from 'react';
-import { ImStarEmpty, ImStarHalf, ImStarFull } from 'react-icons/im';
+import { RxStarFilled } from 'react-icons/rx';
 
-const StartRating = () => {
-  const [currentRating, setCurrentRating] = useState(null);
-  const [hover, setHover] = useState(null);
-  console.log(currentRating);
+export function StarHover({ hover, onSetHover, onSetCurrentRating }) {
   return (
-    <div
-      className={`${styles.centerPosition} min-w-[300px] min-h-[250px] flex flex-row justify-center items-center bg-orangeLightess rounded-2xl drop-shadow-2xl p-6`}
-    >
+    <div className="flex flex-row">
       {Array.from({ length: 5 }, (_, index) => {
         const currentRating = index + 1;
+        console.log(currentRating);
+        console.log(hover);
+
         return (
           <label key={index}>
             <input
@@ -19,28 +17,46 @@ const StartRating = () => {
               type="radio"
               name="rating"
               value={currentRating}
-              onClick={() => setCurrentRating(currentRating)}
+              onClick={() => onSetCurrentRating(currentRating)}
             />
-            <ImStarEmpty
-              key={index}
-              size={40}
-              className="cursor-pointer"
-              color={
+            <RxStarFilled
+              className={`w-12 h-12 cursor-pointer hover:scale-110 active:scale-90 ${
                 currentRating <= (hover || currentRating)
-                  ? '#ffc107'
-                  : '#e4e5e9'
-              }
-              onMouseEnter={() => setHover(currentRating)}
-              onMouseLeave={() => setHover(null)}
+                  ? 'text-[#ffc107]'
+                  : 'text-[#e4e5e9]'
+              }`}
+              onMouseOver={() => onSetHover(currentRating)}
+              onMouseOut={() => onSetHover(currentRating)}
             />
-            ;
           </label>
         );
       })}
-      <p className="text-2xl">Your Rating is {currentRating}</p>
+    </div>
+  );
+}
 
-      {/* <ImStarHalf className="w-12 h-12" />
-      <ImStarFull className="w-12 h-12" /> */}
+const StartRating = () => {
+  const [currentRating, setCurrentRating] = useState(0);
+  const [hover, setHover] = useState(0);
+
+  return (
+    <div
+      className={`${styles.centerPosition} min-w-[300px] min-h-[250px] flex flex-col justify-center items-center bg-orangeLightess rounded-2xl drop-shadow-2xl p-6`}
+    >
+      <StarHover
+        hover={hover}
+        onSetHover={setHover}
+        onSetCurrentRating={setCurrentRating}
+      />
+
+      <div className="m-6 flex flex-col items-center">
+        <p className="text-2xl font-bold">
+          Your Rating is: {!currentRating ? 'Not selected yet' : currentRating}
+        </p>
+        <p className="text-2xl font-bold m-6">
+          Your Hover is: {!currentRating ? 'Not selected yet' : hover}
+        </p>
+      </div>
     </div>
   );
 };
