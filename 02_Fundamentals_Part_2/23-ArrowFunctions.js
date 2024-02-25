@@ -1,7 +1,9 @@
 /*
 ************************ ARROW FUNCTIONS ****************
 
-En ES6 se agrego otro tipo de function, la ARROW FUNCTION, basicamente utiliza los simbolos => de ahi su nombre. La ventaja que tiene es que no necesitamos ni parentesis ni nada, es muy simple, util cuando solo buscamos un parametro aunque podemos implimentar varios parametros.
+En ES6 se agrego otro tipo de function, la ARROW FUNCTION, basicamente utiliza los simbolos => de ahi su nombre.
+
+La ventaja que tiene es que no necesitamos ni parentesis ni nada, es muy simple, util cuando solo buscamos un parametro aunque podemos implimentar varios parametros.
 */
 const calcAge3 = (birthYeah) => 2021 - birthYeah;
 const age3 = calcAge3(1987);

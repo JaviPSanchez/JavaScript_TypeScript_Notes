@@ -1,18 +1,23 @@
 /*
 *********** FUNCTIONS CALLING OTHER FUNCTIONS ************
 
-Basicamente llamamos a una funcion desde el cuerpo o interior de orientation, este workflow pasa todo el rato en JS el objetivo es el de siempre, no repetirse mucho en el codigo. DRYER PRINCIPLE!!
+Basicamente llamamos a una funcion desde el cuerpo o interior de orientation,
+este workflow pasa todo el rato en JS el objetivo es el de siempre, no repetirse mucho en el codigo. DRYER PRINCIPLE!!
 */
+
 function cutFruitPieces(fruit) {
   return fruit * 4;
 }
+
 function fruitProcessor(apples, oranges) {
   const applePieces = cutFruitPieces(apples);
   const orangesPieces = cutFruitPieces(oranges);
   const juice = `Juice with ${applePieces} pieces of apples and ${orangesPieces} pieces of oranges.`;
   return juice;
 }
+
 console.log(fruitProcessor(5, 2));
+
 /*
 LECTURE: Functions Calling Other Functions
 1. Create a function called 'describePopulation'. Use the function type you
