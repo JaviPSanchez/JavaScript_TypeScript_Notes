@@ -1,3 +1,5 @@
+// ES5 (La epoca JQuery)
+
 // ES6 (ES2015)
 
 //1️⃣ Let and const
@@ -101,3 +103,50 @@
 //2️⃣ Object.hasOwn()
 
 //2️⃣ Regexp match Indices : match .indices ('d' flag)
+
+// ES14 (ES2023)
+
+//Avoid reverse order searches or complex index calculations
+Array.findLast(); // find()
+Array.findLastIndex(); // findIndex()
+
+const isEven = (number) => number % 2 === 0;
+const numbers = [1, 2, 3, 4];
+// Traditional search (first to last)
+console.log(numbers.find(isEven)); // Output: 2
+console.log(numbers.findIndex(isEven)); // Output: 1
+// New reverse search (last to first)
+console.log(numbers.findLast(isEven)); // Output: 4
+console.log(numbers.findLastIndex(isEven)); // Output: 3
+
+Array.toReversed();
+Array.toSorted();
+Array.toSpliced(start, deletedCount, ...inde);
+Array.with(index, value);
+
+/*
+Hashbang Grammar
+
+It formalizes the usage of Hashbangs (also known as Shebangs), which are directives
+typically found at the beginning of Unix-based scripts that determine the interpreter for the script.
+
+This update means that JavaScript can now standardly interpret scripts beginning with a hashbang,
+specifically in a Node.js environment. It essentially allows the execution of JavaScript scripts
+as standalone executables.
+*/
+
+#!/usr/bin/env node
+console.log('Hello, World!');
+
+/*
+Let  Symbols to serve as keys in WeakMaps. Prior to ES2023, only Objects were permissible
+as WeakMap keys, despite Symbols also being unique and non-duplicable, making them ideal candidates.
+*/
+const weak = new WeakMap();
+const key = Symbol("ref");
+weak.set(key, "Hello world, JS2023!");
+console.log(weak.get(key)); // Output: Hello world, JS2023!
+
+// ES15 (ES2024)
+
+

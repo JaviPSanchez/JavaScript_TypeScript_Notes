@@ -1,11 +1,17 @@
 'use strict';
 
 /*
-Hasta ahora hemos aprendido algunas cosas sobre DOM manipulation, como seleccionar elementos o incluso cambiar aspectos graficos de nuestro sitio web a partir de JS y la API DOM.
+Hasta ahora hemos aprendido algunas cosas sobre DOM manipulation,
+como seleccionar elementos o incluso cambiar aspectos graficos de nuestro
+sitio web a partir de JS y la API DOM.
 
-No obstante queda un largo camino por recorrer, para seguir aprendiendo vamos a continuar con nuestro projecto BANKIST pero mas orientado al diseño web con JS y no tanto el desarollo de la APP.
 
-Aprenderemos diferentes VISUAL COMPONENTS and VISUAL EFFECTS que requieren avanzadas manipulaciones del DOM.
+No obstante queda un largo camino por recorrer,
+para seguir aprendiendo vamos a continuar con nuestro projecto BANKIST
+pero mas orientado al diseño web con JS y no tanto el desarollo de la APP.
+
+Aprenderemos diferentes VISUAL COMPONENTS and VISUAL EFFECTS
+que requieren avanzadas manipulaciones del DOM.
 
 Muchas de estas herramientas pueden ser introducidas con third party libraries, como BOOTSTRAP o JQUERY pero nosotros vamos a utilizar JS y DOM que es el objetivo de este curso...
 

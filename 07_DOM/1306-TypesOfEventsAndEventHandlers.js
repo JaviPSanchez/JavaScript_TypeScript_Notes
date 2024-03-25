@@ -1,17 +1,23 @@
 'use strict';
 
 /*
-Ya hemos trabajado con EVENTS antes, pero conviene añadir conceptos importantes para dar un poco de claridad a estas funciones.
+Ya hemos trabajado con EVENTS antes, pero conviene añadir conceptos importantes
+para dar un poco de claridad a estas funciones.
 
-Un EVENT es basicamente una señal generada por un DOM NODE, cuando hablamos de señal queremos decir algo que ha ocurrido, como un click en una zona especifica o el raton moviendose o el usuario accionando el modo full screen, etc.
+Un EVENT es basicamente una señal generada por un DOM NODE,
+cuando hablamos de señal queremos decir algo que ha ocurrido,
+como un click en una zona especifica o el raton moviendose o el
+usuario accionando el modo full screen, etc.
 
-Todo lo que ocurre en nuestra WebPage genera un EVENTO. Como sabemos podemos escuchar estos eventos con los EventListeners.
+Todo lo que ocurre en nuestra WebPage genera un EVENTO.
+Como sabemos podemos escuchar estos eventos con los EventListeners.
+
+Hasta ahora hemos trabajado bastante con el "click" EVENT LISTENER.
+
+Ahora vamos a ver otro tipo de EVENT, el MOUSE ENTER EVENT (Que vendria a ser como el :hover en CSS)
+
+Definimos y seleccionamos, como siempre:
 */
-
-//Hasta ahora hemos trabajado basdtante con el "click" EVENT LISTENER. Ahora vamos a ver otro tipo de EVENT, el MOUSE ENTER EVENT (Que vendria a ser como el :hover en CSS).
-
-//Definimos y seleccionamos, como siempre:
-
 const h1 = document.querySelector('h1');
 
 //Escuchamos

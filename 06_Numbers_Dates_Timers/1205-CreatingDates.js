@@ -1,6 +1,6 @@
 'use strict';
 
-const account2 = {
+const account1 = {
   owner: 'Jessica Davis',
   movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
   interestRate: 1.5,
@@ -75,14 +75,24 @@ console.log(3 * 24 * 60 * 60 * 1000); //259200000
 //Working with DATES
 
 const future = new Date(2037, 10, 19, 15, 23);
-console.log(future.getFullYear()); //2037
-console.log(future.getYear()); //137 NO FUNCIONA, siempre usar getFullYear!!
-console.log(future.getMonth()); //10
-console.log(future.getDate()); //19
-console.log(future.getHours()); //4 Es el dia de la semana, jueves!
-console.log(future.getMinutes()); //23
-console.log(future.getSeconds()); //0
-console.log(future.toISOString()); //2037-11-19T14:23:00.000Z Esto es el ISO STRING que sigue algun tipo de standart internacional...
+console.log(future.getDate());
+console.log(future.getMonth());
+console.log(future.getFullYear());
+console.log(future.getYear());
+console.log(future.getHours());
+console.log(future.getMinutes());
+console.log(future.getSeconds());
+console.log(future.getMilliseconds());
+console.log(future.getTime());
+console.log(future.setDate(23));
+console.log(future.setMonth(3));
+console.log(future.setFullYear(2024));
+console.log(future.setHours(10));
+console.log(future.setMinutes(45));
+console.log(future.setSeconds(49));
+console.log(future.setMilliseconds(300));
+console.log(future.setTime(1648101488176));
+console.log(future.toISOString());
 
 //Podemos tambien obtener el TIMESTAMP de la fecha, no olvidar que el TIMESTAMP son los milisegundos que han pasado desde el 1 de Enero de 1970!
 
@@ -109,3 +119,19 @@ console.log(future); //Mon Nov 19 2040 15:23:00 GMT+0100 (Central European Stand
 
 future.setMonth(2040);
 future.setHours(2040);
+
+//Checking Dates in a simple way:
+
+const isValidDate = date => {
+  try {
+    new Date(date).toISOString();
+  } catch (error) {
+    return false;
+  }
+  return true;
+};
+
+console.log(isValidDate('23/23/2021'));
+console.log(isValidDate('2021-11-18'));
+console.log(isValidDate('28 September 2021'));
+console.log(isValidDate('23-11-2021'));

@@ -26,7 +26,7 @@ Veamos un ejemplo, vamos a trabajar con un elemento H1 y a partir de este vamos 
 
 const h1 = document.querySelector('h1');
 
-/////////////////////DOWNWARDS/////////////////////
+// DOWNWARDS
 
 //Going downwards, so basically selecting CHILD ELEMENTS, vamos a seleccionar la class .highlight
 
@@ -58,7 +58,7 @@ console.log(h1.lastElementChild);
 h1.firstElementChild.style.color = 'white'; //Solo el primer CHILD sera modificado.
 h1.lastElementChild.style.color = 'red'; //El ultimo CHILD tendra el color rojo.
 
-////////////////////UPWARDS/////////////////
+// UPWARDS
 
 console.log(h1.parentNode); //Obtendremos el header_title que es el PARENT ELEMENT
 console.log(h1.parentElement); //Mismo que el parenNode, puesto que es un NODE tambien en este caso.
@@ -72,7 +72,7 @@ h1.closest('.header').style.backgroundColor = 'black'; //Cambiamos todo el backg
 
 h1.closest('h1').style.backgroundColor = 'blue'; //est METHOD es muy parecido al querySelector pero mirando hacia arriba en el DOM TREE.
 
-/////////////SIDEWAYS///////////////
+// SIDEWAYS
 
 //Podemos elegir SIBLINGS en el DOM TREE. En JS solo podemos elegir direct siblings, no nos deja ir mas alla. Solo el anterior y el posterior.
 
