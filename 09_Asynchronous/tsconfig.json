@@ -115,12 +115,5 @@
   },
   "exclude": ["node_modules"],
   // "include": ["**/src/*"]
-  "files": [
-    "6_ES6_Classes.ts",
-    "7_Setters_and_Getters.ts",
-    "8_Static_Methods.ts",
-    "9_Abstract_Classes.ts",
-    "10_Private_Constructors_Singleton_Pattern.ts",
-    "11_Object_Create.ts"
-  ]
+  "files": ["19_Promise_withResolvers.ts"]
 }

@@ -65,8 +65,6 @@ document.querySelector('button').addEventListener('click', function () {
   }
 });
 
-('use strict');
-
 /*
 *************************Coding Challenge #1******************
 

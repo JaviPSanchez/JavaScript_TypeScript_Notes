@@ -1,7 +1,7 @@
 'use strict';
 
 /*
-Do you remember how we chained array methods one after another, for example filter map and reduce? So by chaining these methods, we could first filter an array, then map the result. And finally reduce the results of the map, all in one line of code.
+Do you remember how we chained array methods one after another, for example filter map and reduce?
 */
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 const eurToUsd = 1.18;
@@ -74,32 +74,7 @@ acc.requestLoan(12000);
 console.log(acc.getMovements());
 
 /*
-And so let's go do that now. And actually, this is extremely easy to do. So all we have to do is to return the object itself at the end of a method that we want to be chainable. So let's say that we wanted to do this:
+So all we have to do is to return the object itself at the end of a method that we want to be chainable.
 */
 acc.deposit(300).deposit(500).withdraw(50).requestLoan(25000).withdraw(2000);
-/*
-So right now, this is not gonna work. We are trying to call the deposit method on undefined which is the result of all this:
-
-acc.deposit(300)
-
-And therefore we get exactly that error here. So what we need to do is to call deposit actually on an account. And so what we want is for the result of this year to be again the account, right?
-
-And so let's do that.
-
-So all we have to do is return.this:
-*/
-// deposit(val) {
-//     this.#movements.push(val);
-//     return this;
-//   }
-/*
-Because this is of course, the current object. And now we do the same on all of them.
-
-So let's take a look at our account here:
-*/
 console.log(acc.getMovements()); //(8) [250, -140, 12000, 300, 500, -50, 25000, -2000]
-/*
-And so indeed, all the deposits and withdrawals that we just did, are now in this Movements array. Great!.
-
-So with this, you have yet another tool in your toolbox now. I actually showed you all there is to show about Object Oriented Programming in JavaScript. Now, just to really wrap up this section. Next up, I have a nice overview of the entire class syntax and then one final coding challenge.
-*/

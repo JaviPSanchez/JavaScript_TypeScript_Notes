@@ -137,7 +137,9 @@ console.log('UnShift Method :');
 console.log([1, 2, 3, 4].unshift(0)); // a
 
 /*
-✅ SLICE METHOD : Muy parecido al que utilizamos con los STRINGS, podemos extraer una parte de nuestro ARRAY sin modificar el original. Hay que meter el parametro de inicio y el de final (no siendo obligatorio este ultimo), el parametro corresponde al index del ARRAY:
+✅ SLICE METHOD : Muy parecido al que utilizamos con los STRINGS, podemos extraer una parte de
+nuestro ARRAY sin modificar el original. Hay que meter el parametro de inicio y el de final
+(no siendo obligatorio este ultimo), el parametro corresponde al index del ARRAY:
 */
 console.log(arr.slice(2)); //["c", "d", "e"]
 //Podemos indicar el parametro final, el cual no se incluye, ojo!

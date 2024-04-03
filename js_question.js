@@ -76,10 +76,4 @@
 29. Validate if a string contains only valid characters (e.g., alphanumeric).
 30. Count the number of occurrences of a substring in a larger string.
 
-Let's learn and grow together, one coding challenge at a time. Stay tuned for the first solution coming your way shortly!
-
-#frontend #javascript #react #reactjs #html #css #typescript #es6 #interviewquestions #interview
-
-Credit - Priya Bagde ⭐
-
 */

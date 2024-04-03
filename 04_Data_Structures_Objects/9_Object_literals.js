@@ -31,8 +31,9 @@ ES6 ha introducido tres formas de escribir OBJECT LITERALS de una forma mas senc
 */
 /*
 1/ Imaginemos que tenemos el OBJECT openingHours fuera de nuestro OBJECT restaurant,
-y queremos seguir teniendolo dentro, antes de ES6 bastaba con escribir dentro del OBJECT restaurant --> openingHours: openingHours,
-el problema es que tenemos el mismo nombre para la PROPERTIE y la VARIABLE, pudiendo crear confusion.
+y queremos seguir teniendolo dentro, antes de ES6 bastaba con escribir dentro del OBJECT
+restaurant (openingHours: openingHours), el problema es que tenemos el mismo nombre para
+la PROPERTIE y la VARIABLE, pudiendo crear confusion.
 */
 const openingHours = {
   thu: {
@@ -48,6 +49,7 @@ const openingHours = {
     close: 24,
   },
 };
+
 const restaurant2 = {
   name: "Classico Italiano",
   location: "Via Angelo Tavanti 23, Firenze, Italy",
@@ -56,8 +58,9 @@ const restaurant2 = {
   mainMenu: ["Pizza", "Pasta", "Risotto"],
   openingHours: openingHours, //PROPERTIE: VARIABLE,
 };
+
 /*
-Con ENHANCED LITERALS despues de ES6 ya no hace falta hacer esto, basta con scribir la PROPERTIE:
+Con ENHANCED LITERALS despues de ES6 ya no hace falta hacer esto, basta con escribir la PROPERTIE:
 */
 const restaurant3 = {
   name: "Classico Italiano",
@@ -68,7 +71,8 @@ const restaurant3 = {
   openingHours, //PROPERTIE,
 };
 /*
-2/ El segundo ENHANCEMENT TO OBJECTS LITERALS is about writting METHODS, en ES6 no tenemos que seguir creando propiedades y despues asignarla a una FUNCTION EXPRESSION. 
+2/ El segundo ENHANCEMENT TO OBJECTS LITERALS is about writting METHODS, en ES6 no tenemos
+que seguir creando propiedades y despues asignarla a una FUNCTION EXPRESSION. 
 */
 const restaurant4 = {
   name: "Classico Italiano",
@@ -121,5 +125,3 @@ const openingHours2 = {
   },
 };
 console.log(openingHours2);
-
-//Ejemplo practico:

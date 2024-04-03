@@ -90,13 +90,12 @@ Next up, we have inheritance.
 
 So let's say we have these two classes, user and admin, which stands for administrator.
 And as we can see, they have actually a lot in common. In fact, admin has all the properties
-and methods that user has. So in OOP, when we have two classes that are closely related, like user
-and admin, we can have one class inherit from the other. So we will have one parent class and one
-child class, and the child class then extends the parent class. a child class inherits all the
+and methods that user has. So in OOP, when we have two classes that are closely related, we can
+have one class inherit from the other. So we will have one parent class and one
+child class, and the child class then extends the parent class. A child class inherits all the
 properties and methods from its parent class.
 
 4) POLYMORPHISM
-
 
 And finally, the last principle is polymorphism.
 

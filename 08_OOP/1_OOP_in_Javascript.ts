@@ -75,4 +75,6 @@ But behind the scenes, ES6 classes are actually implemented with constructor fun
 use prototypal inheritance. Finally, there's also the object.create() which is basically the easiest and
 most straightforward way of linking an object to a prototype object. However, it's not as used as the other
 two ways.
+
+<cmg /images/Picture30.jpg>
 */
