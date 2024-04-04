@@ -1,6 +1,9 @@
 'use strict';
 
 /*
+
+🔍 Define a higher-order function and provide an example of object or array destructuring.
+
 Vamos a tratar una propiedad fundamental de JS, que es el echo de tener funciones de primer nivel o clase.
 
 Lo cual nos permite escribir higher order functions.

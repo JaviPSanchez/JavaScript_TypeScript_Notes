@@ -1,6 +1,7 @@
 import './main.css';
 
 /*
+🔍 What is event delegation, and how does it function in JavaScript?
 Ahora vamos a hablar de PROTOTYPES, conocemosel  PROTOTYPAL INHERITANCE y DELEGATION.
 Pero como funciona todo esto? Bueno, lo primero que debemos saber es que toda FUNCTION en JS,
 automaticamente, tiene la property llamada PROTOTYPE. Incluyendo por supuesto los CONSTRUCTOR FUNCTIONS.
@@ -92,3 +93,5 @@ Check if javi object has its own method:
 */
 console.log(javi.hasOwnProperty('firstName')); //true
 console.log(javi.hasOwnProperty('species')); //false
+
+// 🔍 Explain the concept of prototypal inheritance.

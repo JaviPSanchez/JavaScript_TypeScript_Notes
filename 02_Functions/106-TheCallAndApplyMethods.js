@@ -1,6 +1,7 @@
 'use strict';
 
 /*
+🔍 Can you elucidate the purposes of Function.call and Function.apply, along with their notable differences?
 En esta seccion volveremos al this KEYWORD que estudiamos en la leccion de JS BEHIND THE SCENES.
 
 Aprenderemos como configurar el this KEYWORD de una forma manual y tambien el porque hacerlo.

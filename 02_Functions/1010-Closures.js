@@ -1,6 +1,7 @@
 'use strict';
 
 /*
+🔍 Define what a closure is and describe its uses and advantages.
 Existe un concepto mistico en las FUNCTIONS de JS que muchos developers no entienden, son lo que se conoce como CLOSURES.
 
 Abrochensen los cinturones, que vienen curvas...

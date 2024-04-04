@@ -3,6 +3,7 @@
 import { restaurant, data } from './assets';
 
 /*
+🔍 Discuss the benefits of using spread syntax and differentiate it from rest syntax.
 Nos permite expand an ARRAY into all its elements.
 So basically, unpacking all the ARRAY elements at one.
 Para poder utilizar el SPREAD OPERATOR hay que escribir ...ARRAY

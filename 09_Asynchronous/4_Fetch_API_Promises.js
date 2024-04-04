@@ -1,6 +1,7 @@
 'use strict';
 
 /*
+🔍 Define what a promise is and describe its applications.
 En la leccion anterior hemos visto un poco el CALLBACK HELL, So in this lecture, let's learn about
 a modern JavaScript feature called promises, so that we can escape callback hell. However, before we
 learn about promises, we should actually see one. And so let's now replace the old XML HTTP request

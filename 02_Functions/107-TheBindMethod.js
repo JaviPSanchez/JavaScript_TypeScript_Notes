@@ -1,6 +1,7 @@
 'use strict';
 
 /*
+🔍 Describe the Function.prototype.bind method.
 Este METHOD es mas importante que el CALL y APPLY METHODS,
 al igual que estos BIND nos permite de una forma manual configurar hacia donde apunta el this keyword para cualquier function call.
 

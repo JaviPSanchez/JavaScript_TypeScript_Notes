@@ -112,3 +112,7 @@ Well, it's actually quite simple. In each class we simply just write a new metho
 And then, according to polymorphism, that login method will overwrite the login method that has been inherited 
 from the user class. And that's actually it.
 */
+
+// 🔍 Clarify the distinctions among 'function User(){}', 'var user = User()', and 'var user = new User()
+
+// 🔍 Explore how Object-Oriented Programming (OOP) principles can be applied when coding in JavaScript.

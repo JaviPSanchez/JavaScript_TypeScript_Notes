@@ -6,16 +6,16 @@
 Los arrays sirven para gestionar toda la info que programamos, son de gran utilidad.
 En vez de escribir como hasta ahora todas la variables una por una, podemos crear un array que almacene toda esta informacion, ahorrandonos codigo:
 */
-const friend1 = "Javi";
-const friend2 = "Meli";
+const friend1 = 'Javi';
+const friend2 = 'Meli';
 const friend3 = 2021 - 1987;
 
-const friends = ["Javi", "Meli", 2021 - 1987];
+const friends = ['Javi', 'Meli', 2021 - 1987];
 // Hay dos formas de crear las Arrays:
 // 1/literal syntax -->
-const friendsLiteral = ["valor1", "valor2", "etc"];
+const friendsLiteral = ['valor1', 'valor2', 'etc'];
 // 2/New Array -->
-const friendsNewArray = new Array("valor1", "valor2", "etc");
+const friendsNewArray = new Array('valor1', 'valor2', 'etc');
 /*
 Para poder sacar la informacion de nuestro array, basta con llamarlo e indicarle la posicion, hay que tener en cuenta que empezamos por el 0.
 */
@@ -28,14 +28,14 @@ friends.length; //hay que tener en cuenta que el resultado que nos da no conside
 
 // En las arrays es posible cambiar un valor, pero solo uno, no podemos cambiar varios valores a la vez.
 
-friends[2] = "Pepe"; // Cambiara el valor de 34, por Pepe.
+friends[2] = 'Pepe'; // Cambiara el valor de 34, por Pepe.
 
-const firstName = "Javi"; //Podemos incluso meter una variable en nuestro array.
-const friends4 = ["firstName", "Meli", 2021 - 1987];
+const firstName = 'Javi'; //Podemos incluso meter una variable en nuestro array.
+const friends4 = ['firstName', 'Meli', 2021 - 1987];
 
 // Incluso podriamos meter otras arrays dentro de una.
 
-const friendsEspagne = ["firstName", friends, "Manuel", 5623]; //Tenemos el array friendsEspagne y dentro el array friends.
+const friendsEspagne = ['firstName', friends, 'Manuel', 5623]; //Tenemos el array friendsEspagne y dentro el array friends.
 /*
 friends = ["Juan", "Manuel"]; //No nos deja
 */
@@ -67,11 +67,11 @@ world population for these 4 population values. Use the function
 percentage values
 */
 
-const populations = ["40", "10", "60", "50"];
+const populations = ['40', '10', '60', '50'];
 if (populations.length >= 4) {
-  console.log("True");
+  console.log('True');
 } else {
-  console.log("False");
+  console.log('False');
 }
 
 function percentageOfWorld(populations) {
