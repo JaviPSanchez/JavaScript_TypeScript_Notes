@@ -1,17 +1,19 @@
 /*
+🔍 Give an example of generating a string using ES6 Template Literals and explain their benefits.
+
 
 Templeate Literals --> Cuando queremos crear frases largas es bastante incomodo
 tener en cuenta todos los espacios, por ello a partir de ES6 debemos utilizar los backtips
 `` y el ${}. Mucho mas limpio y sencillo!
 
 */
-const firstName = "Javi";
-const job = "Digital Manager";
+const firstName = 'Javi';
+const job = 'Digital Manager';
 const birthYear = 1987;
 const year = 2021;
 
 const frase =
-  "I'm " + firstName + ", a " + (year - birthYear) + " years old " + job + "!";
+  "I'm " + firstName + ', a ' + (year - birthYear) + ' years old ' + job + '!';
 console.log(frase);
 
 const fraseLiterals = `I'm ${firstName}, a ${
@@ -25,9 +27,9 @@ las versiones anteriores a ES6 habia que escribir \n\.
 */
 
 console.log(
-  "String with \n\
+  'String with \n\
 multiple \n\
-lines"
+lines'
 );
 
 console.log(`String with
@@ -36,9 +38,9 @@ lines`);
 
 // 1. Recreate the 'description' variable from the last assignment, this time using the template literal syntax
 let population = 66;
-const language = "Spanish";
-const country = "Spain";
-const continent = "Europe";
+const language = 'Spanish';
+const country = 'Spain';
+const continent = 'Europe';
 console.log(population / 2);
 population++;
 console.log(population);

@@ -1,14 +1,16 @@
 /*
 ****************************EQUALITY OPERATORS = vs == vs ===.****************
 
+🔍 Explain the differences between == and ===.
+
 = --> Es un assigment operator, cuando asignamos un valor a una variable.
 === (STRICT) --> cuando es solo y unicamente igual, es strict!.
 */
 const age = 18;
-if (age === 18) console.log("Correcto!"); // con operador === podemos omitir el else.
+if (age === 18) console.log('Correcto!'); // con operador === podemos omitir el else.
 // == (LOOSE) --> es lo mismo que el === pero admite type coercion. intentar usar lo menos posible el double equality, da muchos quebraderos de cabeza!
 const age = 18;
-if (age == 18) console.log("Correcto!");
+if (age == 18) console.log('Correcto!');
 
 /*
 // LECTURE: Equality Operators: == vs. ===
@@ -31,15 +33,15 @@ when you input 1
 situation
 */
 const numNeighbourds = Number(
-  prompt("How many neighbour countries does your country have?")
+  prompt('How many neighbour countries does your country have?')
 );
 console.log(typeof numNeighbourds);
 if (numNeighbourds === 1) {
-  console.log("Only 1 border!");
+  console.log('Only 1 border!');
 } else if (numNeighbourds > 1) {
-  console.log("More than 1 border");
+  console.log('More than 1 border');
 } else {
-  console.log("No borders");
+  console.log('No borders');
 }
 
 const favourite = prompt("What's your favourite number?"); // Nos pedira escribir un valor en el browser, el cual sera guardado como String en la variable favourite.
@@ -47,31 +49,31 @@ console.log(favourite);
 console.log(typeof favourite);
 if (favourite == 8) {
   // Aqui estamos usando el loose equality operator, luego hacemos type coercion, convertirá el string "23" a numero y dara un valor logico true, puesto que 23 = 23.
-  console.log("Cool! 8 mola!");
+  console.log('Cool! 8 mola!');
 }
 const favourite = prompt("What's your favourite number?");
 
 if (favourite === 8) {
   // Aqui al usar el triple operador, nos dara false, puesto que el string "23" no es igual al numero 23. no hace type coercion.
-  console.log("Cool! 8 mola!");
+  console.log('Cool! 8 mola!');
 } // Aqui para poder cambiar a numerop la string guaradad, hay que utilizar el operador number.
 
 const favourite = Number(prompt("What's your favourite number?"));
 if (favourite === 8) {
   // 8 = 8
-  console.log("Cool! 8 mola!");
+  console.log('Cool! 8 mola!');
 }
 
 // ELSE IF --> podemos añadir tantas veces como queramos mas condiciones a un statement IF / ELSE:
 const favourite = Number(prompt("What's your favourite number?"));
 if (favourite === 8) {
-  console.log("Cool! 8 mola!");
+  console.log('Cool! 8 mola!');
 } else if (favourite === 7) {
-  console.log("Cool! 7 its also nice!");
+  console.log('Cool! 7 its also nice!');
 } else if (favourite === 9) {
-  console.log("Cool! 9 its also nice!");
+  console.log('Cool! 9 its also nice!');
 } else {
-  console.log("Number is neither 8 nor 7 or 9");
+  console.log('Number is neither 8 nor 7 or 9');
 }
 
 /*
@@ -79,9 +81,9 @@ if (favourite === 8) {
 // != --> LOOSE OPERATORS. intentar no usar!
 // !== --> STRICT OPERATOR.
 */
-const favourite = Number(prompt("Elige un numero entre 7 y 9 incluidos?"));
+const favourite = Number(prompt('Elige un numero entre 7 y 9 incluidos?'));
 if (favourite !== 9) {
-  console.log("¿No te gusta el 9?");
+  console.log('¿No te gusta el 9?');
 } else {
-  console.log("El 9 me encanta.");
+  console.log('El 9 me encanta.');
 }

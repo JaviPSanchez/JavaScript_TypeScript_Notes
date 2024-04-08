@@ -1,8 +1,8 @@
 /*
-**********************TYPE CONVERSION********************************
+🔍 What is type coercion, and what are some common pitfalls associated with relying on it in JavaScript code?
 
+En JS tenemos Type Conversion (cuando convertimos manualmente un valor en otro) y Type Coercion (cuando JS lo hace por nosotros).
 */
-// En JS tenemos Type Conversion (cuando convertimos manualmente un valor en otro) y Type Coercion (cuando JS lo hace por nosotros).
 
 const inputYear = '1987';
 console.log(Number(inputYear)); //La funcion Number convierte nuestro string en un number, pero no modifica la variable inputYear, dejandola definida como una string. Las Boleanas no pueden convertirse.

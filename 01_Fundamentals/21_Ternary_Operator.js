@@ -1,5 +1,7 @@
 /*
 
+🔍 Why is it referred to as a "Ternary operator," and what does the term "Ternary" signify?
+
 Hay una forma de hacer el Statement if / else en una sola linea, usando los signos ?, :
 */
 

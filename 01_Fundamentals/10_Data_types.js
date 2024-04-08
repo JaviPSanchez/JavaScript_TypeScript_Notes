@@ -1,6 +1,8 @@
 /*
 *****************DATA TYPES*****************************
 
+🔍 Differentiate between a variable that is null, undefined, or undeclared.
+
 En la leccion anterior vimos la diferencia entre VALUES y VARIABLES.
 
 Now in every program language VALUES can have different types depending on the type of data that we want them to hold like STRINGS or NUMBER.
@@ -13,7 +15,7 @@ Tipos de PRIMITIVAS:
 */
 let age = 23;
 // 2/STRING : Secuencia de caracteres.
-let firstName = "Javi";
+let firstName = 'Javi';
 // 3/BOOLEAN : es un valor logico que sera toma un valor TRUE o FALSE
 let fullage = true;
 // 4/UNDEFINED : Un valor que aun no hemos asignado a una variable
