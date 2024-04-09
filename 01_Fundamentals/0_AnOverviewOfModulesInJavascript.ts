@@ -1,11 +1,15 @@
 'use strict';
 
 /*
-Modules are a super important part of software development. And so in this lecture, we're gonna talk about modules in more depth and learn how they work behind the scenes.
+Modules are a super important part of software development.
+
+And so in this lecture, we're gonna talk about modules in more depth and learn how they work behind the scenes.
 
 What's a module?
 
-So essentially, a module is a reusable piece of code that encapsulates implementation details of a certain part of our project. That sounds a bit like a function or even a class, but the difference is that a module is usually a standalone file. Now that's not always the case, but normally when we think of a module we think of a separate file.
+So essentially, a module is a reusable piece of code that encapsulates implementation details
+of a certain part of our project. That sounds a bit like a function or even a class, but the
+difference is that a module is usually a standalone file. Now that's not always the case, but normally when we think of a module we think of a separate file.
 
 So of course a module always contains some code but it can also have imports and exports. So with exports, as the name says, we can export values out of a module
 for example, simple values or even entire functions. And whatever we export from a module is called the public API. So this is just like classes where we can also expose a public API for other codes to consume.
