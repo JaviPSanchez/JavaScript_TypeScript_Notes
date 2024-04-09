@@ -1,9 +1,0 @@
-"use strict";
-require('./node_modules/lodash-es/cloneDeep.js');
-var _shoppingCartJs = require('./1705-shoppingCart.js');
-var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
-var _shoppingCartJsDefault = _parcelHelpers.interopDefault(_shoppingCartJs);
-_shoppingCartJsDefault.default('pizza', 2);
-_shoppingCartJsDefault.default('bread', 5);
-_shoppingCartJsDefault.default('apples', 4);
-console.log(_shoppingCartJs.cart);
