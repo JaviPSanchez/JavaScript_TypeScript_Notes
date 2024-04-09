@@ -1,11 +1,13 @@
 /*
 🔍 What is type coercion, and what are some common pitfalls associated with relying on it in JavaScript code?
 
-En JS tenemos Type Conversion (cuando convertimos manualmente un valor en otro) y Type Coercion (cuando JS lo hace por nosotros).
+En JS tenemos:
+👉 Type Conversion (cuando convertimos manualmente un valor en otro)
+👉 Type Coercion (cuando JS lo hace por nosotros).
 */
 
 const inputYear = '1987';
-console.log(Number(inputYear)); //La funcion Number convierte nuestro string en un number, pero no modifica la variable inputYear, dejandola definida como una string. Las Boleanas no pueden convertirse.
+console.log(Number(inputYear));
 console.log(Number('Hola')); //Si no es un number, no convierte nada. NaN.
 console.log(Number(inputYear) + 18);
 console.log(String(23)); //Convertimos un Number en String
@@ -18,7 +20,7 @@ console.log('23' + '10' + '3'); // = 23103 aqui no hay problema, todo convertido
 console.log(2 + 3 + 4 + '5'); // "95" String, con el +, hacemos String.
 console.log('10' - '4' - '3' - 2 + '5'); // "15"
 console.log('23' > '10'); // true
-console.log('I am ' + String(25) + ' years old'); //pero sino la hace como en muchos otros lenguajes deberemos hacerlo manualmente.
+console.log('I am ' + String(25) + ' years old');
 /*
 LECTURE: type Conversion and Coercion
 

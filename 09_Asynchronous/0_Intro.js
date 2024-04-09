@@ -1,6 +1,9 @@
 'use strict';
 
 /*
+
+🔍 Differentiate between synchronous and asynchronous functions and elucidate the event loop.
+
 So, the goal of asynchronous JavaScript is basically to deal with long-running tasks,
 that basically run in the background.
 

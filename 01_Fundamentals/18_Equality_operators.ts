@@ -1,14 +1,14 @@
 /*
-****************************EQUALITY OPERATORS = vs == vs ===.****************
+EQUALITY OPERATORS = vs == vs ===
 
 🔍 Explain the differences between == and ===.
 
 = --> Es un assigment operator, cuando asignamos un valor a una variable.
-=== (STRICT) --> cuando es solo y unicamente igual, es strict!.
+=== (STRICT) --> cuando es solo y unicamente igual, es strict!
 */
 const age = 18;
 if (age === 18) console.log('Correcto!'); // con operador === podemos omitir el else.
-// == (LOOSE) --> es lo mismo que el === pero admite type coercion. intentar usar lo menos posible el double equality, da muchos quebraderos de cabeza!
+// == (LOOSE) --> es lo mismo que el === pero admite type coercion. Evitar!
 const age = 18;
 if (age == 18) console.log('Correcto!');
 

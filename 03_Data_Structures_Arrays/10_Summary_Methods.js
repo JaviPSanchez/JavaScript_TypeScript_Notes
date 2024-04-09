@@ -1,6 +1,11 @@
 'use strict';
 
 /*
+
+🔍 Explain the primary distinction between the Array.forEach() loop and Array.map() method,
+as well as when to choose one over the other.
+
+
 Hemos utilizado desde el comienzo del curso nada mas y nada menos que 23 ARRAY METHODS!!!
 
 <cmg /images/Picture5.jpg>

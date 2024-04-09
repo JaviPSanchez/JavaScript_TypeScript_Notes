@@ -3,42 +3,28 @@
 
 OPERATORS PRECEDENCE
 
-JS tiene una tabla de precedence, se puede ver en : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
-Hay que tener en cuenta que algunos Operators empiezan a leerse por la derecha en vez de hacerlo por la izquierda como en la mayoria de las ocasiones.
+JS tiene una tabla de precedence, se puede ver en
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+Hay que tener en cuenta que algunos Operators empiezan a leerse por la derecha en vez de hacerlo
+por la izquierda como en la mayoria de las ocasiones.
 */
-let x, y;
-x = y = 25 - 10 - 5; // x = y = 10, y = 10, si lo hiciesemos al reves no funcionaria: x = y es Indifined.
+let x: number, y: number;
+x = y = 25 - 10 - 5; // x = y = 10, y = 10, si lo hiciesemos al reves no funcionaria: x = y es Undefined
 console.log(x, y);
 
-const yearNow = 2021;
-const ageJavi = yearNow - 1987;
-const ageMelissa = yearNow - 1989;
-const averageAge = (ageJavi + ageMelissa) / 2; // Aqui si no indicamos los parentesis, que tienen la mayor preferencia, no funcionaria.
-console.log(ageJavi, ageMelissa, averageAge);
-
 //  Math Operators - + / * **
-const yearNow2 = 2021;
-const ageJavi2 = yearNow2 - 1987;
-const ageMelissa2 = yearNow2 - 1989;
-console.log(ageJavi2, ageMelissa2);
-console.log(ageJavi2 * 2, ageJavi2 / 10, ageJavi2 ** 3); // 2 ** 3 means 2 to the power of 3 = 2 * 2* 2
+const ageJavi = 37;
+console.log(ageJavi * 2, ageJavi / 10, ageJavi ** 3);
 
-const firstName = 'Javier';
-const secondName = 'Palomino';
-console.log(firstName + ' ' + secondName);
-
-// typeof operator --> Nos dice que tipo de VALUE es.
-
-console.log(typeof 2365);
-console.log(typeof 'javi');
-
-/**************Assignment operators***************/
+/*
+Assignment operators
+*/
 
 // Addition assignment (+=)
 
 let a = 2;
 let b = 'hello';
-console.log((a += 3)); // a = a + 3; a = 2 + 3
+console.log((a += 3)); // a = a + 3
 //  5
 console.log((b += ' world')); // concatenation
 // "hello world"
@@ -67,6 +53,7 @@ x++ --> If used postfix, with operator "++"" after operand "x" (for example, x++
 the increment operator increments and returns the value before incrementing.
 */
 let w = 3;
+let z;
 z = w++;
 console.log(z);
 console.log(w);
@@ -116,6 +103,7 @@ console.log(n); //3
 x-- --> If used postfix, with operator after operand (for example, x--), the decrement operator decrements and returns the value before decrementing.
 */
 let p = 3;
+let q: number;
 q = p--;
 console.log(q); //3
 console.log(p); //2
@@ -123,12 +111,16 @@ console.log(p); //2
 --x --> If used prefix, with operator before operand (for example, --x), the decrement operator decrements and returns the value after decrementing.
 */
 let r = 2;
+let s: number;
 s = --r;
 console.log(r); //1
 console.log(s); //1
 
 // Comparison Operators --> Para producir Boolean Values
-
+const yearNow = new Date();
+console.log(yearNow.getFullYear());
+const ageMelissa = 34;
 console.log(ageJavi > ageMelissa); // <, >, >=; <=
 console.log(ageMelissa >= 18);
+
 console.log(yearNow - 1987 > yearNow - 1989); //¿como sabe JS que operacion hacer primero?

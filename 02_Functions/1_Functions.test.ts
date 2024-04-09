@@ -1,6 +1,10 @@
 import './main.css';
 import { expect, it } from 'vitest';
 /*
+
+🔍 What distinguishes an "attribute" from a "property"?
+
+
 Es basicamente pequeños chunks de codigo que podemos reutilizar una y otra vez.
 Es como una variable pero con grandes trozos de codigo en ella. Nos permite tener
 un codigo mas manejable, pudiendo usar la funcion tantas veces como queramos en vez

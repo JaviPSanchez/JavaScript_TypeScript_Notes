@@ -1,5 +1,7 @@
 import { data } from './assets';
 
+//🔍 Enumerate the benefits and drawbacks of immutability and explain how you can achieve it in your code.
+
 function getBooks() {
   return data;
 }

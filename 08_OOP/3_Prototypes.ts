@@ -1,6 +1,7 @@
 import './main.css';
 
 /*
+🔍 List the advantages and disadvantages of extending built-in JavaScript objects.
 🔍 What is event delegation, and how does it function in JavaScript?
 Ahora vamos a hablar de PROTOTYPES, conocemosel  PROTOTYPAL INHERITANCE y DELEGATION.
 Pero como funciona todo esto? Bueno, lo primero que debemos saber es que toda FUNCTION en JS,

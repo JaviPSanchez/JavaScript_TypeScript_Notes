@@ -1,6 +1,9 @@
 'use strict';
 
 /*
+
+🔍 Explain how code sharing between files can be accomplished.
+
 Besides native ES Modules, and the module pattern, there are also other module systems, that have been used by JavaScript in the past. But again, they were not native JavaScript. so they relied on some external implementations.
 
 And two examples are: AMD Modules, and CommonJS modules. And in fact, CommonJS modules, are worth taking a look at. And so let's do that now. Now CommonJS modules are important for us, because they have been used in Node.js, for almost all of its existence. So only very recently, ES Modules have actually been implemented, in Node.js.

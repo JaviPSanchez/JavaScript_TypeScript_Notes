@@ -9,22 +9,23 @@ Hay 5 valores falsos :
     4/ null.
     5/ NaN.
 */
-console.log(Boolean(0)); // False
+console.log(Boolean(0)); // Falsy
 console.log(Boolean(1)); // True
-console.log(Boolean(undefined)); //False
-console.log(Boolean("Javi")); // No es un String vacio, luego es Truthy
-console.log(Boolean(" ")); // False
+console.log(Boolean(undefined)); // Falsy
+console.log(Boolean('Javi')); // No es un String vacio, luego es Truthy
+console.log(Boolean(' ')); // Falsy
+
 // Hay veces que bajo situaciones logicas JS convierte automaticamente a Booleanas:
 const money = 0;
 if (money) {
-  console.log("Do not spend it all");
+  console.log('Do not spend it all');
 } else {
-  console.log("You should invest better your money");
+  console.log('You should invest better your money');
 } // Aqui nos dara el valor de else, porque supone una booleana 0. FALSY.
 
 let height;
 if (height) {
-  console.log("Height its defined!");
+  console.log('Height its defined!');
 } else {
-  console.log("It is not defined!");
-} // Aqui supone que la variable height es indifined, luego es FALSY.
+  console.log('It is not defined!');
+} // Aqui supone que la variable height es Undefined, luego es FALSY.

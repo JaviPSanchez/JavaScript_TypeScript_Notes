@@ -1,6 +1,8 @@
 'use strict';
 
 /*
+🔍 Describe event bubbling and event capturing.
+
 Vamos a ver una propiedad muy importante de los EVENT LISTENERS, esta es la llamada CAPTURING PHASE y la BUBBLING PHASE.
 
 En la siguiente imagen podemos ver un HTML document muy simple junto a un DOM TREE apuntando a un anchor ELEMENT.

@@ -1,6 +1,8 @@
 'use strict';
 /*
 Vamos a aprender un nuevo feature para los OBJECTs y los ARRAYS, que se llama OPTIONAL CHAINING.
+
+Basicamente nos permite ahorrarnos los LOGICAL OPERATORS y los IF STATEMENTS.
 */
 import { restaurant, data } from '../03_Data_Structures/assets';
 
@@ -10,30 +12,26 @@ Imaginemos que queremos sacar el OBJECT openingHours de nuestro OBJECT restauran
 console.log(restaurant.openingHours.mon); //Undefined
 /*
 Como podemos ver esta propiedad no existe, pero imaginemos que no sabemos si el restaurante abre los lunes,
-la informacion viene de un web service, una API, que gestiona miles de restaurantes. Imaginemos que queremos saber incluso el horario:
-*/
-// console.log(restaurant.openingHours.mon.open);
-//TypeError: Cannot read property 'open' of undefined
-/*
+la informacion viene de un web service, una API, que gestiona miles de restaurantes.
+
 Para evitar este error, primero tenemos que saber si restaurant.openingHours.mon existe:
 */
 if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open); //Undefined
 if (restaurant.openingHours.fri) console.log(restaurant.openingHours.fri.open); //11
-/* Tambien podria pasar que openingHours no exista, restaurant.openingHours, siendo undefined. En este caso tendremos que mirar los dos, openingHours y el dia de la semana, quedando:
+/*
+Tambien podria pasar que openingHours no exista, restaurant.openingHours, siendo undefined.
+En este caso tendremos que mirar los dos, openingHours y el dia de la semana, quedando:
  */
 if (restaurant.openingHours && restaurant.openingHours.mon)
   console.log(restaurant.openingHours.mon.open); //Undefined
-//Esto se puede complicar aun mas en NESTED OBJECTS...
 /*
-A partir de ES2020 se introdujo una solucion, que es OPTIONAL CHAINING ?, si una PROPERTIE no existe entonces undefined es devuelto inmediatamente,
-basicamente la PROPERTIE que este justo antes del signo ? sera evaluada y solo si existe seguira con la siguiente:
+A partir de ES2020 se introdujo una solucion, que es OPTIONAL CHAINING ?, si una PROPERTY no
+existe entonces undefined es devuelto inmediatamente, basicamente la PROPERTY que este justo
+antes del signo ? sera evaluada y solo si existe seguira con la siguiente:
 */
 // console.log(restaurant.openingHours.mon.open); //Error
 console.log(restaurant.openingHours.mon?.open); //Undefined
-// Tambien podriamos tener MULTIPLES OPTIONAL CHAININGs.
 /*
-En resumidas cuentas con los signos ?, podemos ahorrarnos los LOGICAL OPERATORS y los IF STATEMENTS.
-
 Imaginemos que queremos obtener la informacion de apertura de un restaurante,
 a partir de un ARRAY obtenido de una API que nos diga los dias que abre de la semana y la hora:
 */

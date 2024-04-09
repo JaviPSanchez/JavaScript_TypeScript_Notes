@@ -115,5 +115,5 @@
   },
   "exclude": ["node_modules"],
   // "include": ["**/src/*"]
-  "files": ["0_Interfaces_Functions.ts", "1_Functions.test.ts"]
+  "files": ["01_Interfaces_Objects.ts"]
 }
