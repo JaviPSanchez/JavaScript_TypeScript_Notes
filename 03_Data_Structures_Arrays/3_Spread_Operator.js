@@ -4,13 +4,13 @@ import { restaurant, data } from './assets';
 
 /*
 🔍 Discuss the benefits of using spread syntax and differentiate it from rest syntax.
-Nos permite expand an ARRAY into all its elements.
+
+Nos permite expandir un ARRAY into all its elements.
 So basically, unpacking all the ARRAY elements at one.
 Para poder utilizar el SPREAD OPERATOR hay que escribir ...ARRAY
 
 Esta sería la forma tradicional o mas dolorosa de hacer:
 */
-
 const arr = [7, 8, 9];
 const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
 console.log(badNewArr); //[1, 2, 7, 8, 9]
@@ -23,15 +23,21 @@ console.log(newARRAY); // [1, 2, 7, 8, 9]
 console.log(...newARRAY); // 1 2 7 8 9
 
 /*
-Esto es util cuando queremos expandir un ARRAY y tambien cuando queremos pasar argumentos dentro de funciones!
-Imaginemos que queremos crear un nuevo menu con mas platos:
+Esto es util cuando queremos expandir un ARRAY y tambien cuando queremos
+pasar argumentos dentro de funciones! Imaginemos que queremos crear un
+nuevo menu con mas platos:
 */
 
-const newMenu = [...restaurant.mainMenu, 'Gnocci'];
 console.log(restaurant.mainMenu); //["Pizza", "Pasta", "Risotto"]
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
 console.log(newMenu); // ["Pizza", "Pasta", "Risotto", "Gnocci"]
+
 /*
-SPREAD es muy parecido al DESTRUCTURING ambos nos ayudan a sacar elementos de ARRAYS o OBJECTS, pero la gran diferencia es que el SPREAD saca todos los elementos y NO crea nuevas variables. Como consecuencia we can only use it in places where we would otherwise write values separated by commas.
+SPREAD es muy parecido al DESTRUCTURING ambos nos ayudan a sacar elementos de
+ARRAYS o OBJECTS, pero la gran diferencia es que el SPREAD saca todos los
+elementos y NO crea nuevas variables. Como consecuencia we can only use it
+in places where we would otherwise write values separated by commas.
+
 There are two important use cases for SPREAD OPERATOR:
 
 1/ CREATE SHALLOW COPIES OF ARRAYS
@@ -46,7 +52,10 @@ const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
 console.log(menu); //["Pizza", "Pasta", "Risotto", "Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"]
 
 /*
-Hay que tener en cuenta que el SPREAD OPERATOR funciona en todos los ITERABLES (things like STRINGS, MAPS, SETS, ARRAYS) but NOT OBJECTS. So, basically most of the built-in DATA STRUCTURES in JS are now ITERABLES except OBJECTS.
+Hay que tener en cuenta que el SPREAD OPERATOR funciona en todos los ITERABLES
+(things like STRINGS, MAPS, SETS, ARRAYS) but NOT OBJECTS. So, basically most
+of the built-in DATA STRUCTURES in JS are now ITERABLES except OBJECTS.
+
 Como STRINGS son ITERABLES podemos usar el SPREAD OPERATOR.
 */
 
@@ -56,33 +65,38 @@ const strTotal = [...str1, 'y', ...str2];
 console.log(strTotal); // ["J", "a", "v", "i", "y", "M", "e", "l", "i", "s", "s", "a"]
 
 /*
-Solo podemos usar el SPREAD OPERATOR when building an ARRAY or when passing arguments into a function.
-But, what we can't do is to use this to build a string using a template literal.
+Solo podemos usar el SPREAD OPERATOR when building an ARRAY or when passing
+arguments into a function. But, what we can't do is to use this to build a
+string using a template literal.
 */
-// console.log(`${...str}` Palomino); // SyntaxError: Unexpected token '...'
+console.log(`${...str}` Palomino); // SyntaxError: Unexpected token '...'
 /*
-Podemos crear una FUNCTION que acepte multiple arguments and then use the SPREAD OPERATOR to pass those ARGUMENTS. Vamos a crear otro METHOD en nuestro ARRAY restaurant encargado de pedir pasta con tres ingredientes, queremos ademas obtener estos ingredientes con el prompt window:
+Podemos crear una FUNCTION que acepte multiple arguments and then use the SPREAD OPERATOR
+to pass those ARGUMENTS. Vamos a crear otro METHOD en nuestro ARRAY restaurant encargado
+de pedir pasta con tres ingredientes, queremos ademas obtener estos ingredientes con el
+prompt window:
 */
 
-// const ingredients = [
-//   prompt('Que primer ingrediente quieres?'),
-//   prompt('Que segundo ingrediente quieres?'),
-//   prompt('Que tercer ingrediente quieres?'),
-// ];
+const ingredients = [
+  prompt('Que primer ingrediente quieres?'),
+  prompt('Que segundo ingrediente quieres?'),
+  prompt('Que tercer ingrediente quieres?'),
+];
 
-// console.log(ingredients); // ["a", "b", "c"] Datos que metemos en el BROWSER.
+console.log(ingredients); // ["a", "b", "c"]
 
 //Forma larga
 
-// restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
 
 //Forma SPREAD
 
-// restaurant.orderPasta(...ingredients);
+restaurant.orderPasta(...ingredients);
 
 /*
-NOTA IMPORTANTE!!! desde ES2018 SPREAD OPERATOR funciona también con OBJECTS a pesar de que no sean ITERABLES.
-Vamos a crear un nuevo OBJECT utilizando la info dentro de restaurant y añadiéndole información adicional
+NOTA IMPORTANTE!!! desde ES2018 SPREAD OPERATOR funciona también con OBJECTS
+a pesar de que no sean ITERABLES. Vamos a crear un nuevo OBJECT utilizando la
+info dentro de restaurant y añadiéndole información adicional
 */
 
 const newRestaurant = { ...restaurant, founder: 'Javier', foundedIn: 2021 };

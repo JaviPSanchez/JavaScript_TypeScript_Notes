@@ -5,10 +5,14 @@ pero no por un nombre en particular. Pero afortunadamente en JS tenemos otro tip
 structure, los Objects, donde podemos meter key value pairs, permitiendonos asignar nombres
 a los valores.
 
-Los objetos a diferencia de las arrays llevan los curly braces {}, conocidos como el object literal syntex, porque estamos literalmente escribiendo un objeto. Hay muchas formas de crear Objects en JS, es lo mas fundamental. El orden en los objects no importa como si era importante en los arrays, obligandonos ha acceder por posicion. Por lo que arrays, son utiles para datos ordenados, y los objects para datos unstructured.
+Los objetos a diferencia de las arrays llevan los curly braces {}, conocidos como el object
+literal syntax, porque estamos literalmente escribiendo un objeto. Hay muchas formas de crear
+Objects en JS. El orden en los objects no importa como si era importante en los arrays,
+obligandonos ha acceder por posicion. Por lo que arrays, son utiles para datos ordenados,
+y los objects para datos unstructured.
 */
 
-// Podemos ver como cada valor/key/propertie tiene un nombre, en el siguiente ejemplo tenemos el objeto javi con 5 propiedades y cada propiedad tiene un valor
+// objeto javi con 5 propiedades y cada propiedad tiene un valor
 const javi = {
   firstName: "Javi",
   lastName: "Palomino",

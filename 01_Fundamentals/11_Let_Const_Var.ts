@@ -9,31 +9,22 @@ Stored in Global Scope:   ❌     ❌     ✅
 // Declare a global variable with var
 console.log(globalVar); // undefined
 var globalVar = 'I am a global variable declared with var';
-console.log(window);
-// Declare a global variable with let
-// console.log(globalLet); // Reference Error
+console.log(globalLet); // Reference Error
 let globalLet = 'I am a global variable declared with let';
-// Declare a global variable with const
-// console.log(globalConst); // Reference Error
+console.log(globalConst); // Reference Error
 const globalConst = 'I am a global variable declared with const';
 /*
                 Const    Let    Var
-Function Scope:   ❌     ❌     ✅
+Function Scope:   ✅     ✅     ✅
 */
 function test() {
   var a = 10;
   console.log("Value of 'a' inside funuction", a);
 }
 test();
-try {
-  console.log("Triyng  to access 'a' defined in function ");
-  console.log(a);
-} catch (error) {
-  console.log(error.message);
-}
 /*
                 Const    Let    Var
-Block Scope:     ❌      ❌     ✅
+Block Scope:     ✅      ✅     ❌
 */
 var sandwich = 'tuna';
 let drink = 'soda';

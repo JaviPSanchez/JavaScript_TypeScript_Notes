@@ -115,5 +115,5 @@
   },
   "exclude": ["node_modules"],
   // "include": ["**/src/*"]
-  "files": ["01_Interfaces_Objects.ts"]
+  "files": ["0_Interfaces_Objects.ts"]
 }
