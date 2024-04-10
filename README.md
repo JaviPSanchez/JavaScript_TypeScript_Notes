@@ -1,15 +1,12 @@
 # JavaScript and TypeScript Notes
 
----
-
 <div>
 <p align="center">
-  <a href=https://react.gg/?s=rjsiq>
-    <img src="./images/collab/uidev-banner4x.png" alt="React interview" width="100%">
+  <a href=https://javips.digital>
+    <img src="./images/Background.png" alt="" width="100%">
   </a>
 </p>
 </div>
----
 
 ### Table of Contents
 
@@ -18,16 +15,17 @@
 Hide/Show table of contents
 </summary>
 
-| No. | Questions                                                                                                  |
-| --- | ---------------------------------------------------------------------------------------------------------- |
-| 1   | [Modules in Javasript](#modules-in-Javasript)                                                              |
-| 2   | [What is a prototype chain](#what-is-a-prototype-chain)                                                    |
-| 3   | [What is the difference between Call, Apply and Bind](#what-is-the-difference-between-call-apply-and-bind) |
-| 4   | [What is JSON and its common operations](#what-is-json-and-its-common-operations)                          |
+| No. | Questions                       |
+| --- | ------------------------------- |
+| 1   | [Modules in JS](#modules-in-JS) |
+| 2   |                                 |
+| 3   |                                 |
+| 4   |                                 |
+| 5   |                                 |
 
 </details>
 
-1. ### Modules in Javasript
+1. ### Modules in JS
 
    There are many ways to create objects in javascript as mentioned below:
 
@@ -50,4 +48,4 @@ Hide/Show table of contents
 
       ![Screenshot](images/Picture06.JPG)
 
-2. ### What is a prototype chain
+2. ### Work in Progress
