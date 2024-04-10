@@ -34,10 +34,10 @@ Hide/Show table of contents
    Modules are a super important part of software development.
 
    **:one:** Modules naturally lead to a more organized code.<br />
-   **:two:**Modules are a reusable piece of code that encapsulates implementation details
+   **:two:** Modules are a reusable piece of code that encapsulates implementation details
    of a certain part of our project. Like a function or even a class, but the difference
    is that a module is usually a standalone and separate file.<br />
-   **:three:**Whatever we export from a module is called the public API. So this
+   **:three:** Whatever we export from a module is called the public API. So this
    is just like classes where we can also expose a public API for other codes to consume.<br />
 
    Now, in the case of modules, this public API is actually consumed by importing values into a module.
