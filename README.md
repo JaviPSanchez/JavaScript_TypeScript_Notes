@@ -48,6 +48,6 @@ Hide/Show table of contents
 
       **[⬆ Back to Top](#table-of-contents)**
 
-      ![Screenshot](images/Picture06.jpg)
+      ![Screenshot](images/Picture06.JPG)
 
 2. ### What is a prototype chain
