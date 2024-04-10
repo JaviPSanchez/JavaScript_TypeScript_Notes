@@ -1,41 +1,59 @@
 'use strict';
 
 /*
-Modules are a super important part of software development.
-
 What's a module?
 
-So essentially, a module is a reusable piece of code that encapsulates implementation details
-of a certain part of our project. That sounds a bit like a function or even a class, but the
-difference is that a module is usually a standalone file. Now that's not always the case, but
-normally when we think of a module we think of a separate file.
+Modules are a super important part of software development.
 
-So of course a module always contains some code but it can also have imports and exports. So
-with exports, as the name says, we can export values out of a module for example, simple values
-or even entire functions. And whatever we export from a module is called the public API. So this
+1️⃣ Modules naturally lead to a more organized code.
+2️⃣ Modules are a reusable piece of code that encapsulates implementation details
+of a certain part of our project. Like a function or even a class, but the difference
+is that a module is usually a standalone and separate file.
+3️⃣ Whatever we export from a module is called the public API. So this
 is just like classes where we can also expose a public API for other codes to consume.
 
-Now, in the case of modules, this public API is actually consumed by importing values into a module. So just like we can export values in modules, we can usually also import values from other modules. And these other modules from which we import are then called dependencies of the importing module because the code that is in the module that is importing cannot work without the code, that it is importing from the external module, right?
+Now, in the case of modules, this public API is actually consumed by importing values into a module.
+So just like we can export values in modules, we can usually also import values from other modules.
+And these other modules from which we import are then called dependencies of the importing module
+because the code that is in the module that is importing cannot work without the code, that it is
+importing from the external module, right?
 
 <cmg ../images/Picture06.jpg>
 
-And this entire logic that I just described is true for all modules in all programming languages. So this is not specific to only JavaScript. In fact, modules are a pattern that developers have been using in all languages for decades. Now, of course we can write code without modules, and actually we've been doing that up until this point, but that's because our applications have been very simple. However, when a code base grows bigger and bigger, there start to be many advantages of using modules.
+And this entire logic that I just described is true for all modules in all programming languages.
+So this is not specific to only JavaScript. In fact, modules are a pattern that developers have
+been using in all languages for decades. Now, of course we can write code without modules, and
+actually we've been doing that up until this point, but that's because our applications have been
+very simple. However, when a code base grows bigger and bigger, there start to be many advantages
+of using modules.
 
-And the first one is that modules make it really easy to compose software. So we can think of modules as small building blocks that we can then put together in order to build really complex applications. And I think it might be helpful to look at a more real world example, to understand all the benefits of modules.
+And the first one is that modules make it really easy to compose software. So we can think of modules
+as small building blocks that we can then put together in order to build really complex applications.
+And I think it might be helpful to look at a more real world example, to understand all the benefits
+of modules.
 
 <cmg ../images/Picture07.jpg>
 
-So let's take this digital camera. You can see that this specific camera is basically made up of all these modules that we can see here. And this is exactly how we can compose software using modules as well. Another big advantage of these camera modules is that each of them can be developed in complete isolation.
-So you can have one engineer working on the lens and another one on the screen
-and even another one on the controller module. And the best part of this is that each engineer can actually work on their own module without even understanding
-what the other engineers are doing. And also without understanding how the entire final camera works itself.
+So let's take this digital camera. You can see that this specific camera is basically made up of all
+these modules that we can see here. And this is exactly how we can compose software using modules as
+well. Another big advantage of these camera modules is that each of them can be developed in complete
+isolation. So you can have one engineer working on the lens and another one on the screen and even
+another one on the controller module. And the best part of this is that each engineer can actually work
+on their own module without even understanding what the other engineers are doing. And also without
+understanding how the entire final camera works itself.
 
-And so isolating components is another huge advantage of using modules. And again, isolating components essentially means that each module can be developed in isolation without the developer having to think about the entire code base.
-He doesn't even need to understand all of it, which makes it really easy to collaborate on a larger team. 
+And so isolating components is another huge advantage of using modules. And again, isolating components
+essentially means that each module can be developed in isolation without the developer having to think
+about the entire code base. He doesn't even need to understand all of it, which makes it really easy to
+collaborate on a larger team.
 
-Next up modules make it very easy to abstract or code. And we already talked about what abstraction means, but basically we can use modules to implement low level code then other modules, which don't really care about these low level details can import these abstractions and use them. And back to our camera, the screen module, for example, does not care about the low level implementation details of the controller module. It can simply import the controller, but without knowing how it works and use it to control other parts of the camera.
+Next up modules make it very easy to abstract or code. And we already talked about what abstraction means,
+but basically we can use modules to implement low level code then other modules, which don't really care
+about these low level details can import these abstractions and use them.
 
-And so that's essentially the power of abstraction. Modules also naturally lead to a more organized code base. Because when we break up our code into separate isolated and obstructed modules, this will automatically organize our code and make it easier to understand. And so this alone is a huge benefit of modules.
+
+And so that's essentially the power of abstraction. Modules also naturally lead to a more organized code base.
+Because when we break up our code into separate isolated and obstructed modules, this will automatically organize our code and make it easier to understand. And so this alone is a huge benefit of modules.
 
 Finally modules allow us to easily reuse the same code in a project and even across multiple projects. For example, if we use the module to implement a couple of mathematical functions in a certain project, and if we then need the same functions in the next project, all we need to do is to copy that module to the new project. And in our camera example here, this company could now use the exact same lens or the exact same screen in different camera models, all because they nicely abstracted these components into self-contained reusable modules.
 
