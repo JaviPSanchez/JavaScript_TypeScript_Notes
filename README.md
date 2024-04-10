@@ -33,7 +33,7 @@ Hide/Show table of contents
 
    Modules are a super important part of software development.
 
-   \*\*[:one:] Modules naturally lead to a more organized code.<br />
+   **:one:** Modules naturally lead to a more organized code.<br />
    2️⃣ Modules are a reusable piece of code that encapsulates implementation details
    of a certain part of our project. Like a function or even a class, but the difference
    is that a module is usually a standalone and separate file.<br />
