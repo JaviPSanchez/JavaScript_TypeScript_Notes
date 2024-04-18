@@ -137,9 +137,10 @@ console.log('UnShift Method :');
 console.log([1, 2, 3, 4].unshift(0)); // a
 
 /*
-✅ SLICE METHOD : Muy parecido al que utilizamos con los STRINGS, podemos extraer una parte de
-nuestro ARRAY sin modificar el original. Hay que meter el parametro de inicio y el de final
-(no siendo obligatorio este ultimo), el parametro corresponde al index del ARRAY:
+✅ SLICE METHOD : Muy parecido al que utilizamos con los STRINGS,
+podemos extraer una parte de nuestro ARRAY sin modificar el original.
+Hay que meter el parametro de inicio y el del final (no siendo obligatorio
+este ultimo), el parametro corresponde al index del ARRAY:
 */
 console.log(arr.slice(2)); //["c", "d", "e"]
 //Podemos indicar el parametro final, el cual no se incluye, ojo!
@@ -154,12 +155,18 @@ console.log(arr.slice()); //["a", "b", "c", "d", "e"]
 console.log([...arr]); //["a", "b", "c", "d", "e"]
 
 /*
-✅  SPLICE METHOD :  Funciona casi de la misma forma que el .slice() pero en este caso cambia el ARRAY original, muta el ARRAY, si llamamos al ARRAY original, este es modificado!
+✅  SPLICE METHOD :  Funciona casi de la misma forma que el .slice()
+pero en este caso cambia el ARRAY original, muta el ARRAY, si llamamos
+al ARRAY original, este es modificado!
 */
-console.log(arr.splice(2)); //["c", "d", "e"]
-console.log(arr); //["a", "b"]
+console.log(arr.splice(2));
+console.log(arr);
+const arr7 = ['a', 'b', 'c', 'd', 'e'];
+console.log(arr7.splice(2, 1));
+console.log(arr7);
 
-//Normalmente con el SPLICE METHOD lo que nos interesa es eliminar info no necesaria. Por ejemplo eliminar el ultimo elemento de un ARRAY.
+//Normalmente con el SPLICE METHOD lo que nos interesa es eliminar info no necesaria.
+// Por ejemplo eliminar el ultimo elemento de un ARRAY.
 arr.splice(-1);
 console.log(arr); //["a"]
 let arr2 = ['a', 'b', 'c', 'd', 'e'];

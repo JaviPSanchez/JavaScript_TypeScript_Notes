@@ -1,9 +1,7 @@
 /*
-************************LOOPING ARRAYS, BREAKING & CONTINUING***********************
-
-
-Al igual que podemos loopear una primitiva, los ARRAYS son susceptibles de loopear,
-permitiendonos mostrar todos los elementos dentro de un array sin necesidad de llamar uno a uno:
+Al igual que podemos loopear una primitiva, los ARRAYS son susceptibles
+de loopear, permitiendonos mostrar todos los elementos dentro de un array
+sin necesidad de llamar uno a uno:
 */
 const javi = [
   'Javi',
@@ -29,7 +27,8 @@ for (let i = 0; i < javi.length; i++) {
 **********************FILLING ARRAYS CON LOOP**********************
 
 
-Anteriormente hemos visto que utilizando el metodo .push, podemos meter nuevos datos al final de nuestra ARRAY.
+Anteriormente hemos visto que utilizando el metodo .push, podemos 
+meter nuevos datos al final de nuestra ARRAY.
 */
 const friends = ['Javi', 'Meli', 'Gabi'];
 const newLength = friends.push('Napoleon');
@@ -47,7 +46,8 @@ console.log(ages); //(4) [30, 34, 32, 1] automaticamente ha calculado los valor
 /*
 *******************BREAKING AND CONTINUING STATEMENTS*****************
 
-CONTINUING --> se sale de la iteracion actual de nuestro loop y continua con la siguiente iteracion.
+CONTINUING --> se sale de la iteracion actual de nuestro loop y continua
+con la siguiente iteracion.
 
 Imaginemos que solo queremos logear elementos STRING.
 */

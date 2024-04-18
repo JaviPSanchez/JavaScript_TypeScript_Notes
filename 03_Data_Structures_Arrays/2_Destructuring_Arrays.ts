@@ -1,6 +1,38 @@
 'use strict';
 
-import { restaurant } from './assets';
+export const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicius pasta with ${ing1}, ${ing2} and ${ing3}.`
+    );
+  },
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    return [mainIngredient, otherIngredients];
+  },
+};
 
 //Si quisiésemos extraer los elementos del ARRAY categories:
 
@@ -64,15 +96,21 @@ m;
 n;
 r;
 
-// Hay otra herramienta útil, si quisiésemos extraer información de un API por ejemplo:
-// ¡Imaginemos que tenemos un ARRAY con “x” elementos, pero no sabemos cuántos! por lo que creamos una variable destructurando los tres primeros valores de un ARRAY que solo tiene dos elementos! lo que pasara es que nos devolverá un tercer elemento undefined inservible!
-
+/*
+Imaginemos que tenemos un ARRAY con 'x' elementos, pero no sabemos cuántos! por lo
+que creamos una variable destructurando los tres primeros valores de un ARRAY que
+solo tiene dos elementos! lo que pasara es que nos devolverá un tercer elemento
+undefined inservible!
+*/
 const [k, f, l] = [8, 9];
 k;
 f;
 l;
 
-// Para evitar esto, podemos asignar valores a los elementos undefined, permitiendonos utilizar esta info:
+/*
+Para evitar esto, podemos asignar valores a los elementos undefined, permitiendonos
+utilizar esta info:
+*/
 
 const [p = 1, q = 1, t = 1] = [8, 9];
 p;
@@ -80,9 +118,10 @@ q;
 r;
 
 /*
-We can even destructure an ARRAY using Objects, ARRAY is inherited from Object class, whcich means internally JS uses the object to construct the ARRAY
-
-So, every item in an ARRAY is internally mapped to an Object with index as a Key and item as the Value {key(index): value(item)}
+We can even destructure an ARRAY using Objects, ARRAY is inherited from Object class,
+which means internally JS uses the object to construct the ARRAY. So, every item in
+an ARRAY is internally mapped to an Object with index as a Key and item as the Value
+{key(index): value(item)}
 
 This is useful if we want to destructure only from a specific place in a big size ARRAY.
 
@@ -97,7 +136,7 @@ const os = data[100]
 console.log(os) // 99.96
 */
 
-const data = ['Microsoft', 99.96, 'Windows 11'];
+const data = ['Microsoft', 99.96, 'Windows 11', 'linux', 1000, 'Madrid'];
 
 const { 1: price } = data;
 

@@ -1,22 +1,23 @@
-//In JavaScript, we can use 𝐎𝐛𝐣𝐞𝐜𝐭.𝐟𝐫𝐞𝐞𝐳𝐞() and 𝐎𝐛𝐣𝐞𝐜𝐭.𝐬𝐞𝐚𝐥() methods to make an object immutable.
+/**
+ * Object.freeze()
+ * Object.seal()
+ */
 
 /*
-
 With 𝐎𝐛𝐣𝐞𝐜𝐭.𝐟𝐫𝐞𝐞𝐳𝐞(): 
 1-We cannot add a new property in an object. ❌
 2-We cannot delete existing properties. ❌
 3-We cannot update the value of existing properties. ❌
-
 */
 
 let obj = {
-  name: 'Javi Palomino',
-  city: 'Madrid',
+  name: "Javi Palomino",
+  city: "Madrid",
 };
 
 Object.freeze(obj);
 
-obj.city = 'Nantes';
+obj.city = "Nantes";
 console.log(obj);
 
 /*
@@ -29,13 +30,13 @@ Any properties which are objects itself can still be modified.
 */
 
 let nestedObj = {
-  name: 'Manuelito',
-  cities: { spain: 'Madrid', france: 'Nantes' },
+  name: "Manuelito",
+  cities: { spain: "Madrid", france: "Nantes" },
 };
 
 Object.freeze(nestedObj);
 
-nestedObj.cities.spain = 'Hendaye';
+nestedObj.cities.spain = "Hendaye";
 console.log(nestedObj);
 
 /*
@@ -48,11 +49,11 @@ With 𝐎𝐛𝐣𝐞𝐜𝐭.𝐬𝐞𝐚𝐥():
 */
 
 let obj2 = {
-  name: 'Javi Palomino',
-  city: 'Madrid',
+  name: "Javi Palomino",
+  city: "Madrid",
 };
 
 Object.seal(obj2);
 
-obj2.city = 'Nantes';
+obj2.city = "Nantes";
 console.log(obj2);

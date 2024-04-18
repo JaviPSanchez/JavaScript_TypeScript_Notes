@@ -115,5 +115,5 @@
   },
   "exclude": ["node_modules"],
   // "include": ["**/src/*"]
-  "files": ["0_Interfaces_Objects.ts"]
+  "files": ["0_Types_Interfaces_Enums_Objects.ts"]
 }

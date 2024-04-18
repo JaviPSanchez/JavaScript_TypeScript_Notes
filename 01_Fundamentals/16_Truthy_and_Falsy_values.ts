@@ -14,6 +14,8 @@ console.log(Boolean(1)); // True
 console.log(Boolean(undefined)); // Falsy
 console.log(Boolean('Javi')); // No es un String vacio, luego es Truthy
 console.log(Boolean(' ')); // Falsy
+console.log(NaN + 1);
+console.log(undefined + 1);
 
 // Hay veces que bajo situaciones logicas JS convierte automaticamente a Booleanas:
 const money = 0;
@@ -29,3 +31,26 @@ if (height) {
 } else {
   console.log('It is not defined!');
 } // Aqui supone que la variable height es Undefined, luego es FALSY.
+
+/*
+Si quisieramos evitar los if, else statements:
+*/
+
+interface Info {
+  name: string;
+  lastName: any;
+  firstName: any;
+}
+
+let userInfo: Info;
+
+userInfo = {
+  name: 'Javier',
+  lastName: undefined,
+  firstName: 'Palomino',
+};
+//Si tenemos un Falsy Value como undefined, podemos asignarle un 0
+userInfo.lastName = userInfo.lastName || 'No Name';
+console.log(userInfo);
+userInfo.firstName = userInfo.firstName || 'Sanchez';
+console.log(userInfo);

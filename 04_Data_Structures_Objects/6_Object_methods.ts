@@ -1,4 +1,24 @@
-"use strict";
+/**
+ * Object.assign() 👉 Merge objects into one
+ * Object.keys()
+ * Object.values()
+ * Object.entries()
+ * Object.assign()
+ */
+
+const person = {
+  name: "javier",
+  age: 36,
+  gender: "male",
+};
+
+const jobObject = {
+  job: "CTO",
+  salary: "80000",
+};
+
+const finalObject = Object.assign(person, jobObject);
+console.log(finalObject);
 
 const openingHours = {
   thu: {
@@ -279,34 +299,3 @@ for (const [team, odd] of Object.entries(game.odds)) {
   const teamString = team === "x" ? "draw" : `victory ${game[team]}`;
   console.log(`Odd of ${teamString}: ${odd}`);
 }
-/*
-Odd of victory Bayern Munich: 1.33
-Odd of draw: 3.25
-Odd of victory Borrussia Dortmund: 6.5
-*/
-/*
-NOTA!!! De donde coño sale el game[team] o mejor dicho, porque funciona, si las PROPERTIES team1 y team2 no se llaman team?
-Because we want to access properties team1 & team2 inside the game object. Since we can't use the dot . notation to access the properties, we use the [] notation to access them. If you try to use dot notation, you'll get undefined because game.team command will try  to find property team and won't be found because we didn't define it inside game object, thus it will return undefined.
-*/
-/*
-4. Bonus: Create an object called 'scorers' which contains the names of the players who scored as properties, and the number of goals as the value. In this game, it will look like this:
-{
-Gnarby: 1,
-Hummels: 1,
-Lewandowski: 2
-}
-*/
-
-const person = {
-  name: "javier",
-  age: 36,
-  gender: "male",
-};
-
-const jobObject = {
-  job: "CTO",
-  salary: "80000",
-};
-
-const finalObject = Object.assign(person, jobObject);
-console.log(finalObject);

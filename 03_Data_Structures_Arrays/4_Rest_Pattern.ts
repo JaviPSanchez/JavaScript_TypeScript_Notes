@@ -3,20 +3,30 @@
 import { restaurant, data } from './assets';
 
 /*
-The REST PATTERN looks like the SPREAD OPERATOR
-
-It has the same syntax with the three dots but it does the opposite of the SPREAD OPERATOR.
-
-En vez de separar junta.
-
-Usábamos el SPREAD OPERATOR to build new ARRAYS o OBJECTS, o para pasar múltiples VALUES en una función.
-Para diferenciar el SPREAD de REST simplemente saber que cada uno se hace en un lado diferentes de una igualdad,
-el SPREAD en el lado izquierdo, mientras que el REST en el derecho, aunque esto no deberíamos fijarnos mucho...,
+The REST PATTERN looks like the SPREAD OPERATOR, It has the same
+syntax with the three dots but it does the opposite of the SPREAD
+OPERATOR. En vez de separar junta. Usábamos el SPREAD OPERATOR to
+build new ARRAYS or OBJECTS, o para pasar múltiples VALUES en una
+función.
+*/
+function getTotal(...args) {
+  console.log(typeof args);
+}
+/*
+This syntax allows the function to accept any number of arguments
+and gather them into an array called args
+*/
+getTotal(871);
+/*
+Para diferenciar el SPREAD de REST simplemente saber que cada uno se
+hace en un lado diferentes de una igualdad, el SPREAD en el lado izquierdo,
+mientras que el REST en el derecho, aunque esto no deberíamos fijarnos mucho...,
 más bien en que queremos obtener.
 
 If you want to break an array into several variables, you're using spread syntax.
 
-If you're taking several variables and putting them into one array, you're using rest syntax.
+If you're taking several variables and putting them into one array, you're using
+rest syntax.
 */
 
 //SPREAD --> right side of = operator

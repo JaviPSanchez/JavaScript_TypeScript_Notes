@@ -1,6 +1,42 @@
 'use strict';
 
-import { restaurant, data } from './assets';
+import { data } from './assets';
+
+// import { restaurant, data } from './assets';
+
+export const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicius pasta with ${ing1}, ${ing2} and ${ing3}.`
+    );
+  },
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    return [mainIngredient, otherIngredients];
+  },
+};
 
 /*
 🔍 Discuss the benefits of using spread syntax and differentiate it from rest syntax.
@@ -62,14 +98,20 @@ Como STRINGS son ITERABLES podemos usar el SPREAD OPERATOR.
 const str1 = 'Javi';
 const str2 = 'Melissa';
 const strTotal = [...str1, 'y', ...str2];
-console.log(strTotal); // ["J", "a", "v", "i", "y", "M", "e", "l", "i", "s", "s", "a"]
+console.log(strTotal);
+
+function getTotal(...args: number[]) {
+  console.log(typeof args);
+}
+
+console.log(getTotal(871));
 
 /*
 Solo podemos usar el SPREAD OPERATOR when building an ARRAY or when passing
 arguments into a function. But, what we can't do is to use this to build a
 string using a template literal.
 */
-console.log(`${...str}` Palomino); // SyntaxError: Unexpected token '...'
+// console.log(`${...str}` Palomino); // SyntaxError: Unexpected token '...'
 /*
 Podemos crear una FUNCTION que acepte multiple arguments and then use the SPREAD OPERATOR
 to pass those ARGUMENTS. Vamos a crear otro METHOD en nuestro ARRAY restaurant encargado
@@ -106,7 +148,7 @@ console.log(newRestaurant.foundedIn);
 
 // creando un OBJECT con nuevos METHODS.
 
-function getBooks(id) {
+function getBooks(id: number) {
   return data.find(book => book.id === id);
 }
 
