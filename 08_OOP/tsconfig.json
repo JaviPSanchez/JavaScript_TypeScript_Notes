@@ -121,6 +121,6 @@
     "8_Static_Methods.ts",
     "9_Abstract_Classes.ts",
     "10_Private_Constructors_Singleton_Pattern.ts",
-    "11_Object_Create.ts"
+    "13_Generic_Classes.ts"
   ]
 }

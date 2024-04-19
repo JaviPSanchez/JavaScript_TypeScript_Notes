@@ -72,7 +72,9 @@ const calcAge = function (birthYear) {
 calcAge(1987);
 
 /*
-Las Arrow functions no tienen su propio this keyword, cogera el valor del "this keyword" de su padre,siendo en el siguiente ejemplo el GLOBAL SCOPE, siendo WINDOW OBJECT. Este proceso de adaptar el this de su padre es lo que se conoce como LEXICAL THIS!
+Las Arrow functions no tienen su propio this keyword, cogera el valor del "this keyword"
+de su padre, siendo en el siguiente ejemplo el GLOBAL SCOPE, siendo WINDOW OBJECT. Este
+proceso de adaptar el this de su padre es lo que se conoce como LEXICAL THIS!
 */
 
 console.log(this);
