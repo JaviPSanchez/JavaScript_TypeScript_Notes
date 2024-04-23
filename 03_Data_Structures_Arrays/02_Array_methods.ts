@@ -1,4 +1,4 @@
-// import './main.css';
+import './main.css';
 
 /**
  * 1️⃣ .push() Muta ❌ 👉 añadimos un valor al final de nuestro array y ademas nos calcula el tamaño de nuestro array
@@ -22,6 +22,7 @@
  * 1️⃣7️⃣ .flat() No Muta ✅
  * 1️⃣8️⃣ .flatMap() No Muta ✅
  * 1️⃣9️⃣ .with() No Muta ✅
+ * 2️⃣0️⃣ .startsWith() No Muta ✅
  *
  *
  */
@@ -177,8 +178,8 @@ this method generates a new array without modifying the original one. By calling
 you obtain a sorted version in ascending order. It's incredibly handy when you need to perform operations
 on a sorted array while retaining the original order.
 */
-initArray2 = [2, 1, 3];
-iteratedArray2 = initArray2.toSorted();
+const initArray2 = [2, 1, 3];
+const iteratedArray2 = initArray2.toSorted();
 console.log(initArray2, iteratedArray2); // Output: [2, 1, 3], [1, 2, 3]
 
 /*
@@ -186,9 +187,9 @@ console.log(initArray2, iteratedArray2); // Output: [2, 1, 3], [1, 2, 3]
 Specify the startIndex and deleteCount parameters to define the range of elements to extract. The resulting array is returned,
 allowing you to perform targeted operations while keeping the initial array intact.
 */
-initArray = [1, 2, 3, 4];
-iteratedArray = initArray.toSpliced(1, 2);
-console.log(initArray, iteratedArray); // Output: [1, 2, 3, 4], [1, 4]
+const initArray3 = [1, 2, 3, 4];
+const iteratedArray3 = initArray3.toSpliced(1, 2);
+console.log(initArray3, iteratedArray3); // Output: [1, 2, 3, 4], [1, 4]
 
 /*
 1️⃣6️⃣ .toSort()

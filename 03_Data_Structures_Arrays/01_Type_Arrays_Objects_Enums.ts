@@ -49,14 +49,14 @@ const product: {
 
 //Type Array (Strict ARRAY)
 let favoriteActivities: string[];
-favoriteActivities = ['Cooking', 5];
+// favoriteActivities = ['Cooking', 5];
 //Type Array Any
 let favoriteActivities2: any[];
-favoriteActivities = ['Cooking', 5];
+// favoriteActivities = ['Cooking', 5];
 
 //TS nos permite hacer un .push() a un tuple! cuando no deberiamos!, para evitar este efecto ideseable añadimos readonly keyword
-product.role[1] = 10;
-product.role.push('admin');
+// product.role[1] = 10;
+// product.role.push('admin');
 product.car.push('Porsche');
 console.log(product);
 
@@ -87,7 +87,7 @@ const user = {
 if (user.role === Role.ADMIN) {
   console.log('is admin');
 }
-console.log(person.nickname);
-console.log(person.name);
+// console.log(person.nickname);
+// console.log(person.name);
 console.log(person2.name);
 console.log(person3.name);
