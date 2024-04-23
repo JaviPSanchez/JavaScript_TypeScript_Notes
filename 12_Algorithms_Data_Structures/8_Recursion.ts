@@ -54,5 +54,12 @@ function sumRange(num: number) {
   if (num === 1) return 1;
   return num + sumRange(num - 1);
 }
+// return 3 + sumRange(2) = 3
+//                  return 2 + sumRange(1) = 3
+//                              return 1
 
-console.log(sumRange(5)); // 15
+console.log(sumRange(3)); // 6
+
+// Factorial --> 10! = 10 * 9 * 8 * 7 * 6 ... * 1
+
+//TODO
