@@ -61,3 +61,5 @@ function sumRange(num: number) {
 console.log(sumRange(3)); // 6
 
 // Factorial --> 10! = 10 * 9 * 8 * 7 * 6 ... * 1
+
+//TODO
