@@ -115,5 +115,5 @@
   },
   "exclude": ["node_modules"],
   // "include": ["**/src/*"]
-  "files": ["19_Promise_withResolvers.ts"]
+  "files": ["./15_Try_Catch_error_handling.ts"]
 }
