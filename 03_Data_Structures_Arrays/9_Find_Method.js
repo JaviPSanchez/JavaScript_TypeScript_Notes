@@ -46,7 +46,12 @@ console.log(firstWithdrawal); //-400
 //Vamos a trabajar con OBJECTS, con FIND podemos encontrar un objeto en el ARRAY basado en alguna propiedad de este OBJECT.
 
 const accounts = [account1, account2, account3, account4];
-//Imaginemos que queremos seleccionar una de las accounts, por ejemplo de Jessica Davis, gracias al FIND METHOD nos encuentra el OBJECT donde se encuentra este STRING, algo muy muy util.
+
+/*
+Imaginemos que queremos seleccionar una de las accounts, por ejemplo de Jessica Davis,
+gracias al FIND METHOD nos encuentra el OBJECT donde se encuentra este STRING, algo muy
+muy util.
+*/
 const account = accounts.find(acc => acc.owner === 'Jessica Davis');
 console.log(account); //Nos devuelve el OBJECT:
 /*

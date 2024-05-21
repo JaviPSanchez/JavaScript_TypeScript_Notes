@@ -10,7 +10,9 @@ Utilizaremos el FILTER METHOD, que filtra los elementos con una condicion especi
 
 Seguimos trabajando con el ARRAY movements.
 
-Al igual que con el resto de METHODs, tenemos acceso al INDEX, al ENTIRE ARRAY y al CURRENT ELEMENT VALUE, aunque aqui solo trabajaremos con el current element value que es lo unico que suele interesar con el FILTER METHOD.
+Al igual que con el resto de METHODs, tenemos acceso al INDEX, al ENTIRE ARRAY y al
+CURRENT ELEMENT VALUE, aunque aqui solo trabajaremos con el current element value que
+es lo unico que suele interesar con el FILTER METHOD.
 */
 
 //Queremos crear un ARRAY de los DEPOSITs (movements above 0)
@@ -18,7 +20,7 @@ const deposits = movements.filter(function (mov, i, arr) {
   return mov > 0;
 });
 console.log(movements); //[200, 450, -400, 3000, -650, -130, 70, 1300]
-//Queremos filtrar los valores negativos, luego solo los valores que cumplan la condicion de >0 pasaran a la nueva ARRAY. Solo los valores que sean true, pasan:
+//Queremos filtrar los valores negativos, Solo los valores que sean true, pasan:
 console.log(deposits); //[200, 450, 3000, 70, 1300]
 
 //Podrimos hacer lo mismo con el FOR OF LOOP
