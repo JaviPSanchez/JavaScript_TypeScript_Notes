@@ -23,6 +23,9 @@ import './main.css';
  * 1️⃣8️⃣ .flatMap() No Muta ✅
  * 1️⃣9️⃣ .with() No Muta ✅
  * 2️⃣0️⃣ .startsWith() No Muta ✅
+ * 2️⃣1️⃣ .filter()
+ * 2️⃣2️⃣ .find()
+ * 2️⃣3️⃣ .reduce()
  *
  *
  */
@@ -309,3 +312,139 @@ const family = ['John', 'Meli', 'Javi', 'Gabriel'];
 const trueFamily = family.with(0, 'Napoleon');
 console.log(family);
 console.log(trueFamily);
+
+/*
+2️⃣0️⃣ .startsWith()
+
+is used to determine whether a string begins with the characters of a specified string.
+It returns true if the string starts with the specified characters
+*/
+let str = 'Hello, world!';
+
+console.log(str.startsWith('Hello')); // Output: true
+console.log(str.startsWith('world')); // Output: false
+console.log(str.startsWith('world', 7)); // Output: true
+console.log(str.startsWith('Hello', 7)); // Output: false
+let urls = [
+  'https://example.com',
+  'http://example.org',
+  'https://anotherexample.net',
+];
+
+urls.forEach(url => {
+  if (url.startsWith('https://')) {
+    console.log(`${url} is a secure URL.`);
+  } else {
+    console.log(`${url} is not a secure URL.`);
+  }
+});
+
+/*
+2️⃣1️⃣ .filter()
+
+filtrar un ARRAY basado en una condicion.
+*/
+
+const bankMovements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const deposits = bankMovements.filter(function (mov, i, arr) {
+  return mov > 0;
+});
+
+console.log(bankMovements); //[200, 450, -400, 3000, -650, -130, 70, 1300]
+console.log(deposits); //[200, 450, 3000, 70, 1300]
+
+const withdrawals = movements.filter(mov => mov < 0);
+console.log(withdrawals);
+
+/*
+2️⃣2️⃣ .find()
+
+recuperar un elemento de un ARRAY basado en una condicion.
+*/
+
+const accounts = [account1, account2, account3, account4];
+const account = accounts.find(acc => acc.owner === 'Manuela Perez');
+console.log(account);
+
+/*
+2️⃣3️⃣ .reduce()
+
+Usado para "condensar" todos los ELEMENTS de un ARRAY en un solo valor.
+
+El .reduce() recibe una callback function (accumulator, value, index, array)
+
+Basicamente en cada iteración devolvemos el accumulador actualizado + el nuevo current value,
+permitiendonos añadir la siguiente iteracion.
+
+
+Hay un segundo parametro que seria el initial value del accumulator, en el ejemplo sera 0.
+Es el valor inicial del accumulador en la primera iteracion.
+*/
+const balance = movements.reduce(function (acc, val, i, arr) {
+  return acc + val;
+}, 0);
+console.log(balance); //3840
+
+//Si queremos ver como funciona el accumulador:
+const balance2 = movements.reduce(function (acc, val, i, arr) {
+  console.log(`Iteracion ${i}: ${acc}`);
+  return acc + val;
+}, 0);
+/*
+Iteracion 0: 0  //Aqui podemos ver el INITIAL VALUE del ACCUMULATOR
+Iteracion 1: 200 
+Iteracion 2: 650 
+Iteracion 3: 250 
+Iteracion 4: 3250 
+Iteracion 5: 2600 
+Iteracion 6: 2470 
+Iteracion 7: 2540 
+*/
+console.log(balance2); //3840
+
+// Si quisiesemos hacerlo manualmente con FOR OF LOOP
+let balance3 = 0;
+for (const mov of movements) balance3 += mov;
+console.log(balance3); //3840
+
+//El problema aqui es que hay que definir una nueva variable, ademas de hacerlo mas largo de escribir...
+
+//Si queremos podemos simplificar el codigo:
+const balance4 = movements.reduce((acc, val) => acc + val, 0);
+console.log(balance4); // 3840
+
+//Podemos pasar a calcular el balance de nuestra cuenta, creamos una funcion callback que recibira la informacion del ARRAY movements como un input.
+const calcPrintBalance = function (movements) {
+  //El primer parametro es el acumulador y el segundo es el current value.
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+};
+calcPrintBalance(account1.movements); //3840 €
+
+// Calcular el valor máximo del ARRAY movements2:
+
+//La primera pregunta que debemos hacernos es saber cual es el porpuse de nuestro accumulator, aqui sera el encargado de ver el valor mas alto.
+const valueMax = movements2.reduce((acc, mov, i) => {
+  console.log(`Iteracion ${i + 1}: ${acc} > ${mov}`);
+  if (acc > mov) return acc;
+  else return mov;
+  /*
+  Si el acumulador es mas grande que el valor actual entonces devolver acumulador, en la primera iteracion sera:
+  Iteracion 1: 300 > 300 siempre el mismo valor de 300
+  Iteracion 2: 300 > 450 False, devuelve actual value de acc = 450
+  Iteracion 3: 450 > -400 True, devuelve acc = 450
+  Iteracion 4: 450 > 3000 False, devuelve actual value de acc = 3000
+  Iteracion 5: 3000 > -650 True, devuelve acc = 3000
+  Iteracion 6: 3000 > -130 True, devuelve acc = 3000
+  Iteracion 7: 3000 > 70 True, devuelve acc = 3000
+  Iteracion 8: 3000 > 1300 True,luego devuelve acumulador 3000.
+  */
+}, movements2[0]); //Ponemos el valor inicial
+console.log(valueMax); //3000
+
+//Otra solucion hubiese sido:
+const valueMax2 = movements.reduce(
+  (acc, el) => Math.max(acc, el),
+  movements[0]
+);
+console.log(valueMax2); //3000
